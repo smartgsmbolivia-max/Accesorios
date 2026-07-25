@@ -1587,17 +1587,6 @@ body.modal-abierto{overflow:hidden;}
       </div>
     </div>
 
-    <div class="seccion-productos" id="seccionDestacados">
-      <div class="encabezado-seccion">
-        <h2>⭐ Destacados</h2>
-        <button type="button" onclick="verSeccion('destacado')">Ver todos</button>
-      </div>
-      <div class="carrusel-productos">
-        <button class="flecha-carrusel izquierda" type="button" aria-label="Anterior" onclick="moverCarrusel('productosDestacados',-1)">‹</button>
-        <div class="fila-productos" id="productosDestacados"></div>
-        <button class="flecha-carrusel derecha" type="button" aria-label="Siguiente" onclick="moverCarrusel('productosDestacados',1)">›</button>
-      </div>
-    </div>
 
     <div class="seccion-productos" id="seccionOfertas">
       <div class="encabezado-seccion">
@@ -2021,14 +2010,7 @@ const clasificacionProductos = {
     "Xiaomi Bluetooth Speaker Essential",
     "Xiaomi Night Light 3"
   ],
-  destacado: [
-    "Xiaomi Smart Band 10",
-    "Xiaomi Watch S4",
-    "Mibro Watch C4",
-    "Xiaomi Smart Projector L1 Pro",
-    "Amazon Echo Dot Max",
-    "Xiaomi Sound Outdoor 30W"
-  ],
+ 
   oferta: [
     "Xiaomi Redmi Buds 6 Active",
     "Xiaomi Redmi Buds 6 Play",
@@ -2120,11 +2102,10 @@ function productosPorSeccion(tipo){
 
 function renderSeccionesPrincipales(){
   const configuracion = [
-    ["nuevo", "productosNuevos", "seccionNuevos"],
-    ["destacado", "productosDestacados", "seccionDestacados"],
-    ["oferta", "productosOfertas", "seccionOfertas"]
-  ];
-
+  ["nuevo", "productosNuevos", "seccionNuevos"],
+  ["oferta", "productosOfertas", "seccionOfertas"]
+];
+  
   configuracion.forEach(([tipo, contenedorId, seccionId]) => {
     const lista = productosPorSeccion(tipo).slice(0, 6);
     const contenedor = document.getElementById(contenedorId);
