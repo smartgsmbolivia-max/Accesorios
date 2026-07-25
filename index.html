@@ -1372,6 +1372,47 @@ body.modal-abierto{overflow:hidden;}
   }
 }
 
+/* ===== BÚSQUEDA RÁPIDA: CELULAR, TABLET Y COMPUTADORA ===== */
+
+/*
+  Mientras el usuario escribe, ocultamos las zonas
+  promocionales para que los resultados aparezcan arriba.
+*/
+
+body.modo-busqueda .hero{
+  display:none;
+}
+
+body.modo-busqueda .secciones-principales{
+  display:none;
+}
+
+body.modo-busqueda .xiaomi-home{
+  display:none;
+}
+
+/* El título y los productos suben inmediatamente */
+
+body.modo-busqueda .titulo-catalogo-completo{
+  margin-top:18px;
+  padding-top:8px;
+}
+
+body.modo-busqueda .container{
+  padding-top:8px;
+}
+
+/*
+  Mantiene visible la cabecera con el buscador
+  mientras se revisan los resultados.
+*/
+
+body.modo-busqueda header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+  
 </style>
 </head>
   
@@ -2365,33 +2406,128 @@ function detectarCategoria(nombre){
   return "otros";
 }
 
-function aplicarFiltros(){
-  const texto=document.getElementById("buscador").value.toLowerCase().trim();
-  const marca=document.getElementById("filtroMarca").value;
-  const categoria=document.getElementById("filtroCategoria").value;
+let busquedaRapidaActiva = false;
 
-  const filtrado=productos.filter(p=>{
-    const nombre=p[0].toLowerCase();
-    const coincideTexto=!texto || nombre.includes(texto);
-    const coincideMarca=!marca || nombre.includes(marca);
-    const coincideCategoria=!categoria || detectarCategoria(nombre)===categoria;
-    return coincideTexto && coincideMarca && coincideCategoria;
+function aplicarFiltros(origen = "filtro"){
+
+  const buscador = document.getElementById("buscador");
+  const filtroMarca = document.getElementById("filtroMarca");
+  const filtroCategoria = document.getElementById("filtroCategoria");
+  const tituloCatalogo = document.getElementById("tituloCatalogo");
+
+  const texto = buscador.value.toLowerCase().trim();
+
+  /*
+    Cuando el usuario escribe, se limpian automáticamente
+    los filtros de marca y categoría.
+  */
+  if(origen === "buscador" && texto !== ""){
+    filtroMarca.value = "";
+    filtroCategoria.value = "";
+  }
+
+  const marca = filtroMarca.value;
+  const categoria = filtroCategoria.value;
+
+  const filtrado = productos.filter(producto => {
+
+    const nombre = producto[0].toLowerCase();
+
+    const coincideTexto =
+      texto === "" || nombre.includes(texto);
+
+    const coincideMarca =
+      marca === "" || nombre.includes(marca);
+
+    const coincideCategoria =
+      categoria === "" ||
+      detectarCategoria(nombre) === categoria;
+
+    return coincideTexto &&
+           coincideMarca &&
+           coincideCategoria;
   });
 
-  const hayFiltro=texto || marca || categoria;
-  document.getElementById("tituloCatalogo").innerText=hayFiltro ? `Productos encontrados (${filtrado.length})` : "Todos los productos";
+  const hayBusqueda =
+    texto !== "" || marca !== "" || categoria !== "";
+
+  tituloCatalogo.innerText = hayBusqueda
+    ? `Productos encontrados (${filtrado.length})`
+    : "Todos los productos";
+
   mostrar(filtrado);
+
+  /*
+    Activa el modo de búsqueda en cualquier pantalla:
+    celular, tablet o computadora.
+  */
+  document.body.classList.toggle(
+    "modo-busqueda",
+    texto !== ""
+  );
+
+  /*
+    Mueve la pantalla hacia los resultados solamente
+    cuando comienza la búsqueda.
+  */
+  if(texto !== "" && !busquedaRapidaActiva){
+
+    busquedaRapidaActiva = true;
+
+    setTimeout(() => {
+
+      tituloCatalogo.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    }, 100);
+  }
+
+  /*
+    Cuando se borra el texto, vuelve a mostrarse
+    todo el catálogo.
+  */
+  if(texto === ""){
+    busquedaRapidaActiva = false;
+  }
 }
 
-document.getElementById("buscador").addEventListener("input",aplicarFiltros);
-document.getElementById("filtroMarca").addEventListener("change",aplicarFiltros);
-document.getElementById("filtroCategoria").addEventListener("change",aplicarFiltros);
-document.getElementById("limpiarFiltros").addEventListener("click",()=>{
-  document.getElementById("buscador").value="";
-  document.getElementById("filtroMarca").value="";
-  document.getElementById("filtroCategoria").value="";
-  aplicarFiltros();
-});
+document
+  .getElementById("buscador")
+  .addEventListener("input", () => {
+    aplicarFiltros("buscador");
+  });
+
+document
+  .getElementById("filtroMarca")
+  .addEventListener("change", () => {
+    aplicarFiltros("filtro");
+  });
+
+document
+  .getElementById("filtroCategoria")
+  .addEventListener("change", () => {
+    aplicarFiltros("filtro");
+  });
+document
+  .getElementById("limpiarFiltros")
+  .addEventListener("click", () => {
+
+    document.getElementById("buscador").value = "";
+    document.getElementById("filtroMarca").value = "";
+    document.getElementById("filtroCategoria").value = "";
+
+    document.body.classList.remove("modo-busqueda");
+    busquedaRapidaActiva = false;
+
+    aplicarFiltros("filtro");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
 
 function filtrar(marca){
   document.getElementById("filtroMarca").value=marca || "";
