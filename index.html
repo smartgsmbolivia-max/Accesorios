@@ -1414,6 +1414,424 @@ body.modo-busqueda header{
   top:0;
   z-index:1000;
 }
+
+/* ==================================================
+   CINCO BANNERS HERO PREMIUM POR CATEGORÍAS
+   ================================================== */
+
+.hero-slide.hero-categoria{
+  min-height:390px;
+  overflow:hidden;
+  isolation:isolate;
+  grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr);
+}
+
+/* Evita que los estilos antiguos controlen estos banners */
+
+.hero-slide.hero-categoria .hero-texto{
+  position:relative;
+  z-index:5;
+}
+
+.hero-slide.hero-categoria::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(
+      circle at 78% 38%,
+      rgba(255,255,255,.20),
+      transparent 27%
+    );
+  z-index:-1;
+}
+
+.hero-slide.hero-categoria::after{
+  content:"";
+  position:absolute;
+  width:480px;
+  height:480px;
+  right:-160px;
+  bottom:-285px;
+  border-radius:50%;
+  border:70px solid rgba(255,255,255,.055);
+  z-index:-1;
+}
+
+/* ===== FONDOS DE LAS CINCO CATEGORÍAS ===== */
+
+.hero-slide.hero-hogar{
+  background:
+    radial-gradient(
+      circle at 82% 30%,
+      rgba(190,242,203,.30),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #071d17 0%,
+      #164d38 52%,
+      #76a968 100%
+    );
+}
+
+.hero-slide.hero-audio{
+  background:
+    radial-gradient(
+      circle at 82% 28%,
+      rgba(125,211,252,.25),
+      transparent 26%
+    ),
+    linear-gradient(
+      135deg,
+      #06101d 0%,
+      #173653 52%,
+      #5b82a4 100%
+    );
+}
+
+.hero-slide.hero-relojes{
+  background:
+    radial-gradient(
+      circle at 82% 30%,
+      rgba(216,180,254,.24),
+      transparent 26%
+    ),
+    linear-gradient(
+      135deg,
+      #120b23 0%,
+      #39235d 52%,
+      #7961a5 100%
+    );
+}
+
+.hero-slide.hero-energia{
+  background:
+    radial-gradient(
+      circle at 82% 30%,
+      rgba(253,230,138,.22),
+      transparent 26%
+    ),
+    linear-gradient(
+      135deg,
+      #211506 0%,
+      #664214 52%,
+      #ad8041 100%
+    );
+}
+
+.hero-slide.hero-ofertas{
+  background:
+    radial-gradient(
+      circle at 82% 30%,
+      rgba(253,164,175,.27),
+      transparent 26%
+    ),
+    linear-gradient(
+      135deg,
+      #27070e 0%,
+      #79192d 52%,
+      #d75968 100%
+    );
+}
+
+/* ===== ÁREA DE PRODUCTOS ===== */
+
+.hero-productos-multiples{
+  position:relative;
+  width:100%;
+  min-height:300px;
+  z-index:3;
+}
+
+/* Halo detrás de los productos */
+
+.hero-productos-multiples::before{
+  content:"";
+  position:absolute;
+  width:330px;
+  height:330px;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.29),
+      rgba(255,255,255,.09) 46%,
+      transparent 72%
+    );
+  animation:heroHaloCategoria 4.5s ease-in-out infinite;
+}
+
+/* Sombra inferior */
+
+.hero-productos-multiples::after{
+  content:"";
+  position:absolute;
+  width:310px;
+  height:40px;
+  left:50%;
+  bottom:2px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:rgba(0,0,0,.28);
+  filter:blur(16px);
+}
+
+/* Contenedor individual */
+
+.hero-producto-flotante{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:24px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.98),
+      rgba(241,245,249,.94)
+    );
+  border:1px solid rgba(255,255,255,.76);
+  box-shadow:
+    0 26px 46px rgba(0,0,0,.27),
+    inset 0 1px 0 rgba(255,255,255,.95);
+}
+
+/* Las imágenes ya no heredan estilos del antiguo hero */
+
+.hero-producto-flotante img{
+  width:88%;
+  height:88%;
+  object-fit:contain;
+  transform:none;
+  animation:none;
+  filter:none;
+}
+
+/* Producto central */
+
+.hero-producto-flotante.producto-principal{
+  width:205px;
+  height:235px;
+  left:50%;
+  top:28px;
+  z-index:5;
+  animation:productoPrincipalFlotar 4s ease-in-out infinite;
+}
+
+/* Producto izquierdo */
+
+.hero-producto-flotante.producto-superior{
+  width:145px;
+  height:175px;
+  left:1%;
+  top:4px;
+  z-index:4;
+  animation:productoIzquierdoFlotar 4.5s ease-in-out infinite;
+}
+
+/* Producto derecho */
+
+.hero-producto-flotante.producto-derecho{
+  width:150px;
+  height:185px;
+  right:0;
+  bottom:14px;
+  z-index:4;
+  animation:productoDerechoFlotar 4.2s ease-in-out infinite;
+}
+
+/* ===== ANIMACIONES ===== */
+
+@keyframes productoPrincipalFlotar{
+
+  0%,
+  100%{
+    transform:
+      translateX(-50%)
+      translateY(0)
+      rotate(-1deg);
+  }
+
+  50%{
+    transform:
+      translateX(-50%)
+      translateY(-12px)
+      rotate(1deg);
+  }
+}
+
+@keyframes productoIzquierdoFlotar{
+
+  0%,
+  100%{
+    transform:
+      translateY(0)
+      rotate(-8deg);
+  }
+
+  50%{
+    transform:
+      translateY(-9px)
+      rotate(-4deg);
+  }
+}
+
+@keyframes productoDerechoFlotar{
+
+  0%,
+  100%{
+    transform:
+      translateY(0)
+      rotate(8deg);
+  }
+
+  50%{
+    transform:
+      translateY(-11px)
+      rotate(4deg);
+  }
+}
+
+@keyframes heroHaloCategoria{
+
+  0%,
+  100%{
+    transform:
+      translate(-50%,-50%)
+      scale(.94);
+    opacity:.70;
+  }
+
+  50%{
+    transform:
+      translate(-50%,-50%)
+      scale(1.06);
+    opacity:1;
+  }
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width:1050px){
+
+  .hero-slide.hero-categoria{
+    grid-template-columns:minmax(0,1fr) minmax(300px,.85fr);
+    padding:46px 52px;
+  }
+
+  .hero-producto-flotante.producto-principal{
+    width:175px;
+    height:210px;
+  }
+
+  .hero-producto-flotante.producto-superior{
+    width:125px;
+    height:150px;
+  }
+
+  .hero-producto-flotante.producto-derecho{
+    width:130px;
+    height:160px;
+  }
+}
+
+/* ===== CELULAR ===== */
+
+@media (max-width:800px){
+
+  .hero-contenedor{
+    min-height:610px;
+  }
+
+  .hero-slide.hero-categoria{
+    min-height:610px;
+    grid-template-columns:1fr;
+    padding:26px 24px 62px;
+    text-align:center;
+    gap:5px;
+  }
+
+  .hero-categoria .hero-productos-multiples{
+    order:-1;
+    width:min(100%,390px);
+    min-height:225px;
+    margin:0 auto 5px;
+  }
+
+  .hero-productos-multiples::before{
+    width:245px;
+    height:245px;
+  }
+
+  .hero-productos-multiples::after{
+    width:225px;
+    height:28px;
+    bottom:1px;
+  }
+
+  .hero-producto-flotante.producto-principal{
+    width:138px;
+    height:165px;
+    top:20px;
+  }
+
+  .hero-producto-flotante.producto-superior{
+    width:100px;
+    height:120px;
+    left:3%;
+    top:8px;
+  }
+
+  .hero-producto-flotante.producto-derecho{
+    width:103px;
+    height:126px;
+    right:3%;
+    bottom:19px;
+  }
+
+  .hero-categoria .hero-etiqueta{
+    margin:auto;
+  }
+
+  .hero-categoria .hero-texto h1{
+    margin-top:13px;
+    font-size:35px;
+  }
+
+  .hero-categoria .hero-texto p{
+    margin-left:auto;
+    margin-right:auto;
+    font-size:14px;
+    line-height:1.5;
+  }
+
+  .hero-categoria .hero-beneficios{
+    justify-content:center;
+    margin-bottom:17px;
+  }
+
+  .hero-categoria .hero-beneficio{
+    padding:7px 9px;
+    font-size:10px;
+  }
+
+  .hero-categoria .hero-acciones{
+    justify-content:center;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+
+  .hero-producto-flotante,
+  .hero-productos-multiples::before{
+    animation:none;
+  }
+}  
   
 </style>
 </head>
@@ -1610,7 +2028,7 @@ body.modo-busqueda header{
     </div>
 
     <div class="hero-producto-flotante producto-superior">
-      <img src="img/echoshow11.png" alt="Amazon Echo Show 11">
+      <img src="img/amazonechoshow11.png" alt="Amazon Echo Show 11">
     </div>
 
     <div class="hero-producto-flotante producto-derecho">
@@ -1787,11 +2205,11 @@ body.modo-busqueda header{
     </div>
 
     <div class="hero-producto-flotante producto-superior">
-      <img src="img/smartscaleS200.png" alt="Xiaomi Smart Scale S200">
+      <img src="img/smartscaleS200.jpg" alt="Xiaomi Smart Scale S200">
     </div>
 
     <div class="hero-producto-flotante producto-derecho">
-      <img src="img/strawmug.png" alt="Xiaomi Straw Mug">
+      <img src="img/strawmug.jpg" alt="Xiaomi Straw Mug">
     </div>
 
   </div>
