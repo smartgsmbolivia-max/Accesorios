@@ -670,6 +670,145 @@ color:#9ca3af;
   background:linear-gradient(135deg,#3f0d12,#a71d31 58%,#ef4444);
 }
 
+/* ===== TERCER BANNER XIAOMI SOUND POCKET ===== */
+
+.hero-slide.oferta-pocket {
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 78% 35%,
+      rgba(255,255,255,.24),
+      transparent 27%
+    ),
+    linear-gradient(
+      135deg,
+      #25060b 0%,
+      #68101c 50%,
+      #d84a58 100%
+    );
+}
+
+.hero-slide.oferta-pocket::after {
+  content: "";
+  position: absolute;
+  width: 470px;
+  height: 470px;
+  right: -80px;
+  top: -110px;
+  border-radius: 50%;
+  border: 65px solid rgba(255,255,255,.06);
+  z-index: -1;
+}
+
+.oferta-pocket .hero-texto {
+  position: relative;
+  z-index: 2;
+}
+
+.oferta-pocket .hero-beneficios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -8px 0 24px;
+}
+
+.oferta-pocket .hero-beneficios span {
+  padding: 8px 13px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  background: rgba(255,255,255,.10);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.oferta-pocket .hero-producto {
+  position: relative;
+  min-height: 290px;
+}
+
+.oferta-pocket .hero-producto::before {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.32),
+      rgba(255,255,255,.10) 45%,
+      transparent 72%
+    );
+  animation: haloPocket 4s ease-in-out infinite;
+}
+
+.oferta-pocket .hero-producto::after {
+  content: "";
+  position: absolute;
+  width: 235px;
+  height: 35px;
+  bottom: 12px;
+  border-radius: 50%;
+  background: rgba(20,0,4,.45);
+  filter: blur(13px);
+}
+
+.oferta-pocket .hero-producto img {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 430px);
+  height: 310px;
+  object-fit: contain;
+  transform: none;
+  filter: drop-shadow(0 30px 28px rgba(25,0,4,.52));
+  animation: flotarPocket 3.5s ease-in-out infinite;
+}
+
+@keyframes flotarPocket {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes haloPocket {
+  0%,
+  100% {
+    transform: scale(.94);
+    opacity: .72;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 800px) {
+  .oferta-pocket .hero-beneficios {
+    justify-content: center;
+  }
+
+  .oferta-pocket .hero-producto {
+    min-height: 225px;
+  }
+
+  .oferta-pocket .hero-producto img {
+    width: min(88%, 330px);
+    height: 225px;
+  }
+
+  .oferta-pocket .hero-producto::before {
+    width: 250px;
+    height: 250px;
+  }
+}
+  
 .hero-etiqueta{
   display:inline-flex;
   align-items:center;
@@ -1367,18 +1506,47 @@ body.modal-abierto{overflow:hidden;}
 
       <article class="hero-slide">
         <div class="hero-texto">
-          <span class="hero-etiqueta">Precios especiales</span>
-          <h1>Ofertas destacadas por tiempo limitado</h1>
-          <p>Revisa los productos seleccionados con precio especial y realiza tu pedido fácilmente por WhatsApp.</p>
-          <div class="hero-acciones">
-            <button class="hero-btn principal" type="button" onclick="verSeccion('oferta')">Ver ofertas</button>
-            <button class="hero-btn secundario" type="button" onclick="abrirSelectorVendedores('las ofertas disponibles')">Consultar ahora</button>
-          </div>
-        </div>
-        <div class="hero-producto">
-          <img src="img/soundpocket.png" alt="Xiaomi Sound Pocket" loading="lazy">
-        </div>
-      </article>
+          <article class="hero-slide oferta-pocket">
+  <div class="hero-texto">
+    <span class="hero-etiqueta">🔥 Oferta destacada</span>
+
+    <h1>Xiaomi Sound Pocket</h1>
+
+    <p>
+      Sonido potente en un diseño compacto para llevar tu música a todas partes.
+      Consulta el precio especial y la disponibilidad por WhatsApp.
+    </p>
+
+    <div class="hero-beneficios">
+      <span>Compacto y portátil</span>
+      <span>Conexión Bluetooth</span>
+      <span>Diseño resistente</span>
+    </div>
+
+    <div class="hero-acciones">
+      <button
+        class="hero-btn principal"
+        type="button"
+        onclick="verSeccion('oferta')">
+        Ver oferta
+      </button>
+
+      <button
+        class="hero-btn secundario"
+        type="button"
+        onclick="abrirSelectorVendedores('la oferta del Xiaomi Sound Pocket')">
+        Consultar ahora
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-producto">
+    <img
+      src="img/soundpocket.png"
+      alt="Xiaomi Sound Pocket"
+      loading="lazy">
+  </div>
+</article>
 
     </div>
 
