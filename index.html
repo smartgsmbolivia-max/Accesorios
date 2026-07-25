@@ -1507,63 +1507,257 @@ body.modo-busqueda header{
   <div class="hero-contenedor" id="heroContenedor">
     <div class="hero-slides" id="heroSlides">
 
-      <article class="hero-slide">
-        <div class="hero-texto">
-          <span class="hero-etiqueta">⌚ Nuevo Xiaomi</span>
-          <h1>Xiaomi Watch S4</h1>
-          <p>Elegancia y tecnología en tu muñeca. Pantalla AMOLED, llamadas Bluetooth, monitoreo de salud y batería de larga duración.</p>
-          <div class="hero-beneficios" aria-label="Características principales">
-            <span class="hero-beneficio">AMOLED</span>
-            <span class="hero-beneficio">Llamadas Bluetooth</span>
-            <span class="hero-beneficio">Salud y deporte</span>
-          </div>
-          <div class="hero-acciones">
-            <button class="hero-btn principal" type="button" onclick="buscarProductoHero('Xiaomi Watch S4')">Ver producto</button>
-            <button class="hero-btn secundario" type="button" onclick="abrirSelectorVendedores('el Xiaomi Watch S4')">Consultar por WhatsApp</button>
-          </div>
-        </div>
-        <div class="hero-producto">
-          <img src="img/watchs4.png" alt="Xiaomi Watch S4" loading="eager">
-        </div>
-      </article>
-
-      <article class="hero-slide">
-        <div class="hero-texto">
-          <span class="hero-etiqueta">✨ Nuevo con Alexa</span>
-          <h1>Amazon Echo Show 11</h1>
-          <p>Controla tu hogar inteligente, disfruta contenido y realiza videollamadas con Alexa y una gran pantalla.</p>
-          <div class="hero-beneficios" aria-label="Características principales">
-            <span class="hero-beneficio">Pantalla de 11″</span>
-            <span class="hero-beneficio">Alexa integrada</span>
-            <span class="hero-beneficio">Control del hogar</span>
-          </div>
-          <div class="hero-acciones">
-            <button class="hero-btn principal" type="button" onclick="irAlCatalogo()">Ver producto</button>
-            <button class="hero-btn secundario" type="button" onclick="abrirSelectorVendedores('Amazon Echo Show 11')">Consultar por WhatsApp</button>
-          </div>
-        </div>
-        <div class="hero-producto">
-          <img src="img/echoshow11.png" alt="Amazon Echo Show 11" loading="lazy">
-        </div>
-      </article>
-
-<article class="hero-slide oferta-pocket">
+   <article class="hero-slide hero-categoria hero-hogar">
 
   <div class="hero-texto">
 
-    <span class="hero-etiqueta">🔥 Oferta destacada</span>
+    <span class="hero-etiqueta">🏡 Xiaomi Smart Home</span>
 
-    <h1>Xiaomi Sound Pocket</h1>
+    <h1>Tu hogar, más inteligente</h1>
 
     <p>
-      Sonido potente en un diseño compacto para llevar tu música a todas partes.
-      Consulta el precio especial y la disponibilidad por WhatsApp.
+      Soluciones Xiaomi para cocinar, limpiar, proteger y conectar
+      cada ambiente de tu hogar.
     </p>
 
     <div class="hero-beneficios">
-      <span class="hero-beneficio">Compacto y portátil</span>
-      <span class="hero-beneficio">Conexión Bluetooth</span>
-      <span class="hero-beneficio">Diseño resistente</span>
+      <span class="hero-beneficio">Cocina inteligente</span>
+      <span class="hero-beneficio">Limpieza eficiente</span>
+      <span class="hero-beneficio">Seguridad conectada</span>
+    </div>
+
+    <div class="hero-acciones">
+
+      <button
+        class="hero-btn principal"
+        type="button"
+        onclick="verXiaomiHogar()">
+        Explorar Smart Home
+      </button>
+
+      <button
+        class="hero-btn secundario"
+        type="button"
+        onclick="abrirSelectorVendedores('productos Xiaomi Smart Home')">
+        Consultar por WhatsApp
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="hero-productos-multiples">
+
+    <div class="hero-producto-flotante producto-principal">
+      <img src="img/smartairfryer65l.jpg" alt="Xiaomi Smart Air Fryer">
+    </div>
+
+    <div class="hero-producto-flotante producto-superior">
+      <img src="img/vacuumcleanerg20lite.jpg" alt="Xiaomi Vacuum Cleaner">
+    </div>
+
+    <div class="hero-producto-flotante producto-derecho">
+      <img src="img/smartcamerac500pro.jpg" alt="Xiaomi Smart Camera">
+    </div>
+
+  </div>
+
+</article>   
+
+<article class="hero-slide hero-categoria hero-audio">
+
+  <div class="hero-texto">
+
+    <span class="hero-etiqueta">🎧 Audio y entretenimiento</span>
+
+    <h1>Disfruta cada momento</h1>
+
+    <p>
+      Audífonos, parlantes y dispositivos inteligentes para llevar
+      tu música y entretenimiento a todas partes.
+    </p>
+
+    <div class="hero-beneficios">
+      <span class="hero-beneficio">Audio inalámbrico</span>
+      <span class="hero-beneficio">Sonido potente</span>
+      <span class="hero-beneficio">Entretenimiento inteligente</span>
+    </div>
+
+    <div class="hero-acciones">
+
+      <button
+        class="hero-btn principal"
+        type="button"
+        onclick="mostrarCategoriaHero('audio')">
+        Ver productos
+      </button>
+
+      <button
+        class="hero-btn secundario"
+        type="button"
+        onclick="abrirSelectorVendedores('productos de audio y entretenimiento')">
+        Consultar por WhatsApp
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="hero-productos-multiples">
+
+    <div class="hero-producto-flotante producto-principal">
+      <img src="img/soundpocket.png" alt="Xiaomi Sound Pocket">
+    </div>
+
+    <div class="hero-producto-flotante producto-superior">
+      <img src="img/echoshow11.png" alt="Amazon Echo Show 11">
+    </div>
+
+    <div class="hero-producto-flotante producto-derecho">
+      <img src="img/redmibuds6active.png" alt="Redmi Buds 6 Active">
+    </div>
+
+  </div>
+
+</article>
+
+<article class="hero-slide hero-categoria hero-relojes">
+
+  <div class="hero-texto">
+
+    <span class="hero-etiqueta">⌚ Relojes inteligentes</span>
+
+    <h1>Tecnología en tu muñeca</h1>
+
+    <p>
+      Controla tu salud, tus entrenamientos y tus notificaciones
+      con los mejores smartwatches.
+    </p>
+
+    <div class="hero-beneficios">
+      <span class="hero-beneficio">Monitoreo de salud</span>
+      <span class="hero-beneficio">Modos deportivos</span>
+      <span class="hero-beneficio">Llamadas Bluetooth</span>
+    </div>
+
+    <div class="hero-acciones">
+
+      <button
+        class="hero-btn principal"
+        type="button"
+        onclick="mostrarCategoriaHero('relojes')">
+        Ver relojes
+      </button>
+
+      <button
+        class="hero-btn secundario"
+        type="button"
+        onclick="abrirSelectorVendedores('relojes inteligentes')">
+        Consultar por WhatsApp
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="hero-productos-multiples">
+
+    <div class="hero-producto-flotante producto-principal">
+      <img src="img/watchs4.png" alt="Xiaomi Watch S4">
+    </div>
+
+    <div class="hero-producto-flotante producto-superior">
+      <img src="img/watchs4sunsetgold.jpg" alt="Xiaomi Watch S4 Sunset Gold">
+    </div>
+
+    <div class="hero-producto-flotante producto-derecho">
+      <img src="img/watchs4white.jpg" alt="Xiaomi Watch S4 White">
+    </div>
+
+  </div>
+
+</article>
+
+      <article class="hero-slide hero-categoria hero-energia">
+
+  <div class="hero-texto">
+
+    <span class="hero-etiqueta">🔋 Energía y conectividad</span>
+
+    <h1>Siempre conectado</h1>
+
+    <p>
+      Cargadores, power banks y soluciones WiFi para mantener
+      todos tus dispositivos listos y conectados.
+    </p>
+
+    <div class="hero-beneficios">
+      <span class="hero-beneficio">Carga rápida</span>
+      <span class="hero-beneficio">Energía portátil</span>
+      <span class="hero-beneficio">WiFi estable</span>
+    </div>
+
+    <div class="hero-acciones">
+
+      <button
+        class="hero-btn principal"
+        type="button"
+        onclick="mostrarCategoriaHero('energia')">
+        Explorar productos
+      </button>
+
+      <button
+        class="hero-btn secundario"
+        type="button"
+        onclick="abrirSelectorVendedores('cargadores, power banks y conectividad')">
+        Consultar por WhatsApp
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="hero-productos-multiples">
+
+    <div class="hero-producto-flotante producto-principal">
+      <img
+        src="img/67wpowerbank10000mah.png"
+        alt="Xiaomi 67W Power Bank">
+    </div>
+
+    <div class="hero-producto-flotante producto-superior">
+      <img
+        src="img/67whyperchargecombotypea.png"
+        alt="Xiaomi 67W HyperCharge">
+    </div>
+
+    <div class="hero-producto-flotante producto-derecho">
+      <img
+        src="img/xiaomirouterax3000t.png"
+        alt="Xiaomi Router AX3000T">
+    </div>
+
+  </div>
+
+</article>
+
+<article class="hero-slide hero-categoria hero-ofertas">
+
+  <div class="hero-texto">
+
+    <span class="hero-etiqueta">🔥 Ofertas especiales</span>
+
+    <h1>Tecnología a mejor precio</h1>
+
+    <p>
+      Encuentra productos seleccionados con precios especiales
+      y disponibilidad limitada.
+    </p>
+
+    <div class="hero-beneficios">
+      <span class="hero-beneficio">Precios especiales</span>
+      <span class="hero-beneficio">Stock limitado</span>
+      <span class="hero-beneficio">Envíos a Bolivia</span>
     </div>
 
     <div class="hero-acciones">
@@ -1572,13 +1766,13 @@ body.modo-busqueda header{
         class="hero-btn principal"
         type="button"
         onclick="verSeccion('oferta')">
-        Ver oferta
+        Ver ofertas
       </button>
 
       <button
         class="hero-btn secundario"
         type="button"
-        onclick="abrirSelectorVendedores('la oferta del Xiaomi Sound Pocket')">
+        onclick="abrirSelectorVendedores('productos disponibles en oferta')">
         Consultar ahora
       </button>
 
@@ -1586,25 +1780,67 @@ body.modo-busqueda header{
 
   </div>
 
-  <div class="hero-producto">
-    <img
-      src="img/soundpocket.png"
-      alt="Xiaomi Sound Pocket"
-      loading="lazy">
+  <div class="hero-productos-multiples">
+
+    <div class="hero-producto-flotante producto-principal">
+      <img src="img/soundpocket.png" alt="Xiaomi Sound Pocket">
+    </div>
+
+    <div class="hero-producto-flotante producto-superior">
+      <img src="img/smartscaleS200.png" alt="Xiaomi Smart Scale S200">
+    </div>
+
+    <div class="hero-producto-flotante producto-derecho">
+      <img src="img/strawmug.png" alt="Xiaomi Straw Mug">
+    </div>
+
   </div>
 
 </article>
-
+      
     </div>
 
     <button class="hero-flecha anterior" type="button" aria-label="Banner anterior" onclick="cambiarHero(-1)">‹</button>
     <button class="hero-flecha siguiente" type="button" aria-label="Banner siguiente" onclick="cambiarHero(1)">›</button>
 
     <div class="hero-indicadores" aria-label="Seleccionar banner">
-      <button class="hero-punto activo" type="button" aria-label="Banner 1" onclick="mostrarHero(0)"></button>
-      <button class="hero-punto" type="button" aria-label="Banner 2" onclick="mostrarHero(1)"></button>
-      <button class="hero-punto" type="button" aria-label="Banner 3" onclick="mostrarHero(2)"></button>
-    </div>
+
+  <button
+    class="hero-punto activo"
+    type="button"
+    aria-label="Banner 1"
+    onclick="mostrarHero(0)">
+  </button>
+
+  <button
+    class="hero-punto"
+    type="button"
+    aria-label="Banner 2"
+    onclick="mostrarHero(1)">
+  </button>
+
+  <button
+    class="hero-punto"
+    type="button"
+    aria-label="Banner 3"
+    onclick="mostrarHero(2)">
+  </button>
+
+  <button
+    class="hero-punto"
+    type="button"
+    aria-label="Banner 4"
+    onclick="mostrarHero(3)">
+  </button>
+
+  <button
+    class="hero-punto"
+    type="button"
+    aria-label="Banner 5"
+    onclick="mostrarHero(4)">
+  </button>
+
+</div>
   </div>
 </section>
 
@@ -1646,40 +1882,7 @@ body.modo-busqueda header{
   </section>
 
 
-  <!-- ===== XIAOMI SMART HOME ===== -->
-  <section class="xiaomi-home" id="xiaomiSmartHome">
-    <div class="xiaomi-home-slider" id="xiaomiHomeSlider">
-      <div class="xiaomi-home-slides" id="xiaomiHomeSlides">
-        <article class="xiaomi-home-slide"><div class="xiaomi-home-copy"><span class="xiaomi-home-tag">🏡 Ecosistema Xiaomi</span><h2>Xiaomi Smart Home</h2><p>Haz tu hogar más cómodo, conectado y eficiente con soluciones inteligentes para cada ambiente.</p><div class="xiaomi-home-actions"><button class="explorar" type="button" onclick="verXiaomiHogar()">Explorar productos</button><button class="consultar" type="button" onclick="abrirSelectorVendedores('productos Xiaomi para el hogar')">Consultar por WhatsApp</button></div></div><div class="xiaomi-home-visual" aria-hidden="true"><img src="img/smartairfryer65l.jpg" alt=""><img src="img/smartcamerac500pro.jpg" alt=""><img src="img/vacuumcleanerg20lite.jpg" alt=""></div></article>
-        <article class="xiaomi-home-slide"><div class="xiaomi-home-copy"><span class="xiaomi-home-tag">🍳 Cocina inteligente</span><h2>Más practicidad en tu cocina</h2><p>Prepara tus comidas con equipos Xiaomi modernos, eficientes y fáciles de usar.</p><div class="xiaomi-home-actions"><button class="explorar" type="button" onclick="verXiaomiAmbiente('cocina')">Ver cocina</button><button class="consultar" type="button" onclick="abrirSelectorVendedores('productos Xiaomi para cocina')">Consultar</button></div></div><div class="xiaomi-home-visual" aria-hidden="true"><img src="img/smartairfryer65l.jpg" alt=""><img src="img/blenderpro.png" alt=""><img src="img/smartkettle2pro.jpg" alt=""></div></article>
-        <article class="xiaomi-home-slide"><div class="xiaomi-home-copy"><span class="xiaomi-home-tag">🧹 Limpieza inteligente</span><h2>Tu hogar limpio con menos esfuerzo</h2><p>Aspiradoras Xiaomi diseñadas para una limpieza práctica, rápida y eficiente.</p><div class="xiaomi-home-actions"><button class="explorar" type="button" onclick="verXiaomiAmbiente('limpieza')">Ver limpieza</button><button class="consultar" type="button" onclick="abrirSelectorVendedores('productos Xiaomi de limpieza')">Consultar</button></div></div><div class="xiaomi-home-visual" aria-hidden="true"><img src="img/vacuumcleanerg20lite.jpg" alt=""><img src="img/vacuumcleanerg20max.jpg" alt=""><img src="img/vacuumcleanerg20lite.jpg" alt=""></div></article>
-        <article class="xiaomi-home-slide"><div class="xiaomi-home-copy"><span class="xiaomi-home-tag">🌐 Conectividad total</span><h2>WiFi estable en todo tu hogar</h2><p>Routers Xiaomi para conectar más dispositivos y disfrutar una señal rápida y confiable.</p><div class="xiaomi-home-actions"><button class="explorar" type="button" onclick="verXiaomiAmbiente('conectividad')">Ver conectividad</button><button class="consultar" type="button" onclick="abrirSelectorVendedores('routers y conectividad Xiaomi')">Consultar</button></div></div><div class="xiaomi-home-visual" aria-hidden="true"><img src="img/xiaomirouter4a.png" alt=""><img src="img/xiaomirouterax1500.png" alt=""><img src="img/xiaomirouterax3000t.png" alt=""></div></article>
-        <article class="xiaomi-home-slide"><div class="xiaomi-home-copy"><span class="xiaomi-home-tag">🔒 Seguridad inteligente</span><h2>Protege lo que más importa</h2><p>Cámaras Xiaomi para vigilar tu hogar desde cualquier lugar y mantenerte siempre conectado.</p><div class="xiaomi-home-actions"><button class="explorar" type="button" onclick="verXiaomiAmbiente('seguridad')">Ver seguridad</button><button class="consultar" type="button" onclick="abrirSelectorVendedores('cámaras de seguridad Xiaomi')">Consultar</button></div></div><div class="xiaomi-home-visual" aria-hidden="true"><img src="img/smartcamerac500pro.jpg" alt=""><img src="img/xiaomioutdoorcameraaw300.png" alt=""><img src="img/xiaomioutdoorcameracw500dual.png" alt=""></div></article>
-      </div>
-      <button class="xiaomi-home-flecha anterior" type="button" aria-label="Banner anterior" onclick="cambiarXiaomiHome(-1)">‹</button>
-      <button class="xiaomi-home-flecha siguiente" type="button" aria-label="Banner siguiente" onclick="cambiarXiaomiHome(1)">›</button>
-      <div class="xiaomi-home-indicadores" aria-label="Seleccionar banner Xiaomi"><button class="xiaomi-home-punto activo" type="button" onclick="mostrarXiaomiHome(0)"></button><button class="xiaomi-home-punto" type="button" onclick="mostrarXiaomiHome(1)"></button><button class="xiaomi-home-punto" type="button" onclick="mostrarXiaomiHome(2)"></button><button class="xiaomi-home-punto" type="button" onclick="mostrarXiaomiHome(3)"></button><button class="xiaomi-home-punto" type="button" onclick="mostrarXiaomiHome(4)"></button></div>
-    </div>
-
-    <div class="xiaomi-home-ambientes" aria-label="Ambientes Xiaomi Smart Home">
-      <button class="xiaomi-home-chip" type="button" onclick="verXiaomiAmbiente('cocina')">🍳 Cocina</button>
-      <button class="xiaomi-home-chip" type="button" onclick="verXiaomiAmbiente('limpieza')">🧹 Limpieza</button>
-      <button class="xiaomi-home-chip" type="button" onclick="verXiaomiAmbiente('seguridad')">🔒 Seguridad</button>
-      <button class="xiaomi-home-chip" type="button" onclick="verXiaomiAmbiente('conectividad')">🌐 Conectividad</button>
-      <button class="xiaomi-home-chip" type="button" onclick="verXiaomiAmbiente('iluminacion')">💡 Iluminación</button>
-      <button class="xiaomi-home-chip" type="button" onclick="verXiaomiAmbiente('bienestar')">🌿 Bienestar</button>
-    </div>
-
-    <div class="xiaomi-home-carrusel-titulo">
-      <h3>Productos para un hogar inteligente</h3>
-      <button type="button" onclick="verXiaomiHogar()">Ver todos</button>
-    </div>
-    <div class="carrusel-productos">
-      <button class="flecha-carrusel izquierda" type="button" aria-label="Anterior" onclick="moverCarrusel('productosXiaomiHogar',-1)">‹</button>
-      <div class="fila-productos" id="productosXiaomiHogar"></div>
-      <button class="flecha-carrusel derecha" type="button" aria-label="Siguiente" onclick="moverCarrusel('productosXiaomiHogar',1)">›</button>
-    </div>
-  </section>
+  
 
   <h2 class="titulo-catalogo-completo" id="tituloCatalogo">Todos los productos</h2>
   <div class="container" id="productos"></div>
@@ -2202,6 +2405,74 @@ function iniciarCarruselesAutomaticos(){
   });
 }
 
+function mostrarCategoriaHero(categoriaHero){
+
+  let categoriaCatalogo = "";
+  let titulo = "";
+
+  if(categoriaHero === "audio"){
+    categoriaCatalogo = "parlantes";
+    titulo = "🎧 Audio y entretenimiento";
+  }
+
+  if(categoriaHero === "relojes"){
+    categoriaCatalogo = "relojes";
+    titulo = "⌚ Relojes inteligentes";
+  }
+
+  if(categoriaHero === "energia"){
+
+    const lista = productos.filter(producto => {
+
+      const nombre = producto[0].toLowerCase();
+
+      return (
+        detectarCategoria(nombre) === "cargadores" ||
+        detectarCategoria(nombre) === "powerbanks" ||
+        /router|mesh|extender|wifi/.test(nombre)
+      );
+    });
+
+    mostrar(lista);
+
+    document.getElementById("tituloCatalogo").innerText =
+      `🔋 Energía y conectividad (${lista.length})`;
+
+    document.getElementById("tituloCatalogo").scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+    return;
+  }
+
+  const lista = productos.filter(producto => {
+
+    const nombre = producto[0].toLowerCase();
+
+    if(categoriaHero === "audio"){
+
+      return (
+        detectarCategoria(nombre) === "audifonos" ||
+        detectarCategoria(nombre) === "parlantes" ||
+        detectarCategoria(nombre) === "television"
+      );
+    }
+
+    return detectarCategoria(nombre) === categoriaCatalogo;
+  });
+
+  mostrar(lista);
+
+  document.getElementById("tituloCatalogo").innerText =
+    `${titulo} (${lista.length})`;
+
+  document.getElementById("tituloCatalogo").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+}
+  
 function verSeccion(tipo){
   const lista = productosPorSeccion(tipo);
   mostrar(lista);
@@ -2576,24 +2847,6 @@ if(heroContenedor){
   heroContenedor.addEventListener("touchend",reiniciarHero,{passive:true});
   reiniciarHero();
 }
-
-
-// ===== SLIDER XIAOMI SMART HOME =====
-let xiaomiHomeActual=0;
-let xiaomiHomeIntervalo;
-function mostrarXiaomiHome(indice){
-  const slides=document.getElementById("xiaomiHomeSlides");
-  const puntos=document.querySelectorAll(".xiaomi-home-punto");
-  if(!slides || !puntos.length) return;
-  xiaomiHomeActual=(indice+puntos.length)%puntos.length;
-  slides.style.transform=`translateX(-${xiaomiHomeActual*100}%)`;
-  puntos.forEach((p,i)=>p.classList.toggle("activo",i===xiaomiHomeActual));
-  reiniciarXiaomiHome();
-}
-function cambiarXiaomiHome(dir){mostrarXiaomiHome(xiaomiHomeActual+dir);}
-function reiniciarXiaomiHome(){clearInterval(xiaomiHomeIntervalo);xiaomiHomeIntervalo=setInterval(()=>mostrarXiaomiHome(xiaomiHomeActual+1),6000);}
-const xiaomiHomeSlider=document.getElementById("xiaomiHomeSlider");
-if(xiaomiHomeSlider){xiaomiHomeSlider.addEventListener("mouseenter",()=>clearInterval(xiaomiHomeIntervalo));xiaomiHomeSlider.addEventListener("mouseleave",reiniciarXiaomiHome);xiaomiHomeSlider.addEventListener("touchstart",()=>clearInterval(xiaomiHomeIntervalo),{passive:true});xiaomiHomeSlider.addEventListener("touchend",reiniciarXiaomiHome,{passive:true});reiniciarXiaomiHome();}
 
 renderSeccionesPrincipales();
 renderXiaomiHogar();
