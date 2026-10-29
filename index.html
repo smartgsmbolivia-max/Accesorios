@@ -615,7 +615,7 @@ color:#9ca3af;
 
 
 
-/* Características y precios de la lista del 28/10/2026. */
+/* Características y precios del catálogo. */
 .card {display:flex;flex-direction:column;min-width:0;}
 .card .nombre-producto {font-size:14px;line-height:1.5;overflow-wrap:anywhere;}
 .card .price {margin:8px 0 14px;}
@@ -644,7 +644,6 @@ color:#9ca3af;
 .catalogo-marcas {max-width:1400px;margin:0 auto;padding:28px 20px 40px;}
 .catalogo-intro {margin-bottom:32px;}
 .catalogo-intro h1 {margin:0 0 10px;color:#0f172a;font-size:clamp(24px,3vw,34px);letter-spacing:-.03em;scroll-margin-top:190px;}
-.catalogo-intro .actualizacion-catalogo {margin:0;line-height:1.6;}
 .catalogo-por-marcas {display:block;}
 .grupo-marca {margin-bottom:40px;}
 .encabezado-marca {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:0 0 14px;margin-bottom:20px;border-bottom:2px solid #e2e8f0;}
@@ -767,7 +766,6 @@ color:#9ca3af;
 <main class="catalogo-marcas">
   <div class="catalogo-intro">
     <h1 id="tituloCatalogo" aria-live="polite">Catálogo por marcas</h1>
-    <p class="actualizacion-catalogo">Lista del 28/10/2026 · Precios en bolivianos</p>
   </div>
   <div class="catalogo-por-marcas" id="productos"></div>
 </main>
@@ -794,12 +792,12 @@ const cambio = 12.1;
 let cart={};
 
 let vendedores = [
-{nombre:"Jhamila Mercado", numero:"59165391513"},
-{nombre:"Judith Guillen", numero:"59160395920"},
-{nombre:"Fabiola Gonzales", numero:"59169484826"},
-{nombre:"Elmer Condori", numero:"59160751226"},
-{nombre:"Viviana Villarroel", numero:"59160702593"},  
-{nombre:"Fedor Villegas", numero:"59170341190"}
+{nombre:"Eliana", numero:"59165391513"},
+{nombre:"Pamela", numero:"59165391518"},
+{nombre:"Judith", numero:"59165391339"},
+{nombre:"Fabiola", numero:"59169484826"},
+{nombre:"Elmer", numero:"59160751226"},
+{nombre:"Fedor", numero:"59170341190"}
 ];
 
 
@@ -858,7 +856,7 @@ document.addEventListener("keydown", event => {
 });
 
 
-// Fuente: lista del 28/10/2026, hoja Accesorios Por Mayor.
+// Fuente: lista del 29/10/2026, hoja Accesorios Por Mayor.
 // Precio: columna R, PRECIO DETALLE CBBA $us. Disponibilidad: columna U, CBBA.
 // [nombre, precio USD, agotado, imagen, precio anterior, características, marca, categoría]
 let productos=[
@@ -1263,7 +1261,7 @@ let productos=[
       "Aviso por vibración y manejo con un botón: confirma la medición sin emitir pitidos."
     ],
     "XIAOMI",
-    "hogar"
+    "cuidado-personal"
   ],
   [
     "XIAOMI INSTANT PHOTO PAPER 3\" 40 HOJAS",
@@ -1470,9 +1468,16 @@ let productos=[
     false,
     "img/173-xiaomimicomputerglassespro.png",
     null,
-    [],
+    [
+      "Filtro de luz azul: para uso frente a pantallas.",
+      "Protección UV: sin indicar categoría ni porcentaje de filtrado.",
+      "Diseño ligero: orientado al uso diario.",
+      "Ajuste ergonómico: pensado para brindar comodidad durante periodos prolongados.",
+      "Variedad de colores: opciones en negro, transparente, rojo y azul tinta, según la variante.",
+      "Construcción resistente: el vendedor declara materiales duraderos, sin especificar su composición."
+    ],
     "XIAOMI",
-    "gafas"
+    "cuidado-personal"
   ],
   [
     "XIAOMI MI CORDLESS SCREWDRIVER",
@@ -1539,7 +1544,7 @@ let productos=[
       "Patillas con silicona antideslizante: ofrecen una sujeción"
     ],
     "XIAOMI",
-    "gafas"
+    "cuidado-personal"
   ],
   [
     "XIAOMI MI PORTABLE PHOTO PRINTER",
@@ -1890,7 +1895,7 @@ let productos=[
       "Adaptador de válvula de conexión rápida y luz integrada: facilita la conexión y el uso nocturno."
     ],
     "XIAOMI",
-    "infladores"
+    "auto"
   ],
   [
     "XIAOMI REDMI BUDS 6 ACTIVE GLOBAL",
@@ -2266,7 +2271,14 @@ let productos=[
     false,
     "img/253-xiaomismartcamerac500.jpeg",
     null,
-    [],
+    [
+      "Resolución 3.5K de 6 MP: imágenes de 3200 × 1800 píxeles, con lente de seis elementos y apertura f/1.6.",
+      "Cobertura panorámica: movimiento de 360° en horizontal y 116° en vertical, controlable desde el teléfono.",
+      "Visión nocturna avanzada: imagen a color con poca luz y ocho iluminadores infrarrojos de 940 nm sin brillo rojo visible.",
+      "Detección y seguimiento mediante IA: reconoce personas, gatos y perros, y envía notificaciones al teléfono.",
+      "Wi-Fi 6 de doble banda: compatible con redes de 2,4 GHz y 5 GHz para una transmisión estable.",
+      "Privacidad con ocultación física: la lente se recoge dentro del cuerpo de la cámara, con horarios programables."
+    ],
     "XIAOMI",
     "camaras"
   ],
@@ -2276,7 +2288,14 @@ let productos=[
     false,
     "img/254-xiaomismartcamerac500dual.jpeg",
     null,
-    [],
+    [
+      "Dos cámaras de 4 MP: cada una ofrece resolución de 2560 × 1440 píxeles, con apertura f/1.6.",
+      "Doble perspectiva simultánea: cámara fija gran angular de 110° y cámara móvil con teleobjetivo para observar detalles.",
+      "Seguimiento coordinado de personas: la cámara móvil sigue el movimiento detectado por la cámara fija; permite visualizar ambas imágenes en pantalla dividida.",
+      "Detección inteligente: reconoce gatos y perros, detecta llanto de bebés y envía alertas cuando alguien cruza una zona delimitada.",
+      "Visión nocturna avanzada: imágenes a color con poca luz e iluminación infrarroja de 940 nm sin brillo rojo visible.",
+      "Wi-Fi 6 de doble banda: conexión en 2,4 GHz y 5 GHz para una transmisión estable."
+    ],
     "XIAOMI",
     "camaras"
   ],
@@ -2286,7 +2305,14 @@ let productos=[
     false,
     "img/257-xiaomismartcamerac701.jpeg",
     null,
-    [],
+    [
+      "Resolución 4K de 8 MP: lente de seis elementos, apertura f/1.6 y HDR automático para conservar detalles en luces y sombras.",
+      "Cobertura panorámica: movimiento de 360° en horizontal y 109° en vertical, controlable desde el teléfono.",
+      "Visión nocturna avanzada: imagen a color con poca luz e infrarrojos de 940 nm con alcance declarado de hasta 10 metros, sin brillo rojo visible.",
+      "IA con procesamiento local: detección y seguimiento de personas, gatos y perros; alertas por llanto de bebés y ruidos fuertes.",
+      "Wi-Fi 6 de doble banda: compatible con redes de 2,4 GHz y 5 GHz para una conexión estable.",
+      "Ocultación física de la lente: protección de privacidad con activación manual o mediante horarios programados."
+    ],
     "XIAOMI",
     "camaras"
   ],
@@ -2344,7 +2370,14 @@ let productos=[
     false,
     "img/261-xiaomismartledbulbwhiteandcolor.jpeg",
     null,
-    [],
+    [
+      "16 millones de colores: iluminación personalizable para crear diferentes ambientes.",
+      "Temperatura de color ajustable: desde 2700 K de luz cálida hasta 6500 K de luz fría.",
+      "10 escenas dinámicas predefinidas: incluye Navidad, selva, chimenea y océano, además de opciones personalizadas.",
+      "Wi-Fi integrado: conexión con Xiaomi Home para controlar la iluminación desde la aplicación.",
+      "Certificación Matter: permite integrarla con dispositivos y plataformas compatibles de distintas marcas.",
+      "Consumo de 8,5 W: la versión internacional ofrece una luminosidad comparable a una bombilla incandescente tradicional de 60 W."
+    ],
     "XIAOMI",
     "hogar"
   ],
@@ -2354,7 +2387,14 @@ let productos=[
     false,
     "img/263-xiaomismartprojectorl1pro.png",
     null,
-    [],
+    [
+      "Resolución nativa Full HD 1080p: compatible con reproducción de vídeos 4K.",
+      "Brillo de 400 lúmenes ISO: medido según la norma ISO/IEC 21118:2020.",
+      "Proyección de 40 a 120 pulgadas: relación de proyección de 1,21:1 para disfrutar de una pantalla grande.",
+      "Ajuste automático de imagen: enfoque automático y corrección trapezoidal automática con un margen de hasta 15°.",
+      "Google TV integrado: acceso a aplicaciones de entretenimiento, Google Assistant y transmisión desde dispositivos compatibles mediante Google Cast.",
+      "Dos altavoces de 5 W con Dolby Audio: sonido estéreo integrado para películas, series y música."
+    ],
     "XIAOMI",
     "proyectores"
   ],
@@ -2364,7 +2404,14 @@ let productos=[
     false,
     "img/264-xiaomismartscales200.png",
     null,
-    [],
+    [
+      "Medición en incrementos de 50 g: sensor de acero al manganeso para registrar pequeños cambios de peso.",
+      "Rango de 0,1 a 150 kg: permite pesar personas y objetos, con cambio automático entre ambos modos.",
+      "Cuatro indicadores: peso, IMC, peso de referencia y recomendaciones de control de peso.",
+      "Hasta 36 perfiles de usuario: permite gestionar los registros de distintos integrantes del hogar.",
+      "Seguimiento en Xiaomi Home: informes personalizados y gráficos de evolución por semanas, meses y años.",
+      "Autonomía de hasta 180 días: según las pruebas del fabricante y las condiciones de uso."
+    ],
     "XIAOMI",
     "cuidado-personal"
   ],
@@ -2374,7 +2421,14 @@ let productos=[
     false,
     "img/266-xiaomisoundoutdoor.png",
     null,
-    [],
+    [
+      "Potencia de 30 W: incorpora un subwoofer y dos radiadores pasivos para reforzar los graves.",
+      "Hasta 12 horas de reproducción: autonomía medida con conexión Bluetooth y volumen al 50 %.",
+      "Carga USB-C de 15 W: carga completa en aproximadamente 2,5 horas.",
+      "Resistencia al agua y al polvo IP67: diseñado para acompañarte en actividades al aire libre.",
+      "Bluetooth 5.4 y llamadas manos libres: conexión inalámbrica y respuesta de llamadas desde el altavoz.",
+      "Sonido ampliable: conecta dos Xiaomi Sound Outdoor en estéreo TWS o hasta 100 unidades para reproducción sincronizada."
+    ],
     "XIAOMI",
     "parlantes"
   ],
@@ -2384,7 +2438,14 @@ let productos=[
     false,
     "img/267-xiaomisoundparty50w.jpeg",
     null,
-    [],
+    [
+      "Potencia de 50 W con Harman AudioEFX: tweeter de 15 W, woofer de 35 W y modo Bass Boost.",
+      "Hasta 26 horas de reproducción: con volumen al 50 %, iluminación apagada y Bass Boost desactivado.",
+      "Iluminación ambiental 3D: efectos de colores que siguen el ritmo de la música.",
+      "Resistencia al agua y al polvo IP67: protección para uso al aire libre frente a lluvia y salpicaduras.",
+      "Conexión ampliable: emparejamiento estéreo TWS entre dos unidades o reproducción sincronizada en hasta 100 altavoces mediante Party Connect.",
+      "Carga rápida PD y carga inversa: 10 minutos de carga ofrecen hasta 2 horas de reproducción en las condiciones indicadas; puede cargar otros dispositivos con una salida de hasta 15 W."
+    ],
     "XIAOMI",
     "parlantes"
   ],
@@ -2394,7 +2455,14 @@ let productos=[
     false,
     "img/268-xiaomisoundpocket.jpeg",
     null,
-    [],
+    [
+      "Potencia de 5 W: sonido con refuerzo de graves y ecualización automática.",
+      "Hasta 10 horas de reproducción: batería de 1000 mAh, con autonomía medida al 40 % de volumen.",
+      "Diseño compacto de aproximadamente 200 g: incluye una correa para facilitar el transporte.",
+      "Resistencia al agua y al polvo IP67: protección para actividades al aire libre.",
+      "Bluetooth 5.4 y llamadas manos libres: conexión inalámbrica y respuesta de llamadas desde el altavoz.",
+      "Emparejamiento estéreo TWS: conecta dos Xiaomi Sound Pocket para reproducir los canales izquierdo y derecho."
+    ],
     "XIAOMI",
     "parlantes"
   ],
@@ -2404,7 +2472,14 @@ let productos=[
     false,
     "img/271-xiaomistrawmug.jpeg",
     null,
-    [],
+    [
+      "Capacidad de 1 litro: amplio volumen para tus bebidas.",
+      "Interior de acero inoxidable 316L: duradero y resistente a la corrosión.",
+      "Aislamiento térmico de 6 horas: mantiene bebidas calientes por encima de 55 °C o frías por debajo de 10 °C, según las pruebas indicadas.",
+      "Tres formas de beber: mediante pajita, directamente por la abertura o vertiendo la bebida en la boca.",
+      "Tapa y pajita de Tritan sin BPA: con boquilla de silicona apta para contacto alimentario.",
+      "Boca ancha de 90 mm: facilita añadir hielo, llenar el vaso y limpiar el interior."
+    ],
     "XIAOMI",
     "hogar"
   ],
@@ -2414,7 +2489,14 @@ let productos=[
     false,
     "img/272-xiaomisuperslimmagneticpowerbank5000mah.jpeg",
     null,
-    [],
+    [
+      "Batería de 5000 mAh: conserva más del 80 % de su capacidad tras 300 ciclos, según pruebas de Xiaomi.",
+      "Diseño ultradelgado de 8,7 mm: carcasa de aleación de aluminio con bordes redondeados.",
+      "Carga por cable de hasta 22,5 W: compatible con distintos protocolos de carga rápida.",
+      "Carga inalámbrica de hasta 15 W: ofrece 5 W, 7,5 W, 10 W o 15 W según el dispositivo; en iPhone compatibles alcanza 7,5 W.",
+      "Sujeción con 17 imanes de neodimio: fuerza magnética declarada de hasta 10 N.",
+      "Carga simultánea de dos dispositivos: permite utilizar la salida por cable y la inalámbrica a la vez."
+    ],
     "XIAOMI",
     "powerbanks"
   ],
@@ -2424,9 +2506,16 @@ let productos=[
     false,
     "img/273-xiaomitoaster.jpeg",
     null,
-    [],
+    [
+      "Dos ranuras de 35 mm de ancho: admiten rebanadas gruesas y panes de distintos tamaños.",
+      "Seis niveles de tostado: permite ajustar el acabado según tus preferencias.",
+      "Potencia de 780–930 W: calentamiento uniforme por ambos lados, con un programa de 70 segundos en el nivel 1.",
+      "Rejilla superior plegable: permite calentar croissants y panecillos, y se pliega para guardarla.",
+      "Función de descongelación: se activa con un botón para preparar pan congelado.",
+      "Bandeja recogemigas extraíble: facilita retirar los residuos y limpiar la tostadora."
+    ],
     "XIAOMI",
-    "hogar"
+    "cocina"
   ],
   [
     "XIAOMI TRITAN WATER BOTTLE",
@@ -2434,7 +2523,14 @@ let productos=[
     false,
     "img/274-xiaomitritanwaterbottle.png",
     null,
-    [],
+    [
+      "Capacidad de 600 ml: cuerpo reforzado de una sola pieza, con marcas de nivel visibles.",
+      "Material Tritan libre de BPA: transparente, resistente al calor y a los impactos.",
+      "Apertura con una sola mano: tapa abatible de 180° con botón y dos seguros contra aperturas accidentales.",
+      "Colador de té integrado: filtra hojas y residuos, y queda oculto en la tapa superior.",
+      "Accesorio mezclador incluido: permite preparar batidos de proteína y otras bebidas al agitar la botella.",
+      "Diseño fácil de transportar y limpiar: asa de silicona suave y piezas desmontables."
+    ],
     "XIAOMI",
     "hogar"
   ],
@@ -2476,7 +2572,14 @@ let productos=[
     false,
     "img/278-xiaomitypecearphones.jpeg",
     null,
-    [],
+    [
+      "Conector USB-C reversible: conexión directa para escuchar audio sin emparejamiento.",
+      "Controladores de 12,4 mm: diseñados para reproducir un sonido claro y detallado.",
+      "Micrófono HD con reducción digital de ruido: reduce el ruido ambiental durante las llamadas.",
+      "Control de tres botones en el cable: permite ajustar volumen, controlar música y gestionar llamadas.",
+      "Diseño ergonómico y ligero: pensado para ofrecer comodidad durante el uso prolongado.",
+      "Resistencia al polvo y salpicaduras IP54: protección para los auriculares frente al uso cotidiano."
+    ],
     "XIAOMI",
     "audifonos"
   ],
@@ -2486,7 +2589,14 @@ let productos=[
     false,
     "img/279-xiaomiultraslimpowerbank5000mah.png",
     null,
-    [],
+    [
+      "Capacidad de 5000 mAh: batería portátil compacta para recargar dispositivos durante el día.",
+      "Diseño ultradelgado y ligero: aproximadamente 10 mm de grosor y 93 g de peso.",
+      "Carga rápida de hasta 20 W: ajusta automáticamente la salida al dispositivo conectado.",
+      "Puerto USB-C bidireccional: permite cargar dispositivos y recargar la batería con una entrada de hasta 18 W.",
+      "Recarga completa en aproximadamente 1,75 horas: utilizando el cargador Xiaomi de 20 W y el cable incluido.",
+      "Nueve capas de protección: incluye protección térmica, contra cortocircuitos, sobretensión, sobrecargas y sobredescargas."
+    ],
     "XIAOMI",
     "powerbanks"
   ],
@@ -2496,19 +2606,16 @@ let productos=[
     false,
     "img/280-xiaomiunibladetrimmer.jpeg",
     null,
-    [],
+    [
+      "Cuchilla de tres vías: los bordes recortan el pelo largo y la lámina central elimina el vello corto restante.",
+      "Lámina protectora de cobertura completa: forma una barrera entre las cuchillas y la piel.",
+      "Peine con 14 ajustes de longitud: permite recortar y dar forma al vello facial y corporal.",
+      "Cabezal flotante de 40°: se adapta a los contornos del rostro y cuello.",
+      "Hasta 60 minutos de autonomía: incorpora carga inalámbrica magnética y un soporte de pared incluido.",
+      "Resistencia al agua IPX7: apta para afeitado en seco o con espuma y limpieza bajo el agua."
+    ],
     "XIAOMI",
     "cuidado-personal"
-  ],
-  [
-    "XIAOMI WATCH S4 SUNSET GOLD",
-    165.0,
-    false,
-    "img/286-xiaomiwatchs4sunsetgold.jpeg",
-    null,
-    [],
-    "XIAOMI",
-    "relojes"
   ],
   [
     "XIAOMI WATER IONIC HAIR DRYER H500",
@@ -2516,7 +2623,14 @@ let productos=[
     false,
     "img/287-xiaomiwaterionichairdryerh500.jpeg",
     null,
-    [],
+    [
+      "Doble generador de iones de agua: ayuda a reducir la electricidad estática y el encrespamiento.",
+      "Flujo de aire de hasta 20 m/s: motor de 20 000 rpm con siete aspas para un secado rápido.",
+      "Control inteligente de temperatura: sensor que mide 60 veces por segundo y ajusta el calor para evitar el sobrecalentamiento.",
+      "Tres modos de temperatura y dos velocidades: aire caliente, frío o alternancia automática entre ambos.",
+      "Boquilla magnética giratoria de 360°: concentra el aire e incorpora doble pared para reducir la temperatura exterior.",
+      "Cuerpo compacto de aluminio: aproximadamente 550 g sin boquilla y cilindro de 101 mm de longitud."
+    ],
     "XIAOMI",
     "cuidado-personal"
   ],
@@ -2785,7 +2899,7 @@ let productos=[
       "C2, A1, A2, T1, GS, GS PRO, LITE 2, C3, LITE"
     ],
     "MIBRO",
-    "accesorios"
+    "relojes"
   ],
   [
     "MIBRO OPEN EAR",
@@ -3772,6 +3886,40 @@ let productos=[
     "relojes"
   ],
   [
+    "SAMSUNG 25W POWER ADAPTER + CABLE USB-C DE 1 M",
+    25.0,
+    false,
+    "img/079-samsung25wpoweradaptercableusbcde1m.png",
+    null,
+    [
+      "Carga superrápida de hasta 25 W: para dispositivos compatibles con Samsung Super Fast Charging.",
+      "USB Power Delivery 3.0 PPS: ajusta la alimentación a los requisitos del dispositivo.",
+      "Cable USB-C a USB-C de 1 metro incluido: junto con el adaptador de pared.",
+      "Entrada de 100–240 V: admite distintos voltajes de red eléctrica.",
+      "Consumo en espera inferior a 5 mW: reduce el consumo cuando no está cargando.",
+      "Protecciones integradas: contra sobrecorriente, cortocircuitos y altas temperaturas."
+    ],
+    "SAMSUNG",
+    "cargadores"
+  ],
+  [
+    "SAMSUNG CAR CHARGER DUO 25W",
+    22.0,
+    false,
+    "img/080-samsungcarchargerduo25w.png",
+    null,
+    [
+      "Puerto USB-C de hasta 25 W: compatible con Samsung Super Fast Charging.",
+      "Puerto USB-A de hasta 15 W: permite cargar un segundo dispositivo con carga rápida.",
+      "Carga simultánea de dos dispositivos: potencia total combinada de hasta 40 W.",
+      "Protecciones integradas: contra sobrecorriente, cortocircuitos y altas temperaturas.",
+      "Diseño compacto: dimensiones de 80 × 34 × 26 mm.",
+      "Peso ligero de 36,5 g: fácil de transportar y guardar en el vehículo."
+    ],
+    "SAMSUNG",
+    "cargadores"
+  ],
+  [
     "SAMSUNG TRAVEL ADAPTER 25W",
     15.0,
     false,
@@ -3782,6 +3930,23 @@ let productos=[
       "Conectividad USB-C de amplia compatibilidad: dispone de un puerto USB tipo C para cargar celulares Samsung Galaxy, tablets y otros dispositivos compatibles con carga USB-C, adaptando la velocidad de carga según las capacidades de cada equipo.",
       "Diseño compacto con tecnología GaN: utiliza tecnología de nitruro de galio para ofrecer un adaptador más pequeño y eficiente que su predecesor.",
       "Admite entrada de 100 a 240 V, lo que facilita su utilización en diferentes redes eléctricas mediante el enchufe adecuado"
+    ],
+    "SAMSUNG",
+    "cargadores"
+  ],
+  [
+    "SAMSUNG TRAVEL ADAPTER 45W + CABLE USB-C",
+    32.0,
+    false,
+    "img/082-samsungtraveladapter45wcableusbc.png",
+    null,
+    [
+      "Carga superrápida de hasta 45 W: compatible con Samsung Super Fast Charging 2.0.",
+      "USB Power Delivery 3.0 PDO/PPS: adapta la alimentación a dispositivos compatibles.",
+      "Cable USB-C a USB-C de 5 A incluido: preparado para utilizar la carga de alta potencia.",
+      "Cable de 1,8 metros: ofrece mayor alcance entre el enchufe y el dispositivo.",
+      "Entrada de 100–240 V: compatible con diferentes voltajes de red eléctrica.",
+      "Protecciones integradas: contra sobrecorriente, cortocircuitos y variaciones de temperatura."
     ],
     "SAMSUNG",
     "cargadores"
@@ -4028,6 +4193,23 @@ let productos=[
     "relojes"
   ],
   [
+    "XIAOMI WATCH S4 41MM SUNSET GOLD",
+    165.0,
+    false,
+    "img/286-xiaomiwatchs4sunsetgold.jpeg",
+    null,
+    [
+      "Acabado Sunset Gold: correa milanesa y corona con un diamante cultivado en laboratorio.",
+      "Pantalla AMOLED de 1,32 pulgadas: resolución de 466 × 466 píxeles, 60 Hz y brillo HBM de hasta 1500 nits.",
+      "Diseño compacto de acero inoxidable: grosor de 9,5 mm y peso aproximado de 32 g sin correa.",
+      "Autonomía de hasta 8 días con uso ligero: hasta 4 días con uso normal o 3 días con uso intensivo.",
+      "Más de 150 modos deportivos: posicionamiento independiente GNSS de doble frecuencia L1 + L5 y cinco sistemas de satélites.",
+      "Seguimiento del bienestar: frecuencia cardíaca, SpO₂, sueño, estrés y temperatura de la piel."
+    ],
+    "XIAOMI",
+    "relojes"
+  ],
+  [
     "XIAOMI WATCH S4 41MM WHITE",
     135.0,
     false,
@@ -4114,7 +4296,6 @@ function buscarProducto(nombre) {
   const canonico = aliasProductos[clave] || clave;
   return productos.find(p => normalizar(p[0]) === canonico);
 }
-
 // Fotos originales disponibles en el sitio para archivos nuevos aún no subidos.
 const imagenesAlternativas = {
   "img/268-xiaomisoundpocket.jpeg": "img/soundpocket.png",
@@ -4122,6 +4303,7 @@ const imagenesAlternativas = {
   "img/272-xiaomisuperslimmagneticpowerbank5000mah.jpeg": "img/superslimmagneticpowerbank5000mah.png",
   "img/273-xiaomitoaster.jpeg": "img/xiomitoaster.png"
 };
+
 function imagenNoDisponible(img) {
   const alternativa = imagenesAlternativas[img.getAttribute("src")];
   if (alternativa && !img.dataset.alternativaUsada) {
