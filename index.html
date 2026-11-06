@@ -788,7 +788,7 @@ color:#9ca3af;
 
 <script>
 // TIPO DE CAMBIO: modificar únicamente este valor (bolivianos por USD).
-const cambio = 12.0;
+const cambio = 12;
 let cart={};
 
 let vendedores = [
@@ -856,8 +856,8 @@ document.addEventListener("keydown", event => {
 });
 
 
-// Fuente: lista del 29/10/2026, hoja Accesorios Por Mayor.
-// Precio: columna R, PRECIO DETALLE CBBA $us. Disponibilidad: columna U, CBBA.
+// Fuente: lista del 06/11/2026, hoja Accesorios Por Mayor.
+// Precio: columna P, PRECIO DETALLE CBBA $us. Disponibilidad: columna U, CBBA.
 // [nombre, precio USD, agotado, imagen, precio anterior, características, marca, categoría]
 let productos=[
   [
@@ -867,10 +867,12 @@ let productos=[
     "img/102-xiaomi15wultrathinmagneticpowerbank5000mah.png",
     null,
     [
-      "6 MM DE GROSOR, 98 G DE PESO, DISEÑADO PARA LA PORTABILIDAD",
-      "CARGA RÁPIDA INALÁMBRICA DE HASTA 15 W CON MODOS DE CARGA VERSÁTILES",
-      "BATERÍA DE CALIDAD PARA SMARTPHONES PARA UNA FIABILIDAD DURADERA",
-      "ELEGANTE CUERPO METÁLICO EN COLORES REFINADOS"
+      "Diseño ultrafino y ligero: solo 6 mm de grosor y aproximadamente 98 g de peso.",
+      "Batería de silicio-carbono de 5000 mAh: alta densidad energética en un cuerpo compacto.",
+      "Carga inalámbrica magnética de hasta 15 W: disponible en la serie Xiaomi 17; los iPhone compatibles admiten hasta 7,5 W.",
+      "Carga rápida USB-C de hasta 22,5 W: requiere un cable Xiaomi de 3 A o superior.",
+      "Carga simultánea de dos dispositivos: también permite alimentar dispositivos mientras se recarga la propia batería.",
+      "Diez capas de protección: incluye doble sensor de temperatura NTC y protecciones contra sobrecarga, cortocircuitos y objetos extraños."
     ],
     "XIAOMI",
     "powerbanks"
@@ -1915,23 +1917,6 @@ let productos=[
     "audifonos"
   ],
   [
-    "XIAOMI REDMI BUDS 6 PLAY",
-    17.0,
-    false,
-    "img/218-xiaomiredmibuds6play.png",
-    null,
-    [
-      "Drivers dinámicos de 10 mm: sonido potente ajustado por Xiaomi Acoustic Lab.",
-      "Reducción de ruido con IA para llamadas: ayuda a distinguir la voz del ruido ambiental.",
-      "Hasta 36 horas de autonomía con el estuche: hasta 7,5 horas por carga.",
-      "Carga rápida: 10 minutos ofrecen hasta 3 horas de música.*",
-      "Bluetooth 5.4 y Google Fast Pair: conexión rápida con dispositivos Android compatibles.",
-      "Peso de solo 3,6 g por auricular: diseño ligero para mayor comodidad."
-    ],
-    "XIAOMI",
-    "audifonos"
-  ],
-  [
     "XIAOMI REDMI BUDS 8 LITE",
     27.0,
     false,
@@ -2051,23 +2036,6 @@ let productos=[
     "relojes"
   ],
   [
-    "XIAOMI REDMI WATCH 6 ACTIVE",
-    43.0,
-    false,
-    "img/230-xiaomiredmiwatch6active.png",
-    null,
-    [
-      "Pantalla AMOLED de 1,85 pulgadas: resolución de 390 × 450, brillo máximo de 1.200 nits y pantalla siempre encendida.",
-      "Llamadas por Bluetooth: responde desde la muñeca con el teléfono conectado.",
-      "Hasta 18 días de autonomía en uso ligero: hasta 12 días en uso normal.",
-      "Más de 140 modos deportivos: seguimiento de diferentes entrenamientos.",
-      "Monitorización de frecuencia cardíaca, SpO₂, sueño y estrés.",
-      "Diseño delgado y ligero: grosor de 9,9 mm y peso de 26 g sin correa."
-    ],
-    "XIAOMI",
-    "relojes"
-  ],
-  [
     "XIAOMI REDMI WATCH 6 LITE",
     60.0,
     false,
@@ -2164,22 +2132,6 @@ let productos=[
     ],
     "XIAOMI",
     "routers"
-  ],
-  [
-    "XIAOMI SMART BAND 10",
-    40.0,
-    false,
-    "img/242-xiaomismartband10.jpeg",
-    null,
-    [
-      "Pantalla AMOLED de 1,72″: brillo de hasta 1500 nits y frecuencia de actualización de 60 Hz para una visualización clara y fluida.",
-      "Batería de hasta 21 días: autonomía en uso típico; hasta 9 días con la pantalla siempre encendida.",
-      "Más de 150 modos deportivos: registra métricas como VO₂ máx., carga de entrenamiento y tiempo de recuperación.",
-      "Seguimiento de bienestar y sueño: monitorea frecuencia cardíaca, oxígeno en sangre, estrés y descanso, con recomendaciones personalizadas.",
-      "Resistencia al agua 5 ATM: apta para natación, con conteo de vueltas y monitoreo del ritmo cardíaco bajo el agua."
-    ],
-    "XIAOMI",
-    "relojes"
   ],
   [
     "XIAOMI SMART BAND 9 ACTIVE",
@@ -2434,7 +2386,7 @@ let productos=[
   ],
   [
     "XIAOMI SOUND PARTY 50W",
-    85.0,
+    88.0,
     false,
     "img/267-xiaomisoundparty50w.jpeg",
     null,
@@ -3170,22 +3122,6 @@ let productos=[
     "asistentes"
   ],
   [
-    "AMAZON ECHO SHOW 8 3RA GEN",
-    145.0,
-    false,
-    "img/012-amazonechoshow83ragen.jpeg",
-    null,
-    [
-      "Audio espacial con adaptación acústica: ajusta el sonido a la habitación para ofrecer mayor claridad y graves mejorados.",
-      "Cámara central de 13 MP: videollamadas con reducción del ruido de fondo para conversaciones más claras.",
-      "Central de hogar inteligente integrada: compatible con Zigbee, Thread y Matter para controlar luces, cerraduras y sensores.",
-      "Contenido adaptable a tu distancia: muestra información simplificada desde lejos y más detalles cuando te acercas.",
-      "Alexa con procesamiento local: respuestas hasta un 40 % más rápidas en solicitudes habituales del hogar inteligente, como encender luces o enchufes, respecto a la generación anterior."
-    ],
-    "AMAZON",
-    "asistentes"
-  ],
-  [
     "AMAZON ECHO SHOW 11",
     245.0,
     false,
@@ -3347,7 +3283,7 @@ let productos=[
   ],
   [
     "APPLE 40W DYNAMIC POWER ADAPTER WITH 60W MAX",
-    30.0,
+    40.0,
     false,
     "img/018-apple40wdynamicpoweradapterwith60wmax.jpeg",
     null,
@@ -4221,6 +4157,23 @@ let productos=[
       "Batería de hasta 8 días: autonomía con uso ligero; hasta 4 días con uso normal.",
       "Más de 150 modos deportivos y resistencia 5 ATM: incluye seguimiento de la frecuencia cardíaca durante la natación.",
       "Monitoreo integral de bienestar: registra frecuencia cardíaca, oxígeno en sangre, estrés, sueño y temperatura de la piel."
+    ],
+    "XIAOMI",
+    "relojes"
+  ],
+  [
+    "XIAOMI WATCH S4 44MM SILVER",
+    115.0,
+    false,
+    "img/xiaomiwatchs444mmsilver-292e378931.jpeg",
+    null,
+    [
+      "Pantalla AMOLED de 1,43 pulgadas: resolución de 466 × 466 píxeles, 60 Hz y brillo HBM de hasta 1500 nits.",
+      "Hasta 15 días de autonomía: batería de 486 mAh; cinco minutos de carga ofrecen hasta dos días de uso según las pruebas de Xiaomi.",
+      "Diseño personalizable: marco de aluminio, bisel intercambiable y corona giratoria; versiones Black y Silver con correa de fluorocaucho.",
+      "Más de 150 modos deportivos: GNSS independiente de doble frecuencia L1 + L5 con cinco sistemas de satélites.",
+      "Seguimiento del bienestar: frecuencia cardíaca, oxígeno en sangre, estrés y sueño.",
+      "Llamadas Bluetooth y resistencia 5 ATM: micrófonos y altavoz integrados; apto para natación en aguas poco profundas."
     ],
     "XIAOMI",
     "relojes"
