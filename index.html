@@ -666,6 +666,7 @@ color:#9ca3af;
   .catalogo-intro h1 {scroll-margin-top:310px;}
 }
 
+.precio-anterior { margin: 8px 0 0; color: #64748b; font-size: 14px; }
 </style>
 </head>
   
@@ -857,10 +858,1426 @@ document.addEventListener("keydown", event => {
 });
 
 
-// Fuente: lista del 06/11/2026, hoja Accesorios Por Mayor.
-// Precio: columna P, PRECIO DETALLE CBBA $us. Disponibilidad: columna U, CBBA.
+// Fuente: lista del 24/11/2026, hoja Accesorios Por Mayor.
+// Precio en Bs: columna Q; oferta en Bs: columna S. Disponibilidad: columna T.
+// Los importes en Bs se dividen entre cambio para conservar la conversión y el carrito existentes.
 // [nombre, precio USD, agotado, imagen, precio anterior, características, marca, categoría]
 let productos=[
+  [
+    "1MORE PISTON FIT E1009",
+    9.5,
+    false,
+    "img/002-1morepistonfite1009.jpeg",
+    null,
+    [
+      "Sonido de alta calidad con diafragma de doble capa: tecnología de titanio de grado aeroespacial y polímero PET para ofrecer graves profundos, voces claras y agudos definidos.",
+      "Diseño ergonómico de 45°: auriculares inclinados que se adaptan al canal auditivo, con tres tamaños de almohadillas de silicona para mayor comodidad.",
+      "Micrófono MEMS integrado: permite realizar llamadas con mayor claridad y controlar funciones básicas desde el cable.",
+      "Estructura de aleación de aluminio: acabado metálico resistente, ligero y elegante, diseñado para el uso diario.",
+      "Conexión universal de 3,5 mm: cable de 1,25 metros, compatible con celulares, computadoras y dispositivos que incorporen entrada de audio de 3,5 mm."
+    ],
+    "1MORE",
+    "audifonos"
+  ],
+  [
+    "1MORE SONOFLOW HC306",
+    40.0,
+    false,
+    "img/003-1moresonoflowhc306.jpeg",
+    null,
+    [
+      "Cancelación activa de ruido (ANC) con modo transparencia para escuchar el entorno.",
+      "Hasta 70 horas de reproducción sin ANC o 50 horas con ANC activado.",
+      "Bluetooth 5.0, con alcance inalámbrico de hasta 10 metros.",
+      "Carga completa en aproximadamente 80 minutos, con batería de 720 mAh.",
+      "Peso de 240 gramos, para llevarlos y utilizarlos a diario."
+    ],
+    "1MORE",
+    "audifonos"
+  ],
+  [
+    "70MAI AIR COMPRESSOR ECO",
+    18.0,
+    false,
+    "img/004-70maiaircompressoreco.jpeg",
+    null,
+    [
+      "Caudal de hasta 14 L/min: permite inflar un neumático de automóvil en pocos minutos.",
+      "Presión máxima de 50 PSI (3,4 bar): con manómetro que muestra la presión en ambas unidades.",
+      "Alimentación de 12 V: se conecta directamente a la toma de encendedor del vehículo.",
+      "Cable de 3,3 m y manguera de 1 m: facilitan alcanzar los neumáticos del automóvil.",
+      "Linterna integrada: se enciende automáticamente durante el inflado para facilitar su uso de noche."
+    ],
+    "70MAI",
+    "auto"
+  ],
+  [
+    "AMAZON ECHO DOT 5TA GENERACIÓN SIN RELOJ",
+    66.0,
+    false,
+    "img/006-amazonechodot5tageneracionsinreloj.png",
+    null,
+    [
+      "Sonido mejorado con graves hasta 2 veces más potentes: parlante frontal de 1,73 pulgadas (44 mm), con voces más claras y bajos más profundos respecto a la cuarta generación.",
+      "Asistente inteligente Alexa: permite reproducir música, consultar el clima, configurar alarmas, recordatorios y controlar dispositivos inteligentes compatibles mediante comandos de voz.",
+      "Sensor de temperatura integrado: detecta la temperatura del ambiente y permite crear rutinas automáticas con dispositivos inteligentes compatibles.",
+      "Detección de movimiento por ultrasonido: permite activar rutinas inteligentes, como encender luces automáticamente cuando detecta presencia en una habitación.",
+      "Conectividad Wi-Fi Dual Band y Bluetooth: compatible con redes de 2,4 GHz y 5 GHz, reproducción de audio inalámbrica y control de dispositivos inteligentes compatibles con Matter."
+    ],
+    "AMAZON",
+    "asistentes"
+  ],
+  [
+    "AMAZON ECHO DOT KIDS 5TA GENERACIÓN BÚHO",
+    62.0,
+    false,
+    "img/007-amazonechodotkids5tageneracionbuho.jpeg",
+    null,
+    [
+      "Parlante frontal de 1,73 pulgadas: para disfrutar de música, cuentos y audiolibros.",
+      "Alexa integrada: permite interactuar por voz y reproducir sonidos ambientales para la rutina de descanso.",
+      "Controles parentales: configura límites de tiempo, objetivos educativos y contenido para hasta cuatro perfiles infantiles.",
+      "Un año de Amazon Kids+ incluido: acceso a contenido infantil, sujeto a disponibilidad regional y condiciones de la suscripción.",
+      "Botón para desactivar los micrófonos: acompañado de controles de privacidad desde la aplicación."
+    ],
+    "AMAZON",
+    "asistentes"
+  ],
+  [
+    "AMAZON ECHO DOT MAX",
+    90.75,
+    false,
+    "img/008-amazonechodotmax.jpeg",
+    null,
+    [
+      "Graves casi 3 veces más potentes: sonido con bajos más profundos en comparación con el Echo Dot de quinta generación, gracias a su sistema de audio de dos vías con woofer y tweeter.",
+      "Sonido inteligente adaptable al ambiente: ajusta automáticamente la reproducción según la acústica de la habitación para ofrecer una experiencia de audio más equilibrada.",
+      "Alexa con procesador Amazon AZ3: reconocimiento de voz mejorado, reducción de ruido ambiental y control mediante comandos de voz para música, alarmas, recordatorios y consultas.",
+      "Centro de hogar inteligente integrado: compatibilidad con Zigbee, Matter y Thread para controlar dispositivos inteligentes compatibles, como luces, enchufes y sensores.",
+      "Tecnología Omnisense: permite crear rutinas inteligentes mediante detección de presencia, movimiento y temperatura, para automatizar distintas funciones del hogar."
+    ],
+    "AMAZON",
+    "asistentes"
+  ],
+  [
+    "AMAZON ECHO SHOW 11",
+    250.0,
+    false,
+    "img/010-amazonechoshow11.jpeg",
+    null,
+    [
+      "Pantalla táctil Full HD de 11″: imágenes nítidas y bordes delgados para disfrutar videos, recetas y calendarios.",
+      "Audio espacial con altavoces estéreo y woofer: sonido envolvente, graves profundos y voces claras.",
+      "Cámara de 13 MP con encuadre automático: mantiene a las personas centradas durante las videollamadas e incorpora reducción de ruido.",
+      "Procesador AZ3 Pro: ofrece un funcionamiento rápido para las funciones de Alexa y el control del hogar.",
+      "Tecnología Omnisense: permite configurar rutinas automáticas según presencia, movimiento y temperatura, utilizando dispositivos compatibles."
+    ],
+    "AMAZON",
+    "asistentes"
+  ],
+  [
+    "AMAZON ECHO SHOW 5 3RA GEN",
+    78.0,
+    false,
+    "img/011-amazonechoshow53ragen.jpeg",
+    null,
+    [
+      "Pantalla de 5,5″: consulta el clima, calendarios, videos y cámaras de seguridad compatibles en un formato compacto.",
+      "Altavoz de 1,7″ con graves mejorados: ofrece el doble de graves y voces más claras respecto a la generación anterior.",
+      "Cámara integrada para videollamadas: comunícate con otros dispositivos Echo con pantalla o con la aplicación Alexa.",
+      "Alexa con procesador AZ2 Neural Edge: controla dispositivos inteligentes compatibles y gestiona recordatorios, temporizadores y música mediante la voz.",
+      "Controles físicos de privacidad: incluye cubierta para la cámara y botón para desactivar los micrófonos."
+    ],
+    "AMAZON",
+    "asistentes"
+  ],
+  [
+    "AMAZON ECHO SHOW 8 3RA GEN",
+    150.0,
+    false,
+    "img/292-amazonechoshow83ragen.png",
+    null,
+    [
+      "Audio espacial con adaptación acústica: ajusta el sonido a la habitación para ofrecer mayor claridad y graves mejorados.",
+      "Cámara central de 13 MP: videollamadas con reducción del ruido de fondo para conversaciones más claras.",
+      "Central de hogar inteligente integrada: compatible con Zigbee, Thread y Matter para controlar luces, cerraduras y sensores.",
+      "Contenido adaptable a tu distancia: muestra información simplificada desde lejos y más detalles cuando te acercas.",
+      "Alexa con procesamiento local: respuestas hasta un 40 % más rápidas en solicitudes habituales del hogar inteligente, como encender luces o enchufes, respecto a la generación anterior."
+    ],
+    "AMAZON",
+    "asistentes"
+  ],
+  [
+    "AMAZON ECHO SPOT",
+    68.0,
+    false,
+    "img/013-amazonechospot.jpeg",
+    null,
+    [
+      "Pantalla táctil a color de 2,83 pulgadas: resolución de 240 × 320 píxeles, con visualización de hora, clima, alarmas y títulos de canciones.",
+      "Sonido mejorado con parlante de 1,73 pulgadas: altavoz frontal que ofrece voces claras y graves profundos para música, podcasts y audiolibros.",
+      "Asistente inteligente Alexa: permite controlar música, programar alarmas, temporizadores, recordatorios y realizar consultas mediante comandos de voz.",
+      "Reloj despertador totalmente personalizable: múltiples diseños de reloj, seis temas de colores, alarmas musicales y modo nocturno.",
+      "Control del hogar inteligente y conectividad inalámbrica: permite crear rutinas y controlar dispositivos compatibles, con Wi-Fi Dual Band de 2,4 y 5 GHz y Bluetooth."
+    ],
+    "AMAZON",
+    "asistentes"
+  ],
+  [
+    "AMAZON ECHO STUDIO",
+    255.0,
+    false,
+    "img/014-amazonechostudio.png",
+    null,
+    [
+      "Cinco altavoces integrados: woofer de 5,25″, tres altavoces de medios de 2″ y un tweeter de 1″ para graves profundos y voces claras.",
+      "Sonido Dolby Atmos: experiencia de audio tridimensional con contenido compatible.",
+      "Ajuste acústico automático: analiza la acústica de la habitación y adapta la reproducción para optimizar el sonido.",
+      "Alexa y central Zigbee integradas: controla dispositivos inteligentes compatibles mediante comandos de voz.",
+      "Conexión con Fire TV compatible: permite utilizar uno o dos Echo Studio para disfrutar del audio de películas y series."
+    ],
+    "AMAZON",
+    "asistentes"
+  ],
+  [
+    "AMAZON SOPORTE ECHO SHOW 8 3RA GEN",
+    21.0,
+    false,
+    "img/015-amazonsoporteechoshow83ragen.jpeg",
+    null,
+    [
+      "Puerto USB-C de 12,5 W: permite cargar celulares, audífonos y otros dispositivos compatibles.",
+      "Inclinación ajustable: mueve el Echo Show hacia adelante o atrás para mejorar el ángulo de visión.",
+      "Fijación magnética: permite colocar el equipo de forma rápida y segura.",
+      "Diseño específico para Echo Show 8 de 3.ª generación: acabado en color a juego con el dispositivo.",
+      "Fabricado con un 44 % de materiales reciclados."
+    ],
+    "AMAZON",
+    "asistentes"
+  ],
+  [
+    "AMAZON VIDEO DOORBELL",
+    70.0,
+    false,
+    "img/016-amazonvideodoorbell.jpeg",
+    null,
+    [
+      "Video Full HD 1080p con visión nocturna: permite observar la entrada de día y de noche.",
+      "Audio bidireccional con cancelación de ruido: para escuchar y hablar con los visitantes.",
+      "Detección avanzada de movimiento: incluye zonas personalizables para vigilar áreas específicas.",
+      "Campo de visión amplio: cobertura de 155° horizontal y 90° vertical.",
+      "Batería recargable integrada: también admite conexión al cableado de un timbre compatible."
+    ],
+    "AMAZON",
+    "hogar"
+  ],
+  [
+    "APPLE 20W POWER ADAPTER USB-C",
+    28.0,
+    false,
+    "img/017-apple20wpoweradapterusbc.jpeg",
+    null,
+    [
+      "Potencia de 20 W: para cargar dispositivos compatibles de forma rápida y eficiente.",
+      "Puerto USB-C: permite conectar el cable de carga adecuado para cada dispositivo.",
+      "Carga rápida para iPhone 8 o posterior: la velocidad depende del modelo y las condiciones de uso.",
+      "Compatible con iPad: Apple recomienda su uso con iPad Pro y iPad Air.",
+      "También compatible con AirPods y Apple Watch: utilizando sus respectivos cables o accesorios de carga."
+    ],
+    "APPLE",
+    "cargadores"
+  ],
+  [
+    "APPLE 40W DYNAMIC POWER ADAPTER WITH 60W MAX",
+    40.0,
+    false,
+    "img/018-apple40wdynamicpoweradapterwith60wmax.jpeg",
+    null,
+    [
+      "Potencia dinámica de hasta 60 W: aumenta la potencia de salida según las necesidades de carga del dispositivo.",
+      "Tecnología AVS: ajusta el voltaje con precisión para una carga más eficiente.",
+      "Carga rápida para iPhone: permite alcanzar hasta el 50 % en 20 minutos en iPhone 17, 17 Pro y 17 Pro Max, según las pruebas de Apple.",
+      "Conexión USB-C: compatible con dispositivos que admiten carga mediante este estándar.",
+      "Diseño compacto de bolsillo: facilita transportarlo para usarlo en casa, la oficina o durante viajes."
+    ],
+    "APPLE",
+    "cargadores"
+  ],
+  [
+    "APPLE DUAL USB-C PORT 35W COMPACT POWER ADAPTER",
+    29.0,
+    false,
+    "img/019-appledualusbcport35wcompactpoweradapter.png",
+    null,
+    [
+      "Potencia total de 35 W: disponible para cargar los dispositivos conectados.",
+      "Dos puertos USB-C: permite cargar dos dispositivos al mismo tiempo.",
+      "Diseño compacto: práctico para llevar y utilizar en casa, la oficina o durante viajes.",
+      "Clavijas plegables: facilitan guardarlo y transportarlo.",
+      "Compatibilidad con dispositivos Apple: puede utilizarse con MacBook Air, iPhone, iPad, Apple Watch y AirPods, con los cables correspondientes."
+    ],
+    "APPLE",
+    "cargadores"
+  ],
+  [
+    "APPLE MAGSAFE CHARGER",
+    28.0,
+    false,
+    "img/021-applemagsafecharger.jpeg",
+    null,
+    [
+      "Carga inalámbrica de hasta 25 W: requiere un iPhone compatible y un adaptador USB-C de 30 W.",
+      "Alineación magnética MagSafe: los imanes mantienen el cargador correctamente colocado en los iPhone compatibles.",
+      "Certificación Qi2 de 25 W y compatibilidad Qi: permite cargar también dispositivos compatibles con estos estándares.",
+      "Compatible con AirPods: funciona con modelos que tienen estuche de carga inalámbrica.",
+      "Cable integrado de 1 metro con conector USB-C: también existe una presentación de 2 metros."
+    ],
+    "APPLE",
+    "cargadores"
+  ],
+  [
+    "APPLE USB-C 60W CHARGE CABLE 1M",
+    19.0,
+    false,
+    "img/022-appleusbc60wchargecable1m.jpeg",
+    null,
+    [
+      "Carga de hasta 60 W: admite carga rápida con dispositivos y adaptadores compatibles.",
+      "Conectores USB-C en ambos extremos: para conectar equipos con este puerto.",
+      "Longitud de 1 metro: práctica para cargar en el escritorio o junto a un tomacorriente.",
+      "Diseño trenzado: recubrimiento exterior tejido.",
+      "Sincronización y transferencia de datos USB 2: permite cargar y transferir información entre dispositivos USB-C."
+    ],
+    "APPLE",
+    "accesorios"
+  ],
+  [
+    "APPLE USB-C TO HEADPHONE JACK",
+    19.0,
+    false,
+    "img/023-appleusbctoheadphonejack.jpeg",
+    null,
+    [
+      "Conector USB-C: se conecta al puerto del dispositivo compatible.",
+      "Entrada de audio de 3,5 mm: permite utilizar audífonos con el conector tradicional.",
+      "Compatible con parlantes de 3,5 mm: también permite conectar equipos de audio que utilicen esta conexión.",
+      "Compatibilidad con iPhone USB-C: incluye iPhone 15 y 16, entre otros modelos indicados por Apple.",
+      "Cable integrado entre ambos conectores: diseño sencillo para conectar directamente el accesorio de audio al dispositivo."
+    ],
+    "APPLE",
+    "accesorios"
+  ],
+  [
+    "BASEUS F01A WIRELESS MOUSE",
+    19.0,
+    false,
+    "img/024-baseusf01awirelessmouse.jpeg",
+    null,
+    [
+      "Conexión inalámbrica de 2,4 GHz: con alcance de hasta 20 metros.",
+      "Sensibilidad ajustable hasta 1600 DPI: tres niveles para adaptar la velocidad del cursor.",
+      "Botones silenciosos: permiten trabajar sin el ruido habitual de los clics.",
+      "Frecuencia de respuesta de 250 Hz: para un movimiento fluido del cursor.",
+      "Suspensión automática tras 30 minutos de inactividad: ayuda a ahorrar batería."
+    ],
+    "BASEUS",
+    "computacion"
+  ],
+  [
+    "BASEUS T2 PRO SMART DEVICE TRACKER",
+    10.0,
+    false,
+    "img/025-baseust2prosmartdevicetracker.jpeg",
+    null,
+    [
+      "RASTREADOR CON BLUETOOTH Y ALARMA DE 90 DB",
+      "LA BATERÍA CR2032 REEMPLAZABLE DURA HASTA 1 AÑO.",
+      "ALERTAS DE SEÑAL BIDIRECCIONAL SI LA DISTANCIA EXCEDE EL RANGO SEGURO",
+      "ACTUALIZACIONES DE UBICACIÓN EN TIEMPO REAL A TRAVÉS DE LA APLICACIÓN BASEUS SMART",
+      "AYUDA A RASTREAR LLAVES, BILLETERAS, MASCOTAS, NIÑOS, EQUIPAJE Y MÁS.",
+      "COMPATIBLE CON DISPOSITIVOS ANDROID E IOS."
+    ],
+    "BASEUS",
+    "accesorios"
+  ],
+  [
+    "BLACK SHARK GOBLIN X1 WIRED GAMING HEADSET",
+    25.0,
+    false,
+    "img/026-blacksharkgoblinx1wiredgamingheadset.jpeg",
+    null,
+    [
+      "Drivers dinámicos de 50 mm: sonido envolvente para identificar detalles durante las partidas.",
+      "Conexión de 3,5 mm: compatible con PC, PS4, PS5, Switch y Xbox mediante puertos compatibles.",
+      "Micrófono omnidireccional flexible: permite ajustar su posición cerca de la boca.",
+      "Almohadillas de espuma viscoelástica: ofrecen comodidad y aislamiento pasivo del ruido.",
+      "Controles en el cable: ajuste de volumen y botón para silenciar el micrófono."
+    ],
+    "BLACK SHARK",
+    "audifonos"
+  ],
+  [
+    "DIVOOM MOCHA",
+    70.0,
+    false,
+    "img/027-divoommocha.jpeg",
+    null,
+    [
+      "Potencia de 40 W: sonido potente con amplificación para altavoces y tweeters.",
+      "Sonido envolvente de 360°: audio multidireccional para disfrutar música desde distintos ángulos.",
+      "Batería de 10.000 mAh: hasta 25 horas de reproducción, según el fabricante.",
+      "Emparejamiento TWS: permite conectar un segundo parlante compatible para reproducir sonido estéreo.",
+      "Carga USB-C con soporte de carga rápida: para recargar su batería integrada."
+    ],
+    "DIVOOM",
+    "parlantes"
+  ],
+  [
+    "DIVOOM VOOMBOX ROCK",
+    42.0,
+    false,
+    "img/028-divoomvoomboxrock.jpeg",
+    null,
+    [
+      "Potencia de 30 W: sistema con dos altavoces de rango completo, dos tweeters y dos radiadores pasivos.",
+      "Bluetooth 4.2: conexión inalámbrica con alcance de hasta 10 metros.",
+      "Batería de 5000 mAh: también permite cargar dispositivos móviles mediante USB.",
+      "Emparejamiento Double Up: conecta dos Voombox Rock para reproducir sonido estéreo con canales izquierdo y derecho.",
+      "Entrada auxiliar de 3,5 mm: reproduce música desde dispositivos mediante cable."
+    ],
+    "DIVOOM",
+    "parlantes"
+  ],
+  [
+    "DIVOOM VOOMBOX TREK",
+    30.0,
+    false,
+    "img/029-divoomvoomboxtrek.jpeg",
+    null,
+    [
+      "Potencia de 6 W con ajuste DSP: altavoz de 2 pulgadas y radiador pasivo para reforzar los graves.",
+      "Resistencia al agua IPX5: preparado para lluvia y salpicaduras.",
+      "Hasta 6 horas de reproducción: batería recargable de 1400 mAh.",
+      "Emparejamiento estéreo TWS: conecta dos Voombox Trek para ampliar la experiencia sonora.",
+      "Tres opciones de reproducción: Bluetooth 4.2, entrada AUX y tarjetas microSD/TF de hasta 32 GB."
+    ],
+    "DIVOOM",
+    "parlantes"
+  ],
+  [
+    "HONOR EARBUDS CLIP",
+    59.0,
+    false,
+    "img/035-honorearbudsclip.jpeg",
+    null,
+    [
+      "Diseño abierto tipo clip con arco de titanio: pesa aproximadamente 5,1 g por audífono y permite escuchar el entorno.",
+      "Drivers de doble imán de 10,8 mm: con diafragma recubierto de titanio para graves dinámicos y agudos definidos.",
+      "Hasta 7 horas por carga y 36 horas con el estuche: además, 10 minutos de carga ofrecen hasta 2 horas de música.*",
+      "Dos micrófonos con reducción de ruido mediante IA: mejoran la claridad de la voz durante las llamadas.",
+      "Bluetooth 5.3 y conexión a dos dispositivos: permite alternar automáticamente entre fuentes de audio."
+    ],
+    "HONOR",
+    "audifonos"
+  ],
+  [
+    "IMILAB CAMARA C21",
+    28.0,
+    false,
+    "img/038-imilabcamarac21.jpeg",
+    null,
+    [
+      "Resolución 2.5K: imágenes detalladas para supervisar tu hogar.",
+      "Movimiento horizontal de 360° y vertical de 110°: permite revisar diferentes ángulos desde la aplicación.",
+      "Detección inteligente y seguimiento de personas: sigue sus movimientos y envía alertas por personas o ruidos detectados.",
+      "Audio bidireccional: escucha y habla con quienes están en casa en tiempo real.",
+      "Grabación continua con microSD de hasta 256 GB: almacenamiento local sin suscripción; tarjeta no incluida."
+    ],
+    "IMILAB",
+    "camaras"
+  ],
+  [
+    "IMILAB CAMARA C22",
+    32.0,
+    false,
+    "img/039-imilabcamarac22.jpeg",
+    null,
+    [
+      "Resolución 3K: imágenes detalladas para supervisar tu hogar en tiempo real.",
+      "Movimiento horizontal de 360° y vertical de 115°: permite revisar diferentes ángulos desde la aplicación.",
+      "Visión nocturna mejorada: captura imágenes a color en ambientes con poca iluminación.",
+      "Detección inteligente y seguimiento automático de personas: sigue sus movimientos y envía alertas al detectar personas o ruidos.",
+      "Audio bidireccional: permite escuchar y hablar con quienes están en casa desde el teléfono."
+    ],
+    "IMILAB",
+    "camaras"
+  ],
+  [
+    "IMILAB CAMARA C30 DUAL",
+    49.0,
+    false,
+    "img/040-imilabcamarac30dual.jpeg",
+    null,
+    [
+      "Doble lente con resolución 3K + 3K: permite visualizar dos áreas simultáneamente con gran detalle.",
+      "Cobertura de 360°: amplía la vigilancia del espacio interior.",
+      "Detección mediante IA: identifica personas, mascotas, llanto de bebés y ruidos para enviar alertas.",
+      "Wi-Fi 6 de doble banda: compatible con redes de 2,4 GHz y 5 GHz.",
+      "Audio bidireccional: permite escuchar y hablar con quienes están en casa desde el teléfono."
+    ],
+    "IMILAB",
+    "camaras"
+  ],
+  [
+    "JBL PARTYBOX WIRELESS MIC",
+    105.0,
+    false,
+    "img/041-jblpartyboxwirelessmic.png",
+    null,
+    [
+      "Kit de dos micrófonos y receptor inalámbrico: compatible con todos los parlantes JBL PartyBox.",
+      "Captación cardioide con filtro antipop: ofrece voces claras y reduce ruidos de respiración y manipulación.",
+      "Conexión inalámbrica de 2,4 GHz: alcance de hasta 30 metros y latencia inferior a 12 ms.",
+      "Baterías recargables de larga duración: hasta 20 horas por micrófono y hasta 12 horas para el receptor.",
+      "Carga rápida: 10 minutos de carga proporcionan hasta 2 horas adicionales de uso del micrófono; también funciona mientras se carga."
+    ],
+    "JBL",
+    "hogar"
+  ],
+  [
+    "KIESLECT KS MINI",
+    29.0,
+    false,
+    "img/042-kieslectksmini.jpeg",
+    null,
+    [
+      "Pantalla AMOLED HD de 1,78 pulgadas: ofrece una visualización clara y amplia.",
+      "Llamadas mediante Bluetooth 5.2: permite conversar desde el reloj conectado al teléfono y guardar hasta 100 contactos.",
+      "Monitoreo de bienestar las 24 horas: registra frecuencia cardíaca, oxígeno en sangre y patrones de sueño.",
+      "Alertas de frecuencia cardíaca anormal: avisa cuando detecta valores fuera de lo habitual.",
+      "Compatibilidad con Android y iOS: permite vincularlo con teléfonos de ambos sistemas."
+    ],
+    "KIESLECT",
+    "relojes"
+  ],
+  [
+    "MAIMO WATCH R",
+    33.0,
+    false,
+    "img/043-maimowatchr.jpeg",
+    null,
+    [
+      "Hasta 12 días de batería: autonomía en uso típico para la versión sin GPS; hasta 11 días en la versión con GPS.",
+      "Hasta 115 modos deportivos",
+      "Resistencia al agua de 5 ATM: apto para natación y uso cotidiano, según el fabricante.",
+      "Monitoreo de bienestar: seguimiento de frecuencia cardíaca, oxígeno en sangre (SpO₂), estrés y calidad del sueño.",
+      "Diseño con marco de acero inoxidable: pesa 29,4 g sin correa y ofrece más de 100 esferas para personalizar su apariencia."
+    ],
+    "MAIMO",
+    "relojes"
+  ],
+  [
+    "MIBRO EARBUDS 5",
+    15.5,
+    false,
+    "img/044-mibroearbuds5.jpeg",
+    null,
+    [
+      "Drivers de 13 mm: para reproducir graves potentes y agudos claros.",
+      "Reducción de ruido ENC en llamadas: ayuda a mejorar la claridad de la voz.",
+      "Modo de baja latencia: orientado a juegos y videos.",
+      "Controles táctiles: permiten gestionar música, llamadas y asistente de voz.",
+      "Compatibilidad con Android y iPhone: conexión inalámbrica con ambos sistemas."
+    ],
+    "MIBRO",
+    "audifonos"
+  ],
+  [
+    "MIBRO MAGNETIC CHARGING CABLE",
+    9.0,
+    false,
+    "img/045-mibromagneticchargingcable.png",
+    null,
+    [
+      "C2, A1, A2, T1, GS, GS PRO, LITE 2, C3, LITE"
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "MIBRO OPEN EAR",
+    25.0,
+    false,
+    "img/046-mibroopenear.jpeg",
+    null,
+    [
+      "Diseño abierto con ganchos de sujeción: permite escuchar música manteniendo la percepción del entorno.",
+      "Drivers de 16,1 mm con tecnología AELC Malleus: mejoran los detalles y la definición del sonido.",
+      "Doble micrófono con reducción de ruido en llamadas: ayuda a transmitir la voz con mayor claridad.",
+      "Bluetooth 5.4 con conexión a dos dispositivos: permite alternar entre el teléfono y otro equipo.",
+      "Resistencia IPX4: protección frente al sudor y las salpicaduras durante el uso diario."
+    ],
+    "MIBRO",
+    "audifonos"
+  ],
+  [
+    "MIBRO OPEN EAR PRO",
+    43.0,
+    false,
+    "img/047-mibroopenearpro.jpeg",
+    null,
+    [
+      "Diseño abierto de 7,2 g por audífono: ganchos con estructura de titanio y silicona para un ajuste cómodo y firme.",
+      "Hasta 7 horas de música y 30 horas con el estuche: autonomía por carga medida al 50 % de volumen.",
+      "Carga rápida: 10 minutos de carga proporcionan hasta 2 horas de reproducción.",
+      "Bluetooth 5.4 con conexión a dos dispositivos: permite alternar entre el teléfono y la computadora.",
+      "Resistencia IPX4: protección frente al sudor y las salpicaduras, ideal para actividades físicas."
+    ],
+    "MIBRO",
+    "audifonos"
+  ],
+  [
+    "MIBRO STRAP",
+    7.5,
+    false,
+    "img/048-mibrostrap.jpeg",
+    null,
+    [
+      "CORREAS DE COLORES"
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "MIBRO WATCH A3",
+    40.0,
+    false,
+    "img/049-mibrowatcha3.jpeg",
+    null,
+    [
+      "Pantalla HD de 1,39 pulgadas: panel IPS con resolución de 360 × 360 píxeles, que ofrece imágenes nítidas y buena visualización.",
+      "Llamadas Bluetooth 5.3: permite realizar y responder llamadas desde el reloj cuando está conectado a un celular compatible.",
+      "GPS integrado con cinco sistemas satelitales: compatible con GPS, BeiDou, GLONASS, Galileo y QZSS para registrar actividades al aire libre.",
+      "Más de 100 modos deportivos y monitoreo de salud: registra actividades físicas, frecuencia cardíaca, oxígeno en sangre (SpO₂), sueño y estrés.",
+      "Hasta 8 días de batería y resistencia al agua 2 ATM: autonomía de hasta 45 días en modo básico, con diseño ligero de 29 gramos sin correa."
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "MIBRO WATCH AEROPACE",
+    94.0,
+    false,
+    "img/293-mibrowatchaeropace.png",
+    null,
+    [
+      "Pantalla AMOLED de 1,32” con resolución 466 × 466 píxeles y brillo de hasta 2.000 nits.",
+      "GPS de doble banda con 5 sistemas de posicionamiento y navegación con mapas sin conexión.",
+      "Entrenador Mibro Coach con inteligencia artificial y planes de entrenamiento personalizados.",
+      "Batería de hasta 8 días de uso diario y hasta 20 días en modo de espera sin conexión.",
+      "Más de 150 modos deportivos y resistencia al agua 5 ATM para actividades físicas.",
+      "Monitoreo de frecuencia cardíaca, oxígeno en sangre, sueño y estrés, con llamadas Bluetooth."
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "MIBRO WATCH C4",
+    34.0,
+    false,
+    "img/050-mibrowatchc4.jpeg",
+    null,
+    [
+      "Pantalla HD de 2,01 pulgadas y 60 Hz: panel TFT con resolución de 240 × 296 píxeles, bordes delgados y visualización amplia y fluida.",
+      "Llamadas Bluetooth 5.3: permite responder y realizar llamadas desde la muñeca, mediante conexión con un celular compatible.",
+      "Más de 100 modos deportivos: registra diferentes actividades físicas y permite monitorear frecuencia cardíaca, oxígeno en sangre (SpO₂), sueño y estrés.",
+      "Hasta 10 días de batería: autonomía de hasta 45 días en modo básico, diseñada para acompañarte durante tus actividades diarias.",
+      "Diseño ultradelgado con resistencia al agua 2 ATM: grosor de 9,8 mm, peso de 29 gramos sin correa y más de 200 esferas personalizables."
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "MIBRO WATCH FIT BLACK",
+    63.0,
+    false,
+    "img/051-mibrowatchfitblack.jpeg",
+    null,
+    [
+      "Pantalla AMOLED de 1,75 pulgadas: resolución de 390 × 450 píxeles, frecuencia de 60 Hz y función Always-On Display para una visualización nítida y fluida.",
+      "GPS integrado con cinco sistemas satelitales: permite registrar rutas deportivas, con altímetro y barómetro para monitorear elevación y presión atmosférica.",
+      "Más de 150 modos deportivos: incluye un modo profesional de pádel con análisis de golpes y rendimiento mediante sensores de movimiento.",
+      "Llamadas Bluetooth y asistente de inteligencia artificial: permite gestionar llamadas desde la muñeca, utilizar comandos de voz y generar esferas personalizadas con IA.",
+      "Hasta 8 días de batería y resistencia al agua 5 ATM: incorpora monitoreo de frecuencia cardíaca, oxígeno en sangre, sueño y estrés, con diseño ligero de 27,9 gramos sin correa."
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "MIBRO WATCH GS ACTIVE",
+    44.0,
+    false,
+    "img/053-mibrowatchgsactive.png",
+    null,
+    [
+      "Pantalla AMOLED de 1,3 pulgadas: resolución de 360 × 360 píxeles y brillo máximo de 1.000 nits para facilitar la lectura en exteriores.",
+      "GPS integrado con cinco sistemas satelitales: compatible con GPS, BeiDou, GLONASS, Galileo y QZSS para registrar recorridos.",
+      "150 modos deportivos: incorpora el algoritmo SeekBeats™ para analizar la actividad física.",
+      "Resistencia al agua de 5 ATM: permite practicar natación e incluye reconocimiento de estilos y medición SWOLF.",
+      "Monitoreo de bienestar: seguimiento de frecuencia cardíaca, oxígeno en sangre (SpO₂), estrés y sueño, incluidas las siestas."
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "MIBRO WATCH GS EXPLORER S",
+    95.0,
+    false,
+    "img/055-mibrowatchgsexplorers.png",
+    null,
+    [
+      "Pantalla AMOLED de 1,32 pulgadas: resolución de 466 × 466 píxeles, brillo de hasta 1500 nits, protección Corning Gorilla Glass 3 y función Always-On Display.",
+      "GPS integrado de doble frecuencia L1 + L5: compatible con cinco sistemas satelitales, navegación de retorno por ruta, brújula, altímetro y barómetro.",
+      "Resistencia al agua 10 ATM y modo de buceo libre: permite registrar profundidad, tiempo y velocidad de inmersión, con soporte para buceo libre de hasta 30 metros.",
+      "Más de 150 modos deportivos y resistencia de grado militar: certificación de pruebas MIL-STD-810H, bisel de nanocerámica y monitoreo de frecuencia cardíaca, SpO₂ y sueño.",
+      "Hasta 20 días de batería y llamadas Bluetooth: autonomía de hasta 25 horas con GPS activo, conectividad Bluetooth 5.3 y sistema Mibro Galaxy OS 2.0."
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "MIBRO WATCH GS EXPLORER S TITANIUM",
+    190.0,
+    false,
+    "img/056-mibrowatchgsexplorerstitanium.png",
+    null,
+    [
+      "Construcción premium de titanio aeroespacial: caja de aleación de titanio con resistencia de grado militar MIL-STD-810H, diseñada para soportar condiciones exigentes.",
+      "Pantalla AMOLED de 1,32 pulgadas: resolución de 466 × 466 píxeles, brillo de hasta 1500 nits, protección Corning Gorilla Glass 3 y función Always-On Display.",
+      "GPS integrado de doble frecuencia L1 + L5 y mapas sin conexión: cinco sistemas satelitales, navegación de rutas, brújula, altímetro y función de retorno para aventuras al aire libre.",
+      "Resistencia al agua 10 ATM y más de 150 modos deportivos: permite registrar actividades como natación, senderismo, pádel y buceo libre de hasta 30 metros.",
+      "Hasta 20 días de batería y llamadas Bluetooth 5.3: autonomía de hasta 25 horas con GPS activo, con monitoreo de frecuencia cardíaca, oxígeno en sangre (SpO₂), sueño y estrés."
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "MIBRO WATCH GS PRO 2",
+    68.0,
+    false,
+    "img/057-mibrowatchgspro2.jpeg",
+    null,
+    [
+      "Pantalla AMOLED de 1,43 pulgadas: resolución de 466 × 466 píxeles, frecuencia de 60 Hz, brillo de hasta 1200 nits y función Always-On Display.",
+      "GPS integrado de doble frecuencia L1 + L5: compatible con cinco sistemas satelitales, navegación de rutas, alertas de desviación, brújula, altímetro y barómetro.",
+      "Más de 150 modos deportivos: incluye triatlón, entrenador de running y modo profesional de pádel con análisis de golpes, velocidad y rendimiento.",
+      "Resistencia al agua 5 ATM y diseño premium: bisel de acero inoxidable 316L, ideal para entrenamientos, natación y actividades al aire libre.",
+      "Hasta 20 días de batería y llamadas Bluetooth 5.3: autonomía de hasta 20 horas con GPS activo, con monitoreo de frecuencia cardíaca, oxígeno en sangre (SpO₂), sueño y estrés."
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "MIBRO WATCH GT",
+    70.0,
+    false,
+    "img/058-mibrowatchgt.png",
+    null,
+    [
+      "Pantalla AMOLED de 1,43″: resolución de 466 × 466 píxeles, refresco de 60 Hz y función de pantalla siempre encendida.",
+      "Diseño en acero inoxidable 316L: acabado elegante y resistente para el uso diario.",
+      "GPS integrado y más de 100 modos deportivos: compatible con cinco sistemas de posicionamiento para registrar actividades al aire libre.",
+      "Llamadas Bluetooth y asistente con IA: permite atender llamadas desde el reloj, consultar información y programar recordatorios.",
+      "Resistencia al agua de 5 ATM: apto para natación y actividades acuáticas compatibles."
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "MIBRO WATCH LITE 3",
+    47.0,
+    false,
+    "img/059-mibrowatchlite3.png",
+    null,
+    [
+      "Pantalla AMOLED de 1,3″: resolución de 360 × 360 píxeles y función de pantalla siempre encendida.",
+      "Llamadas Bluetooth: permite contestar llamadas desde la muñeca al conectarse al teléfono.",
+      "Más de 100 modos deportivos: seguimiento de diferentes actividades y entrenamientos.",
+      "Monitoreo de bienestar las 24 horas: registra frecuencia cardíaca, oxígeno en sangre y niveles de estrés.",
+      "Batería de hasta 12 días: autonomía en modo de uso diario, según las condiciones de utilización."
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "MIBRO WATCH LITE 3 PRO",
+    65.0,
+    false,
+    "img/060-mibrowatchlite3pro.jpeg",
+    null,
+    [
+      "Pantalla AMOLED de 1,32″: resolución de 466 × 466 píxeles, brillo de 1.000 nits y función de pantalla siempre encendida.",
+      "GPS integrado: compatible con cinco sistemas de posicionamiento para registrar recorridos al aire libre.",
+      "Más de 150 modos deportivos y resistencia de 5 ATM: incluye funciones para seguimiento de natación.",
+      "Llamadas por Bluetooth 5.3: permite atender llamadas desde la muñeca al conectarse al teléfono.",
+      "Batería de hasta 15 días: autonomía en uso diario o hasta 15 horas en modo GPS, según las condiciones de uso."
+    ],
+    "MIBRO",
+    "relojes"
+  ],
+  [
+    "ONEPLUS BUDS PRO 2R",
+    83.0,
+    false,
+    "img/061-oneplusbudspro2r.jpeg",
+    null,
+    [
+      "Doble controlador de 11 mm + 6 mm: desarrollado con Dynaudio para reproducir graves profundos y agudos definidos.",
+      "Cancelación activa de ruido adaptativa de hasta 48 dB: ajusta la reducción del ruido según el entorno.",
+      "Hasta 39 horas de autonomía con el estuche: hasta 9 horas por carga sin cancelación de ruido; con ella activada, hasta 25 y 6 horas, respectivamente.",
+      "Bluetooth 5.3 con conexión dual: permite conectar y alternar entre dos dispositivos.",
+      "Resistencia IP55 en los audífonos: protección frente al polvo, agua y sudor; el estuche cuenta con clasificación IPX4."
+    ],
+    "ONEPLUS",
+    "audifonos"
+  ],
+  [
+    "ONN TV 4K",
+    51.0,
+    false,
+    "img/062-onntv4k.png",
+    null,
+    [
+      "Resolución 4K Ultra HD: disfruta películas y series con mayor detalle en televisores y contenido compatibles.",
+      "Google TV integrado: reúne aplicaciones de streaming y recomendaciones de entretenimiento en una misma interfaz.",
+      "Control remoto con Google Assistant: busca contenido y controla funciones del televisor mediante la voz.",
+      "8 GB de almacenamiento y 2 GB de RAM: permite instalar aplicaciones y ejecutar servicios de streaming.",
+      "Wi-Fi de doble banda de 2,4 y 5 GHz: ofrece dos opciones de conexión inalámbrica para reproducir contenido."
+    ],
+    "ONN",
+    "television"
+  ],
+  [
+    "ONN TV HD",
+    45.0,
+    false,
+    "img/063-onntvhd.png",
+    null,
+    [
+      "Resolución Full HD 1080p: reproduce contenido compatible a 1920 × 1080 píxeles.",
+      "Google TV integrado: acceso a aplicaciones de streaming y recomendaciones de películas y series.",
+      "Control remoto con Google Assistant: permite buscar contenido y controlar funciones mediante comandos de voz.",
+      "Google Cast: transmite contenido desde dispositivos móviles compatibles al televisor.",
+      "8 GB de almacenamiento y 1,5 GB de RAM: espacio para instalar aplicaciones y ejecutar servicios de streaming."
+    ],
+    "ONN",
+    "television"
+  ],
+  [
+    "PROOVE MAGIC WAND ASP-02",
+    25.0,
+    false,
+    "img/064-proovemagicwandasp02.png",
+    null,
+    [
+      "Dos modos de uso: activo para pantallas de iPad y pasivo para pantallas táctiles de teléfonos y tabletas.",
+      "Autonomía aproximada de 9 horas: batería recargable de 130 mAh con puerto USB-C.",
+      "Ahorro automático de energía: entra en reposo después de 5 minutos de inactividad.",
+      "Diseño ligero de aluminio: pesa aproximadamente 13 gramos y mide 165 × 9 mm.",
+      "Punta reemplazable: permite sustituirla cuando se desgaste para prolongar la vida útil del lápiz."
+    ],
+    "PROOVE",
+    "lapices"
+  ],
+  [
+    "QCY CROSSKY C10",
+    19.0,
+    false,
+    "img/065-qcycrosskyc10.jpeg",
+    null,
+    [
+      "Diseño abierto tipo clip en C: se sujeta a la oreja sin introducirse en el canal auditivo.",
+      "Construcción ligera: diseñada para ofrecer comodidad durante el uso cotidiano.",
+      "Sonido con graves reforzados: altavoz ovalado y algoritmo de ajuste dinámico de bajas frecuencias.",
+      "Audio direccional 2.0: ayuda a reducir la fuga de sonido hacia el exterior.",
+      "Acabado con textura tipo cuero: disponible en cuatro colores para combinar con distintos estilos."
+    ],
+    "QCY",
+    "audifonos"
+  ],
+  [
+    "REALME BUDS 2 NEO",
+    12.0,
+    false,
+    "img/066-realmebuds2neo.png",
+    null,
+    [
+      "Drivers dinámicos de 11,2 mm: ofrecen graves profundos y sonido de rango completo.",
+      "Micrófono HD integrado: diseñado para mantener conversaciones claras.",
+      "Control mediante un botón: permite reproducir o pausar música y contestar o finalizar llamadas.",
+      "Cable antienredos: facilita guardarlos y utilizarlos diariamente.",
+      "Conector de audio en ángulo de 90°: diseño acodado para la conexión al dispositivo."
+    ],
+    "REALME",
+    "audifonos"
+  ],
+  [
+    "REALME BUDS AIR 7 PRO",
+    66.0,
+    false,
+    "img/067-realmebudsair7pro.jpeg",
+    null,
+    [
+      "Cancelación activa de ruido de hasta 53 dB: reduce el ruido ambiental para disfrutar mejor de la música.",
+      "Doble driver de 11 mm + 6 mm: combina un altavoz para graves con un tweeter microplanar para agudos detallados.",
+      "Audio Hi-Res y códec LHDC: reproducción de alta resolución con dispositivos compatibles.",
+      "Latencia ultrabaja de 45 ms: ayuda a reducir el desfase entre sonido e imagen.",
+      "Resistencia IP55: protección frente al polvo y chorros de agua; no aptos para inmersión."
+    ],
+    "REALME",
+    "audifonos"
+  ],
+  [
+    "REALME BUDS AIR 8",
+    49.0,
+    false,
+    "img/068-realmebudsair8.jpeg",
+    null,
+    [
+      "Sonido de alta resolución con doble driver: incorpora un woofer de 11 mm y tweeter de 6 mm, certificación Hi-Res Audio Wireless y códec LHDC 5.0 para una reproducción detallada.",
+      "Cancelación activa de ruido inteligente de hasta 55 dB,",
+      "Sistema de 6 micrófonos con inteligencia artificial: mejora la claridad de las llamadas mediante reducción de ruido, con conectividad Bluetooth 5.4.",
+      "Hasta 58 horas de batería: autonomía total con estuche de carga y ANC desactivada, hasta 14 horas por carga de los audífonos y carga rápida de hasta 11 horas de reproducción con 10 minutos de carga.",
+      "Modo gaming de baja latencia y resistencia IP55: latencia de hasta 45 ms,"
+    ],
+    "REALME",
+    "audifonos"
+  ],
+  [
+    "REALME BUDS CLIP",
+    49.0,
+    false,
+    "img/070-realmebudsclip.jpeg",
+    null,
+    [
+      "Diseño Titanium-Fit: ajuste tipo clip que se adapta a la oreja.",
+      "Peso ultraligero de 5,3 g: comodidad para el uso diario.",
+      "Algoritmo NextBass: mejora los graves para un sonido más potente.",
+      "Altavoz de gran amplitud con doble imán: diseñado para ofrecer un sonido contundente.",
+      "Traductor con inteligencia artificial: función de traducción para facilitar la comunicación entre idiomas."
+    ],
+    "REALME",
+    "audifonos"
+  ],
+  [
+    "REALME BUDS T200",
+    25.0,
+    false,
+    "img/071-realmebudst200.png",
+    null,
+    [
+      "Drivers dinámicos de 12,4 mm: diseñados para ofrecer graves potentes.",
+      "Cancelación activa de ruido de hasta 32 dB: reduce el ruido ambiental durante la reproducción.",
+      "Audio Hi-Res Wireless y códec LDAC: sonido de alta resolución con dispositivos compatibles.",
+      "Cuatro micrófonos con reducción de ruido en llamadas: ayudan a captar la voz con mayor claridad.",
+      "Conexión dual 2.0: permite conectar dos dispositivos y alternar entre ellos."
+    ],
+    "REALME",
+    "audifonos"
+  ],
+  [
+    "REALME BUDS T200X",
+    23.0,
+    false,
+    "img/073-realmebudst200x.png",
+    null,
+    [
+      "Cancelación activa de ruido de hasta 25 dB: ayuda a reducir las distracciones del entorno.",
+      "Drivers dinámicos de 12,4 mm: diseñados para ofrecer graves potentes.",
+      "Bluetooth 5.4 y conexión dual: permite conectar dos dispositivos y alternar entre ellos.",
+      "Latencia ultrabaja de 45 ms: reduce el desfase entre sonido e imagen.",
+      "Resistencia IP55: protección frente al polvo y al agua para el uso cotidiano, sin sumergirlos."
+    ],
+    "REALME",
+    "audifonos"
+  ],
+  [
+    "REALME BUDS T310",
+    30.0,
+    false,
+    "img/074-realmebudst310.jpeg",
+    null,
+    [
+      "Cancelación activa de ruido híbrida de hasta 46 dB: reduce el ruido exterior.",
+      "Drivers dinámicos de 12,4 mm: sonido con graves potentes.",
+      "Hasta 40 horas de reproducción total con el estuche de carga.",
+      "Carga rápida: hasta 5 horas de reproducción con 10 minutos de carga.",
+      "Resistencia IP55: protección contra polvo y agua."
+    ],
+    "REALME",
+    "audifonos"
+  ],
+  [
+    "REALME BUDS T500 PRO",
+    38.0,
+    false,
+    "img/075-realmebudst500pro.jpeg",
+    null,
+    [
+      "Sonido Hi-Res con driver dinámico de 12,4 mm: diafragma con recubrimiento de titanio, certificación Hi-Res Audio Wireless y códec LHDC 5.0 para disfrutar de graves potentes y sonido detallado.",
+      "Cancelación activa de ruido ANC de hasta 50 dB",
+      "Seis micrófonos con inteligencia artificial: sistema de reducción de ruido para llamadas más claras, acompañado de conectividad Bluetooth 6.1.",
+      "Hasta 56 horas de batería: autonomía total con el estuche de carga y hasta 13,5 horas de reproducción continua en los audífonos con ANC desactivada.",
+      "Modo gaming de 45 ms y resistencia IP55"
+    ],
+    "REALME",
+    "audifonos"
+  ],
+  [
+    "REALME TECH LIFE BUDS",
+    17.0,
+    false,
+    "img/077-realmetechlifebuds.jpeg",
+    null,
+    [
+      "Sonido potente con driver dinámico de 12,4 mm: ofrece graves profundos y una reproducción equilibrada para música, videos y entretenimiento.",
+      "Reducción de ruido ambiental con inteligencia artificial: tecnología AI ENC que ayuda a mejorar la claridad de la voz durante las llamadas.",
+      "Bluetooth 5.4 y conexión dual",
+      "Hasta 36 horas de batería: autonomía total con el estuche de carga y hasta 7 horas de reproducción continua por carga de los audífonos.",
+      "Modo gaming de baja latencia y resistencia IPX4: latencia anunciada de hasta 45 ms, protección contra sudor y salpicaduras y controles táctiles."
+    ],
+    "REALME",
+    "audifonos"
+  ],
+  [
+    "REALME TECH LIFE H1",
+    43.0,
+    false,
+    "img/078-realmetechlifeh1.jpeg",
+    null,
+    [
+      "Cancelación de ruido de hasta 43 dB: reduce el ruido exterior.",
+      "Drivers de 40 mm: sonido potente para música y entretenimiento.",
+      "Hasta 70 horas de reproducción: amplia autonomía.",
+      "Audio espacial de 360°: experiencia de sonido envolvente.",
+      "Modo de baja latencia de 80 ms: reduce el retraso del audio al jugar."
+    ],
+    "REALME",
+    "audifonos"
+  ],
+  [
+    "SAMSUNG 25W POWER ADAPTER + CABLE USB-C DE 1 M",
+    25.0,
+    false,
+    "img/079-samsung25wpoweradaptercableusbcde1m.png",
+    null,
+    [
+      "Carga superrápida de hasta 25 W: para dispositivos compatibles con Samsung Super Fast Charging.",
+      "USB Power Delivery 3.0 PPS: ajusta la alimentación a los requisitos del dispositivo.",
+      "Cable USB-C a USB-C de 1 metro incluido: junto con el adaptador de pared.",
+      "Entrada de 100–240 V: admite distintos voltajes de red eléctrica.",
+      "Consumo en espera inferior a 5 mW: reduce el consumo cuando no está cargando.",
+      "Protecciones integradas: contra sobrecorriente, cortocircuitos y altas temperaturas."
+    ],
+    "SAMSUNG",
+    "cargadores"
+  ],
+  [
+    "SAMSUNG CAR CHARGER DUO 25W",
+    22.0,
+    false,
+    "img/080-samsungcarchargerduo25w.png",
+    null,
+    [
+      "Puerto USB-C de hasta 25 W: compatible con Samsung Super Fast Charging.",
+      "Puerto USB-A de hasta 15 W: permite cargar un segundo dispositivo con carga rápida.",
+      "Carga simultánea de dos dispositivos: potencia total combinada de hasta 40 W.",
+      "Protecciones integradas: contra sobrecorriente, cortocircuitos y altas temperaturas.",
+      "Diseño compacto: dimensiones de 80 × 34 × 26 mm.",
+      "Peso ligero de 36,5 g: fácil de transportar y guardar en el vehículo."
+    ],
+    "SAMSUNG",
+    "cargadores"
+  ],
+  [
+    "SAMSUNG TRAVEL ADAPTER 25W",
+    15.0,
+    false,
+    "img/079-samsungtraveladapter25w.png",
+    null,
+    [
+      "Carga súper rápida de hasta 25 W: incorpora la tecnología Samsung Super Fast Charging, basada en USB Power Delivery 3.0 con PPS",
+      "Conectividad USB-C de amplia compatibilidad: dispone de un puerto USB tipo C para cargar celulares Samsung Galaxy, tablets y otros dispositivos compatibles con carga USB-C, adaptando la velocidad de carga según las capacidades de cada equipo.",
+      "Diseño compacto con tecnología GaN: utiliza tecnología de nitruro de galio para ofrecer un adaptador más pequeño y eficiente que su predecesor.",
+      "Admite entrada de 100 a 240 V, lo que facilita su utilización en diferentes redes eléctricas mediante el enchufe adecuado"
+    ],
+    "SAMSUNG",
+    "cargadores"
+  ],
+  [
+    "SAMSUNG TRAVEL ADAPTER 45W + CABLE USB-C",
+    32.0,
+    false,
+    "img/082-samsungtraveladapter45wcableusbc.png",
+    null,
+    [
+      "Carga superrápida de hasta 45 W: compatible con Samsung Super Fast Charging 2.0.",
+      "USB Power Delivery 3.0 PDO/PPS: adapta la alimentación a dispositivos compatibles.",
+      "Cable USB-C a USB-C de 5 A incluido: preparado para utilizar la carga de alta potencia.",
+      "Cable de 1,8 metros: ofrece mayor alcance entre el enchufe y el dispositivo.",
+      "Entrada de 100–240 V: compatible con diferentes voltajes de red eléctrica.",
+      "Protecciones integradas: contra sobrecorriente, cortocircuitos y variaciones de temperatura."
+    ],
+    "SAMSUNG",
+    "cargadores"
+  ],
+  [
+    "SONY WHXB910N",
+    121.0,
+    false,
+    "img/080-sonywhxb910n.jpeg",
+    null,
+    [
+      "Tecnología EXTRA BASS y controladores de 40 mm: ofrecen graves profundos y potentes, manteniendo la claridad de las voces.",
+      "Cancelación activa de ruido con Dual Noise Sensor: reduce el ruido exterior para disfrutar mejor de la música.",
+      "Hasta 30 horas de batería: para largas sesiones de reproducción, según las condiciones de uso.",
+      "Carga rápida: 10 minutos de carga proporcionan hasta 4,5 horas de reproducción, con un adaptador de corriente compatible.",
+      "Conexión Bluetooth multipunto: permite mantener conectados dos dispositivos y alternar entre ellos."
+    ],
+    "SONY",
+    "audifonos"
+  ],
+  [
+    "TECNO 2 IN 1 MICRO USB TIPO C",
+    7.0,
+    false,
+    "img/081-tecno2in1microusbtipoc.png",
+    null,
+    [
+      "LONGITUD 1 METRO",
+      "SALIDA 2A",
+      "COLOR NEGRO",
+      "MATERIAL NYLON TRENZADO Y ALEACIÓN DE ALUMINIO",
+      "COMPATIBILIDAD CON DISPOSITIVOS TIPO C Y MICRO USB"
+    ],
+    "TECNO",
+    "accesorios"
+  ],
+  [
+    "TECNO BUDS 2",
+    28.0,
+    false,
+    "img/082-tecnobuds2.jpeg",
+    null,
+    [
+      "AUTONOMÍA (ESTUCHE): 12 HRS.",
+      "AUTONOMÍA (AUDIFONOS): 4 HRS.",
+      "GRAVES PROFUNDOS CON UN ALTAVOZ DE BOBINA MÓVIL",
+      "DISEÑO MEDIO INTRAUDITIVO",
+      "BLUETOOTH 5.0",
+      "TIEMPO DE CARGA: 1,5 HRS.",
+      "PUERTO DE CARGA TIPO C"
+    ],
+    "TECNO",
+    "audifonos"
+  ],
+  [
+    "TECNO CARGADOR 33W U330",
+    11.0,
+    false,
+    "img/083-tecnocargador33wu330.jpeg",
+    null,
+    [
+      "Carga rápida de hasta 33 W: proporciona una potencia elevada para recargar smartphones TECNO y otros dispositivos compatibles, ayudando a reducir el tiempo de espera frente a cargadores convencionales de menor potencia.",
+      "Sistema de carga adaptativa inteligente: ajusta automáticamente el voltaje y la corriente de salida según los requerimientos del dispositivo conectado, ofreciendo diferentes niveles de potencia para una recarga eficiente.",
+      "Conexión USB-A para carga de dispositivos: incorpora un puerto USB-A de salida que permite conectar un cable compatible, como USB-A a USB-C, para cargar celulares y otros equipos electrónicos.",
+      "Alimentación universal de 100 a 240 V: admite redes eléctricas de 50/60 Hz, por lo que puede utilizarse en diferentes países y entornos."
+    ],
+    "TECNO",
+    "cargadores"
+  ],
+  [
+    "TECNO HIPODS H3",
+    30.0,
+    false,
+    "img/084-tecnohipodsh3.jpeg",
+    null,
+    [
+      "AUTONOMÍA (ESTUCHE): 12 HRS.",
+      "AUTONOMÍA (AUDIFONOS): 4 HRS.",
+      "TRES MODOS/REDUCCIÓN INTELIGENTE DE RUIDO",
+      "GRAVES ULTRAPROFUNDOS",
+      "BLUETOOTH 5.0",
+      "RESISTENCIA IPX4",
+      "PUERTO DE CARGA TIPO C"
+    ],
+    "TECNO",
+    "audifonos"
+  ],
+  [
+    "TECNO HOT BEATS J2",
+    10.0,
+    false,
+    "img/085-tecnohotbeatsj2.jpeg",
+    null,
+    [
+      "DISEÑO INTRAUDITIVO EN ÁNGULO DE 45° QUE EVITA CAÍDAS",
+      "POTENTE RENDIMIENTO DE LOS GRAVES",
+      "CONTROL REMOTO DE UN BOTÓN",
+      "PARA RESPONDER Y COLGAR LLAMADAS, REPRODUCIR Y PAUSAR MÚSICA Y AJUSTAR EL VOLUMEN"
+    ],
+    "TECNO",
+    "audifonos"
+  ],
+  [
+    "TECNO PHANTOM BACKPACK",
+    45.0,
+    false,
+    "img/tecnophantombackpack.png",
+    null,
+    [],
+    "TECNO",
+    "hogar"
+  ],
+  [
+    "TECNO SQUARE S2",
+    26.0,
+    false,
+    "img/087-tecnosquares2.jpeg",
+    null,
+    [
+      "CAPACIDAD DE LA BATERÍA 2200 MAH",
+      "ALTAVOZ DE GRAVES POTENTES DE 52 MM",
+      "LUZ LED COLORIDA",
+      "ADMITE EMPAREJAMIENTO DE 2 ALTAVOCES BLUETOOTH AL MISMO TIEMPO",
+      "CONEXIÓN DE FLASH USB, TARJETA TF O BLUETOOTH."
+    ],
+    "TECNO",
+    "parlantes"
+  ],
+  [
+    "TECNO TWS EARPHONE BDE01",
+    42.0,
+    false,
+    "img/088-tecnotwsearphonebde01.jpeg",
+    null,
+    [
+      "AUTONOMÍA: 27 HRS.",
+      "SONIDO DE ALTA FIDELIDAD",
+      "MODO DE BAJA LATENCIA",
+      "CANCELACIÓN DE RUIDO ACTIVA",
+      "DISEÑO ERGONÓMICO",
+      "BLUETOOTH 5.0",
+      "RESISTENCIA IPX5"
+    ],
+    "TECNO",
+    "audifonos"
+  ],
+  [
+    "TECNO TWS EARPHONE G01",
+    40.0,
+    false,
+    "img/089-tecnotwsearphoneg01.png",
+    null,
+    [
+      "AUTONOMÍA: 25 HRS.",
+      "AUTONOMÍA (AUDIFONOS): 6.5 HRS.",
+      "DISEÑO ERGONÓMICO",
+      "BLUETOOTH 5.0",
+      "CANCELACIÓN DE RUIDO",
+      "MODO BAJA LATENCIA",
+      "RESISTENCIA IPX4"
+    ],
+    "TECNO",
+    "audifonos"
+  ],
+  [
+    "TRONSMART ELEMENT MEGA",
+    42.5,
+    false,
+    "img/090-tronsmartelementmega.jpeg",
+    null,
+    [
+      "TECNOLOGÍA SOUNDPULSE®.",
+      "POTENTE SONIDO DE ALTA FIDELIDAD",
+      "CONTROL TÁCTIL INTUITIVO.",
+      "VERDADERO EMPAREJAMIENTO ESTÉREO INALÁMBRICO.",
+      "TRANSMISIÓN NFC.",
+      "POTENCIA 40W"
+    ],
+    "TRONSMART",
+    "parlantes"
+  ],
+  [
+    "TRONSMART T7 LITE",
+    30.0,
+    false,
+    "img/091-tronsmartt7lite.png",
+    null,
+    [
+      "Potencia de salida de 24 W.",
+      "Dos altavoces de rango completo y tres radiadores pasivos: graves reforzados.",
+      "Hasta 24 horas de reproducción, con batería de 4.000 mAh.*",
+      "Resistencia al agua IPX7.",
+      "Emparejamiento estéreo: conecta dos unidades para ampliar la experiencia de sonido."
+    ],
+    "TRONSMART",
+    "parlantes"
+  ],
+  [
+    "TRONSMART TRIP",
+    20.0,
+    false,
+    "img/092-tronsmarttrip.png",
+    null,
+    [
+      "Hasta 20 horas de reproducción al 50 % del volumen.",
+      "Resistencia al agua IPX7.",
+      "Bluetooth 5.3: alcance de transmisión de hasta 18 metros.",
+      "Dos altavoces de rango completo con tecnología SoundPulse®: sonido con agudos claros y graves equilibrados.",
+      "Emparejamiento estéreo TWS: conecta dos parlantes Trip para reproducir sonido estéreo."
+    ],
+    "TRONSMART",
+    "parlantes"
+  ],
+  [
+    "VEN DENS S/M VD MIC004",
+    6.0,
+    false,
+    "img/093-vendenssmvdmic004.png",
+    null,
+    [
+      "Breve descripción:",
+      "Modelo: VD-MIC004",
+      "18 g/ud. (peso neto)"
+    ],
+    "VEN DENS",
+    "accesorios"
+  ],
+  [
+    "VEN DENS S/M VD MIC007",
+    10.0,
+    false,
+    "img/094-vendenssmvdmic007.jpeg",
+    null,
+    [
+      "Parámetro del producto",
+      "Material : TPE",
+      "Tipo de conector: para puerto tipo C",
+      "Tiempo de grabación continua: 3-4 horas",
+      "Rango máximo de grabación: 15-20 m"
+    ],
+    "VEN DENS",
+    "accesorios"
+  ],
+  [
+    "VEN DENS S/M VD MIC009",
+    12.0,
+    false,
+    "img/095-vendenssmvdmic009.jpeg",
+    null,
+    [
+      "Parámetro del producto",
+      "Material : TPE",
+      "Tipo de conector: para puerto tipo C",
+      "Tiempo de grabación continua: 3-4 horas",
+      "Rango máximo de grabación: 15-20 m"
+    ],
+    "VEN DENS",
+    "accesorios"
+  ],
+  [
+    "VEN DENS S/M VD MIC011",
+    12.5,
+    false,
+    "img/096-vendenssmvdmic011.jpeg",
+    null,
+    [
+      "Parámetro del producto",
+      "Material : TPE",
+      "Tipo de conector: para puerto tipo C",
+      "Tiempo de grabación continua: 3-4 horas",
+      "Rango máximo de grabación: 15-20 m"
+    ],
+    "VEN DENS",
+    "accesorios"
+  ],
+  [
+    "VEN DENS S/M VD MIC015",
+    18.5,
+    false,
+    "img/097-vendenssmvdmic015.png",
+    null,
+    [
+      "CARACTERÍSTICAS",
+      "1. Reducción de ruido: un clic para la reducción",
+      "de ruido 2. Reverberación: Con efecto de sonido de reverberación (triple clic para cambiar)",
+      "PARÁMETROS",
+      "DEL PRODUCTO Tiempo de carga: aproximadamente 1 hora",
+      "Tiempo de trabajo: 6 horas",
+      "Protocolo de transmisión: Bluetooth 5.3",
+      "Distancia de transmisión: Aproximadamente 20 m–25 m (positivo)",
+      "Sensibilidad del micrófono: -38dB",
+      "Operación: Plug and Play, emparejamiento automático al encender",
+      "RX Receptor: Puerto tipo C"
+    ],
+    "VEN DENS",
+    "accesorios"
+  ],
+  [
+    "VEN DENS S/M VD MIC017",
+    20.5,
+    false,
+    "img/098-vendenssmvdmic017.png",
+    null,
+    [
+      "CARACTERÍSTICAS",
+      "1. Reducción de ruido: un clic para la reducción",
+      "de ruido 2. Reverberación: Con efecto de sonido de reverberación (triple clic para cambiar)",
+      "PARÁMETROS",
+      "DEL PRODUCTO Tiempo de carga: aproximadamente 1 hora",
+      "Tiempo de trabajo: 6 horas",
+      "Protocolo de transmisión: Bluetooth 5.3",
+      "Distancia de transmisión: Aproximadamente 20 m–25 m (positivo)",
+      "Sensibilidad del micrófono: -38dB",
+      "Operación: Plug and Play, emparejamiento automático al encender",
+      "RX Receptor: Puerto tipo C"
+    ],
+    "VEN DENS",
+    "accesorios"
+  ],
+  [
+    "WANBO T6 MAX",
+    190.0,
+    false,
+    "img/099-wanbot6max.png",
+    null,
+    [
+      "Resolución Full HD 1080p: imagen detallada y compatibilidad con reproducción de contenido 4K.",
+      "Brillo de 650 lúmenes ANSI: cifra indicada para esta versión.",
+      "Enfoque automático: facilita ajustar la nitidez de la imagen.",
+      "2 GB de RAM y 16 GB de almacenamiento: para ejecutar aplicaciones y guardar contenido.",
+      "Wi-Fi de doble banda y Bluetooth 5.0: conexión a redes de 2,4/5 GHz y a altavoces inalámbricos."
+    ],
+    "WANBO",
+    "proyectores"
+  ],
+  [
+    "WANBO TT",
+    190.0,
+    false,
+    "img/100-wanbott.jpeg",
+    null,
+    [
+      "Resolución nativa Full HD de 1920 × 1080: admite contenido 4K y proyecta imágenes de 40 a 120 pulgadas.",
+      "Brillo de 650 lúmenes ANSI: para disfrutar películas y contenido multimedia con buena iluminación de imagen.",
+      "Enfoque automático y corrección trapezoidal de cuatro puntos: facilitan ajustar la nitidez y la forma de la proyección.",
+      "Netflix integrado con licencia oficial: también incluye YouTube y Prime Video en su sistema Linux.",
+      "Dos altavoces de 5 W con Dolby Audio: ofrece 10 W de potencia total para reproducir sonido sin altavoces externos."
+    ],
+    "WANBO",
+    "proyectores"
+  ],
   [
     "XIAOMI 15W ULTRA THIN MAGNETIC POWER BANK 5000 MAH",
     50.0,
@@ -895,16 +2312,32 @@ let productos=[
   ],
   [
     "XIAOMI 212W HYPERCHARGE POWER BANK 25000 MAH",
-    80.0,
+    72.0,
     false,
     "img/106-xiaomi212whyperchargepowerbank25000mah.jpeg",
-    null,
+    80.0,
     [
       "ADMITE LA CARGA RÁPIDA DE ALTA POTENCIA PARA TRES DISPOSITIVOS A LA VEZ",
       "PUERTO ÚNICO PD 3.1 CON UNA SALIDA MÁXIMA DE 140 W",
       "CARGA RÁPIDA BIDIRECCIONAL USB-C",
       "PANTALLA COLOR",
       "VARIAS PROTECCIONES PARA MAYOR TRANQUILIDAD"
+    ],
+    "XIAOMI",
+    "powerbanks"
+  ],
+  [
+    "Xiaomi 22.5W Power Bank 10000mAh Lite",
+    20.0,
+    false,
+    "img/108-xiaomi225wpowerbank10000mahlite.jpeg",
+    null,
+    [
+      "Batería de 10.000 mAh: capacidad para proporcionar energía adicional a celulares, tablets y otros dispositivos durante viajes y actividades diarias.",
+      "Carga rápida de hasta 22,5 W: puerto USB-C bidireccional que permite cargar dispositivos compatibles y recargar la batería externa en aproximadamente 4,5 horas con el cargador adecuado.",
+      "Carga simultánea de 3 dispositivos: incorpora 2 puertos USB-A y 1 puerto USB-C para alimentar varios equipos al mismo tiempo.",
+      "Compatibilidad con protocolos PD y QC3+: permite cargar smartphones y accesorios compatibles, incluyendo un modo de baja corriente para audífonos y pulseras inteligentes.",
+      "Diseño ligero con 9 capas de protección: pesa solamente 227 gramos e incorpora sistemas de seguridad contra sobrecargas, sobrecalentamiento y cortocircuitos."
     ],
     "XIAOMI",
     "powerbanks"
@@ -924,23 +2357,6 @@ let productos=[
     ],
     "XIAOMI",
     "powerbanks"
-  ],
-  [
-    "XIAOMI 3A BRAIDED USB C TO USB C CABLE 1M",
-    12.0,
-    false,
-    "img/115-xiaomi3abraidedusbctousbccable1m.png",
-    null,
-    [
-      "Carga rápida de hasta 60 W, con corriente nominal de 3 A.",
-      "Conectores USB-C a USB-C: para smartphones, tablets, portátiles y otros dispositivos compatibles.",
-      "Transferencia de datos de hasta 480 Mbps.",
-      "Recubrimiento trenzado flexible y resistente.",
-      "Durabilidad probada: más de 10.000 conexiones y desconexiones, y más de 10.000 flexiones de ±90°.",
-      "Longitud de 1 metro: práctica para carga en escritorio y transporte."
-    ],
-    "XIAOMI",
-    "accesorios"
   ],
   [
     "XIAOMI 33W NANO POWER ADAPTER (USB-C)",
@@ -989,6 +2405,23 @@ let productos=[
     ],
     "XIAOMI",
     "powerbanks"
+  ],
+  [
+    "XIAOMI 3A BRAIDED USB C TO USB C CABLE 1M",
+    12.0,
+    false,
+    "img/115-xiaomi3abraidedusbctousbccable1m.png",
+    null,
+    [
+      "Carga rápida de hasta 60 W, con corriente nominal de 3 A.",
+      "Conectores USB-C a USB-C: para smartphones, tablets, portátiles y otros dispositivos compatibles.",
+      "Transferencia de datos de hasta 480 Mbps.",
+      "Recubrimiento trenzado flexible y resistente.",
+      "Durabilidad probada: más de 10.000 conexiones y desconexiones, y más de 10.000 flexiones de ±90°.",
+      "Longitud de 1 metro: práctica para carga en escritorio y transporte."
+    ],
+    "XIAOMI",
+    "accesorios"
   ],
   [
     "XIAOMI 45W NANO TURBO CHARGING POWER ADAPTER 2-PORT",
@@ -1041,10 +2474,10 @@ let productos=[
   ],
   [
     "XIAOMI 90W HYPERCHARGE POWER ADAPTER (3-PORT)",
-    31.0,
+    25.0,
     false,
     "img/121-xiaomi90whyperchargepoweradapter3port.jpeg",
-    null,
+    31.0,
     [
       "Carga rápida HyperCharge de hasta 90 W: cada uno de sus dos puertos USB-C puede entregar individualmente hasta 90 W de potencia, permitiendo cargar rápidamente smartphones, tablets y laptops compatibles. Para alcanzar la máxima potencia HyperCharge, Xiaomi especifica el uso de un cable USB-C a USB-C oficial de 6 A.",
       "Tres puertos de carga con distribución inteligente: incorpora dos puertos USB-C y uno USB-A, permitiendo cargar hasta tres dispositivos simultáneamente. Al utilizar dos puertos distribuye hasta 67 W + 18 W, mientras que con los tres activos ofrece hasta 67 W en USB-C1 y 15 W compartidos entre USB-C2 y USB-A.",
@@ -1137,6 +2570,23 @@ let productos=[
     "cocina"
   ],
   [
+    "XIAOMI ELECTRIC PRESSURE COOKER 4.8L",
+    80.0,
+    false,
+    "img/138-xiaomielectricpressurecooker48l.jpeg",
+    98.0,
+    [
+      "GRAN CAPACIDAD DE 4.8L",
+      "DOS OLLA PARA PLATOS DIFERENTES",
+      "7 NIVELES DE AJUSTE",
+      "TEMPORIZADOR INTELIGENTE",
+      "6 MODOS DE COCCIÓN",
+      "8 MEDIDAS DE SEGURIDAD"
+    ],
+    "XIAOMI",
+    "cocina"
+  ],
+  [
     "XIAOMI ELECTRIC SHAVER S200",
     31.0,
     false,
@@ -1150,23 +2600,6 @@ let productos=[
     ],
     "XIAOMI",
     "cuidado-personal"
-  ],
-  [
-    "XIAOMI ELECTRIC PRESSURE COOKER 4.8L",
-    98.0,
-    false,
-    "img/138-xiaomielectricpressurecooker48l.jpeg",
-    null,
-    [
-      "GRAN CAPACIDAD DE 4.8L",
-      "DOS OLLA PARA PLATOS DIFERENTES",
-      "7 NIVELES DE AJUSTE",
-      "TEMPORIZADOR INTELIGENTE",
-      "6 MODOS DE COCCIÓN",
-      "8 MEDIDAS DE SEGURIDAD"
-    ],
-    "XIAOMI",
-    "cocina"
   ],
   [
     "XIAOMI ELECTRIC SHAVER S700",
@@ -1199,21 +2632,21 @@ let productos=[
     "lapices"
   ],
   [
-    "XIAOMI GROOMING KIT PRO",
-    40.0,
+    "XIAOMI FOCUS STYLUS PRO",
+    75.0,
     false,
-    "img/144-xiaomigroomingkitpro.jpeg",
+    "img/143-xiaomifocusstyluspro.png",
     null,
     [
-      "Cinco cabezales intercambiables: para recortar, perfilar, afeitar la barba y eliminar vello corporal, nasal y de las orejas.",
-      "Cuchillas autoafilables de acero inoxidable: con 6.000 movimientos por minuto.",
-      "Longitud ajustable hasta 20 mm: con precisión de recorte de 0,5 mm.",
-      "Resistencia al agua IPX7: cuerpo y cabezal desmontable lavables.",
-      "Hasta 90 minutos de autonomía: permite uso con cable o inalámbrico.",
-      "Carga USB-C: carga completa en aproximadamente 2 horas."
+      "16.384 niveles de sensibilidad a la presión: precisión para trazos suaves y cambios de grosor.",
+      "Latencia ultrabaja: respuesta a nivel de milisegundos para escribir y dibujar con fluidez.",
+      "Control por gestos sin botones: pellizco, doble toque, deslizamiento y rotación para manejar herramientas en Mi Canvas.",
+      "Respuesta háptica: vibraciones que confirman los gestos realizados.",
+      "Vista previa sin tocar la pantalla: muestra posición, color, grosor y forma del pincel en Mi Canvas.",
+      "Compatibilidad con Xiaomi Pad 6S Pro 12.4 y las series Xiaomi Pad 7 y Pad 8."
     ],
     "XIAOMI",
-    "cuidado-personal"
+    "lapices"
   ],
   [
     "XIAOMI HAIR CLIPPER 2",
@@ -1334,21 +2767,20 @@ let productos=[
     "accesorios"
   ],
   [
-    "XIAOMI MAGNETIC POWER BANK 6000 MAH",
-    40.0,
+    "XIAOMI LCD WRITING TABLET 13.5 EDITION COLOR",
+    24.0,
     false,
-    "img/159-xiaomimagneticpowerbank6000mah.jpeg",
+    "img/155-xiaomilcdwritingtablet135editioncolor.png",
     null,
     [
-      "Capacidad de 6.000 mAh: permite cargar un iPhone 15 aproximadamente 1,1 veces de forma inalámbrica, según Xiaomi.",
-      "Carga inalámbrica de hasta 15 W con certificación Qi 2.0: para iPhone compatibles.*",
-      "Carga por cable de hasta 18 W: mediante USB-C.",
-      "Recarga de la batería a 20 W: carga completa en aproximadamente 2,8 horas con un adaptador adecuado.",
-      "Soporte plegable integrado: permite colocar el teléfono en horizontal o vertical.",
-      "Fijación magnética superior a 10 N: diseñada para iPhone 12 y posteriores."
+      "Pantalla LCD de 13,5 pulgadas con trazos multicolor: utiliza zonas de distintos tonos para escribir y dibujar.",
+      "Escritura sensible a la presión: permite crear trazos más gruesos al presionar con mayor fuerza.",
+      "Borrado con un toque y bloqueo de seguridad: limpia la pantalla mediante el botón o la tapa del lápiz sobre el sensor Hall; el bloqueo evita borrados accidentales.",
+      "Lápiz con sujeción magnética: se guarda en el lateral para transportarlo junto con la tableta.",
+      "Hasta 365 días de autonomía: con una pila tipo botón y un uso de 100 borrados diarios, según las pruebas del fabricante."
     ],
     "XIAOMI",
-    "powerbanks"
+    "hogar"
   ],
   [
     "XIAOMI MAGNETIC READING LIGHT BAR",
@@ -1517,22 +2949,6 @@ let productos=[
     "cuidado-personal"
   ],
   [
-    "XIAOMI LCD WRITING TABLET 13.5 EDITION COLOR",
-    24.0,
-    false,
-    "img/155-xiaomilcdwritingtablet135editioncolor.png",
-    null,
-    [
-      "Pantalla LCD de 13,5 pulgadas con trazos multicolor: utiliza zonas de distintos tonos para escribir y dibujar.",
-      "Escritura sensible a la presión: permite crear trazos más gruesos al presionar con mayor fuerza.",
-      "Borrado con un toque y bloqueo de seguridad: limpia la pantalla mediante el botón o la tapa del lápiz sobre el sensor Hall; el bloqueo evita borrados accidentales.",
-      "Lápiz con sujeción magnética: se guarda en el lateral para transportarlo junto con la tableta.",
-      "Hasta 365 días de autonomía: con una pila tipo botón y un uso de 100 borrados diarios, según las pruebas del fabricante."
-    ],
-    "XIAOMI",
-    "hogar"
-  ],
-  [
     "XIAOMI MI POLARIZED SUNGLASSES MSG05GL",
     23.0,
     false,
@@ -1666,22 +3082,6 @@ let productos=[
     "aspiradoras"
   ],
   [
-    "XIAOMI MI WIFI RANGE EXTENDER AC1200",
-    28.0,
-    false,
-    "img/193-xiaomimiwifirangeextenderac1200.png",
-    null,
-    [
-      "Wi-Fi Dual Band AC1200: conexión de 2,4 GHz (300 Mbps) y 5 GHz (867 Mbps), con velocidad inalámbrica combinada de hasta 1167 Mbps.",
-      "Amplificador de cobertura Wi-Fi: extiende la señal inalámbrica existente para mejorar la conexión en habitaciones alejadas y zonas de baja cobertura.",
-      "Doble función Repetidor y Punto de Acceso (AP): permite ampliar una red inalámbrica existente o crear una red Wi-Fi mediante conexión por cable Ethernet.",
-      "Puerto Ethernet de 10/100 Mbps: permite conectar dispositivos por cable, como televisores, computadoras y consolas de videojuegos.",
-      "Tecnología SmartLink y configuración inteligente: cambio automático a una banda de respaldo, indicador de intensidad de señal y administración mediante la aplicación Xiaomi Home."
-    ],
-    "XIAOMI",
-    "routers"
-  ],
-  [
     "XIAOMI MI WI FI RANGE EXTENDER PRO",
     17.5,
     false,
@@ -1694,6 +3094,22 @@ let productos=[
       "Ampliación inalámbrica de cobertura: se conecta al router para llevar la señal a zonas con poca recepción.",
       "Configuración mediante Mi Home: permite comprobar la señal para elegir la ubicación adecuada.",
       "Conserva la configuración al cambiarlo de enchufe: después del emparejamiento inicial."
+    ],
+    "XIAOMI",
+    "routers"
+  ],
+  [
+    "XIAOMI MI WIFI RANGE EXTENDER AC1200",
+    28.0,
+    false,
+    "img/193-xiaomimiwifirangeextenderac1200.png",
+    null,
+    [
+      "Wi-Fi Dual Band AC1200: conexión de 2,4 GHz (300 Mbps) y 5 GHz (867 Mbps), con velocidad inalámbrica combinada de hasta 1167 Mbps.",
+      "Amplificador de cobertura Wi-Fi: extiende la señal inalámbrica existente para mejorar la conexión en habitaciones alejadas y zonas de baja cobertura.",
+      "Doble función Repetidor y Punto de Acceso (AP): permite ampliar una red inalámbrica existente o crear una red Wi-Fi mediante conexión por cable Ethernet.",
+      "Puerto Ethernet de 10/100 Mbps: permite conectar dispositivos por cable, como televisores, computadoras y consolas de videojuegos.",
+      "Tecnología SmartLink y configuración inteligente: cambio automático a una banda de respaldo, indicador de intensidad de señal y administración mediante la aplicación Xiaomi Home."
     ],
     "XIAOMI",
     "routers"
@@ -1749,21 +3165,21 @@ let productos=[
     "camaras"
   ],
   [
-    "Xiaomi Multifunctional Hot Pot Cooker 6L",
-    72.0,
+    "XIAOMI MULTIFUNCION CAMPING LANTERN",
+    48.0,
     false,
-    "img/199-xiaomimultifunctionalhotpotcooker6l.jpeg",
+    "img/197-xiaomimultifuncioncampinglantern.jpeg",
     null,
     [
-      "Capacidad de 6 litros: adecuada para comidas de 4 a 6 personas.",
-      "Potencia de 2.000 W: hierve 2 litros de agua en menos de 8 minutos, según pruebas del fabricante.",
-      "Seis niveles de calor con control NTC: desde mantener caliente hasta hervir rápidamente.",
-      "Tiempo de cocción personalizable: con aviso sonoro y memoria de ajustes.",
-      "Olla desmontable con revestimiento antiadherente: facilita servir y limpiar.",
-      "Protección contra calentamiento en seco: incorpora también asas aislantes y patas antideslizantes."
+      "Diseño de doble luz separable: lámpara principal y luz secundaria extraíble que funciona como linterna.",
+      "Iluminación ambiental multicolor: permite crear distintos ambientes.",
+      "Brillo y temperatura de color ajustables: adapta la iluminación a cada actividad.",
+      "Control Bluetooth mediante Mi Home/Xiaomi Home: personaliza colores y escenarios desde el teléfono.",
+      "Batería de 4.800 mAh con carga USB-C.",
+      "Resistencia IP54: protección contra polvo y salpicaduras."
     ],
     "XIAOMI",
-    "cocina"
+    "hogar"
   ],
   [
     "XIAOMI MULTIFUNCION FLASH LIGHT",
@@ -1783,24 +3199,24 @@ let productos=[
     "hogar"
   ],
   [
-    "XIAOMI MULTIFUNCION CAMPING LANTERN",
-    48.0,
+    "Xiaomi Multifunctional Hot Pot Cooker 6L",
+    60.0,
     false,
-    "img/197-xiaomimultifuncioncampinglantern.jpeg",
-    null,
+    "img/199-xiaomimultifunctionalhotpotcooker6l.jpeg",
+    72.0,
     [
-      "Diseño de doble luz separable: lámpara principal y luz secundaria extraíble que funciona como linterna.",
-      "Iluminación ambiental multicolor: permite crear distintos ambientes.",
-      "Brillo y temperatura de color ajustables: adapta la iluminación a cada actividad.",
-      "Control Bluetooth mediante Mi Home/Xiaomi Home: personaliza colores y escenarios desde el teléfono.",
-      "Batería de 4.800 mAh con carga USB-C.",
-      "Resistencia IP54: protección contra polvo y salpicaduras."
+      "Capacidad de 6 litros: adecuada para comidas de 4 a 6 personas.",
+      "Potencia de 2.000 W: hierve 2 litros de agua en menos de 8 minutos, según pruebas del fabricante.",
+      "Seis niveles de calor con control NTC: desde mantener caliente hasta hervir rápidamente.",
+      "Tiempo de cocción personalizable: con aviso sonoro y memoria de ajustes.",
+      "Olla desmontable con revestimiento antiadherente: facilita servir y limpiar.",
+      "Protección contra calentamiento en seco: incorpora también asas aislantes y patas antideslizantes."
     ],
     "XIAOMI",
-    "hogar"
+    "cocina"
   ],
   [
-    "XIAOMI NGHT LIGHT 3 GL",
+    "XIAOMI NIGHT LIGHT 3 GL",
     21.0,
     false,
     "img/201-xiaominghtlight3gl.jpeg",
@@ -1851,39 +3267,6 @@ let productos=[
     "cuidado-personal"
   ],
   [
-    "XIAOMI OUTDOOR CAMERA CW100 DUAL",
-    40.0,
-    false,
-    "img/206-xiaomioutdoorcameracw100dual.png",
-    null,
-    [
-      "Doble lente con vista panorámica de casi 180°: permite vigilar dos áreas simultáneamente desde Xiaomi Home.",
-      "Imagen 2K de 3 MP con WDR: captura detalles nítidos y equilibra escenas con diferentes niveles de iluminación.",
-      "Visión nocturna inteligente a color: alcance nocturno de hasta 10 metros; activa la grabación a color al detectar movimiento en completa oscuridad.",
-      "Detección con inteligencia artificial: identifica personas y vehículos, permite establecer una cerca virtual y envía notificaciones.",
-      "Resistencia IP66 al agua y al polvo: diseñada para exteriores, con funcionamiento entre −30 °C y 60 °C."
-    ],
-    "XIAOMI",
-    "camaras"
-  ],
-  [
-    "XIAOMI OUTDOOR CAMERA CW500 DUAL",
-    70.0,
-    false,
-    "img/209-xiaomioutdoorcameracw500dual.jpeg",
-    null,
-    [
-      "Dos cámaras de 4 MP con resolución 2,5K: una fija y otra móvil para vigilar dos áreas simultáneamente.",
-      "Detección de personas y vehículos mediante IA: con seguimiento humano coordinado y alertas en Xiaomi Home.",
-      "Visión nocturna a color: cada cámara incorpora dos luces blancas y dos infrarrojas.",
-      "Resistencia al polvo y al agua IP66: diseñada para exteriores.",
-      "Wi-Fi 6 de doble banda, 2,4 y 5 GHz: también admite conexión por cable Ethernet.",
-      "Alarmas sonoras y luminosas: avisos con sonido y luces intermitentes ante detecciones."
-    ],
-    "XIAOMI",
-    "camaras"
-  ],
-  [
     "XIAOMI PORTABLE ELECTRIC AIR COMPRESSOR 2",
     42.0,
     false,
@@ -1902,7 +3285,7 @@ let productos=[
   ],
   [
     "XIAOMI REDMI BUDS 6 ACTIVE GLOBAL",
-    20.5,
+    21.0,
     false,
     "img/216-xiaomiredmibuds6activeglobal.jpeg",
     null,
@@ -1918,25 +3301,25 @@ let productos=[
     "audifonos"
   ],
   [
-    "XIAOMI REDMI BUDS 8 LITE",
-    27.0,
+    "XIAOMI REDMI BUDS 6 PLAY",
+    17.0,
     false,
-    "img/220-xiaomiredmibuds8lite.jpeg",
+    "img/294-xiaomiredmibuds6play.png",
     null,
     [
-      "Cancelación activa de ruido híbrida de hasta 42 dB: reduce el ruido exterior.",
-      "Drivers dinámicos de 12,4 mm con recubrimiento de titanio: sonido claro y detallado.",
-      "Doble micrófono con reducción de ruido por IA: mejora la claridad de las llamadas.",
-      "Hasta 36 horas de autonomía con el estuche: hasta 8 horas por carga con ANC desactivado.",
-      "Carga rápida: 10 minutos ofrecen hasta 2 horas de reproducción.*",
-      "Conexión simultánea a dos dispositivos: cambia automáticamente al equipo que recibe una llamada."
+      "Drivers dinámicos de 10 mm: sonido potente ajustado por Xiaomi Acoustic Lab.",
+      "Reducción de ruido con IA para llamadas: ayuda a distinguir la voz del ruido ambiental.",
+      "Hasta 36 horas de autonomía con el estuche: hasta 7,5 horas por carga.",
+      "Carga rápida: 10 minutos ofrecen hasta 3 horas de música.*",
+      "Bluetooth 5.4 y Google Fast Pair: conexión rápida con dispositivos Android compatibles.",
+      "Peso de solo 3,6 g por auricular: diseño ligero para mayor comodidad."
     ],
     "XIAOMI",
     "audifonos"
   ],
   [
     "XIAOMI REDMI BUDS 8 ACTIVE",
-    24.0,
+    26.0,
     false,
     "img/219-xiaomiredmibuds8active.jpeg",
     null,
@@ -1952,8 +3335,25 @@ let productos=[
     "audifonos"
   ],
   [
+    "XIAOMI REDMI BUDS 8 LITE",
+    28.0,
+    false,
+    "img/220-xiaomiredmibuds8lite.jpeg",
+    null,
+    [
+      "Cancelación activa de ruido híbrida de hasta 42 dB: reduce el ruido exterior.",
+      "Drivers dinámicos de 12,4 mm con recubrimiento de titanio: sonido claro y detallado.",
+      "Doble micrófono con reducción de ruido por IA: mejora la claridad de las llamadas.",
+      "Hasta 36 horas de autonomía con el estuche: hasta 8 horas por carga con ANC desactivado.",
+      "Carga rápida: 10 minutos ofrecen hasta 2 horas de reproducción.*",
+      "Conexión simultánea a dos dispositivos: cambia automáticamente al equipo que recibe una llamada."
+    ],
+    "XIAOMI",
+    "audifonos"
+  ],
+  [
     "XIAOMI REDMI BUDS 8 PRO",
-    58.0,
+    60.0,
     false,
     "img/221-xiaomiredmibuds8pro.png",
     null,
@@ -2054,22 +3454,6 @@ let productos=[
     "relojes"
   ],
   [
-    "XIAOMI ROBOT VACUUM S40C",
-    169.0,
-    false,
-    "img/235-xiaomirobotvacuums40c.png",
-    null,
-    [
-      "Potente succión de 5000 Pa: elimina polvo, residuos y pelos de mascotas, con cuatro niveles de potencia adaptables a diferentes superficies.",
-      "Navegación láser LDS de 360°: mapea las habitaciones con precisión, planifica rutas inteligentes y reduce las zonas sin limpiar.",
-      "Sistema de aspirado y trapeado 2 en 1: incorpora un depósito de polvo de 520 ml y un tanque de agua de 260 ml con tres niveles de flujo ajustables.",
-      "Limpieza inteligente personalizada: permite seleccionar habitaciones, programar limpiezas, establecer paredes virtuales y configurar zonas restringidas.",
-      "Control inteligente mediante Xiaomi Home: administra la limpieza desde el celular, con sensores anticaídas, retorno automático a la base de carga y compatibilidad con Alexa y Google Assistant."
-    ],
-    "XIAOMI",
-    "aspiradoras"
-  ],
-  [
     "XIAOMI ROBOT VACUUM H40",
     263.0,
     false,
@@ -2087,10 +3471,10 @@ let productos=[
   ],
   [
     "XIAOMI ROBOT VACUUM H50",
-    321.0,
+    290.0,
     false,
     "img/233-xiaomirobotvacuumh50.jpeg",
-    null,
+    321.0,
     [
       "Potente succión de 10.000 Pa: elimina polvo, residuos y pelos de mascotas, con sistema doble antienredos en los cepillos principal y lateral.",
       "Estación inteligente de autolimpieza: vaciado automático de polvo, lavado de mopas y secado automático al aire, con bolsa de polvo de hasta 75 días de capacidad.",
@@ -2118,6 +3502,22 @@ let productos=[
     "aspiradoras"
   ],
   [
+    "XIAOMI ROBOT VACUUM S40C",
+    169.0,
+    false,
+    "img/235-xiaomirobotvacuums40c.png",
+    null,
+    [
+      "Potente succión de 5000 Pa: elimina polvo, residuos y pelos de mascotas, con cuatro niveles de potencia adaptables a diferentes superficies.",
+      "Navegación láser LDS de 360°: mapea las habitaciones con precisión, planifica rutas inteligentes y reduce las zonas sin limpiar.",
+      "Sistema de aspirado y trapeado 2 en 1: incorpora un depósito de polvo de 520 ml y un tanque de agua de 260 ml con tres niveles de flujo ajustables.",
+      "Limpieza inteligente personalizada: permite seleccionar habitaciones, programar limpiezas, establecer paredes virtuales y configurar zonas restringidas.",
+      "Control inteligente mediante Xiaomi Home: administra la limpieza desde el celular, con sensores anticaídas, retorno automático a la base de carga y compatibilidad con Alexa y Google Assistant."
+    ],
+    "XIAOMI",
+    "aspiradoras"
+  ],
+  [
     "XIAOMI ROUTER AX1500",
     39.0,
     false,
@@ -2135,17 +3535,34 @@ let productos=[
     "routers"
   ],
   [
-    "XIAOMI SMART BAND 9 ACTIVE",
-    26.5,
+    "Xiaomi Router Wi-Fi 7 Be3600 2.5G EU RN06",
+    62.0,
     false,
-    "img/244-xiaomismartband9active.png",
+    "img/238-xiaomirouterwifi7be360025geurn06.png",
     null,
     [
-      "Pantalla TFT de 1,47\" y 60 Hz: visualización amplia y fluida.",
-      "Hasta 18 días de batería: gran autonomía con una sola carga.",
-      "50 modos deportivos: registra diferentes actividades físicas.",
-      "Monitoreo de salud: frecuencia cardíaca, oxígeno en sangre (SpO₂) y sueño.",
-      "Resistencia al agua 5 ATM: adecuada para natación en piscina y actividades acuáticas poco profundas."
+      "Wi-Fi 7 Dual Band BE3600: conexión de 2,4 GHz (688 Mbps) y 5 GHz (2882 Mbps), con velocidad inalámbrica combinada de hasta 3570 Mbps.",
+      "Puerto Ethernet de 2,5 Gbps: incluye 1 puerto WAN/LAN de 2500 Mbps y 3 puertos Gigabit de 1000 Mbps para conexiones por cable de alta velocidad.",
+      "Tecnología MLO de doble banda: permite utilizar simultáneamente las bandas de 2,4 GHz y 5 GHz con dispositivos compatibles, mejorando la estabilidad y reduciendo la latencia.",
+      "Procesador Qualcomm de cuatro núcleos: CPU de 1,1 GHz, 256 MB de RAM y capacidad probada de hasta 128 dispositivos conectados.",
+      "Tecnología Xiaomi Mesh: permite ampliar la cobertura mediante routers compatibles, creando una red Wi-Fi unificada, con administración desde Xiaomi Home."
+    ],
+    "XIAOMI",
+    "routers"
+  ],
+  [
+    "XIAOMI SMART BAND 11",
+    57.0,
+    false,
+    "img/295-xiaomismartband11.png",
+    null,
+    [
+      "Pantalla AMOLED de 1,72” con 60 Hz de actualización y brillo máximo de 2.000 nits.",
+      "Batería de hasta 21 días de autonomía en uso ligero y carga magnética.",
+      "Más de 150 modos deportivos para registrar entrenamientos y actividades físicas.",
+      "Monitoreo avanzado de salud con seguimiento cardíaco, oxígeno en sangre, estrés y sueño.",
+      "Resistencia al agua 5 ATM ideal para natación y actividades acuáticas poco profundas.",
+      "Conectividad Bluetooth 5.4 compatible con smartphones Android y iPhone mediante Mi Fitness."
     ],
     "XIAOMI",
     "relojes"
@@ -2163,6 +3580,22 @@ let productos=[
       "Seguimiento del bienestar: monitoreo de frecuencia cardíaca, oxígeno en sangre (SpO₂), sueño y estrés.",
       "Resistencia al agua de 5 ATM: apta para actividades acuáticas poco profundas, según las condiciones del fabricante.",
       "Más de 100 esferas disponibles: personalización mediante la aplicación Mi Fitness."
+    ],
+    "XIAOMI",
+    "relojes"
+  ],
+  [
+    "XIAOMI SMART BAND 9 ACTIVE",
+    26.5,
+    false,
+    "img/244-xiaomismartband9active.png",
+    null,
+    [
+      "Pantalla TFT de 1,47\" y 60 Hz: visualización amplia y fluida.",
+      "Hasta 18 días de batería: gran autonomía con una sola carga.",
+      "50 modos deportivos: registra diferentes actividades físicas.",
+      "Monitoreo de salud: frecuencia cardíaca, oxígeno en sangre (SpO₂) y sueño.",
+      "Resistencia al agua 5 ATM: adecuada para natación en piscina y actividades acuáticas poco profundas."
     ],
     "XIAOMI",
     "relojes"
@@ -2270,6 +3703,22 @@ let productos=[
     "camaras"
   ],
   [
+    "XIAOMI SMART ELECTRIC KETTLE 2 PRO",
+    38.0,
+    false,
+    "img/258-xiaomismartelectrickettle2pro.png",
+    46.0,
+    [
+      "Capacidad de 1,7 litros: permite preparar agua caliente para varias personas.",
+      "Potencia de 1.800 W: calentamiento rápido para reducir el tiempo de espera.",
+      "Temperatura ajustable en incrementos de 1 °C: control mediante mando giratorio y visualización en pantalla LED.",
+      "Conservación del calor hasta 24 horas: configurable desde Xiaomi Home; el ajuste predeterminado es de 12 horas.",
+      "Interior de acero inoxidable 304 y cuerpo de doble capa: material apto para contacto con alimentos y aislamiento térmico para reducir el calor exterior."
+    ],
+    "XIAOMI",
+    "cocina"
+  ],
+  [
     "XIAOMI SMART JUMP ROPE",
     22.0,
     false,
@@ -2284,22 +3733,6 @@ let productos=[
     ],
     "XIAOMI",
     "cuidado-personal"
-  ],
-  [
-    "XIAOMI SMART ELECTRIC KETTLE 2 PRO",
-    46.0,
-    false,
-    "img/258-xiaomismartelectrickettle2pro.png",
-    null,
-    [
-      "Capacidad de 1,7 litros: permite preparar agua caliente para varias personas.",
-      "Potencia de 1.800 W: calentamiento rápido para reducir el tiempo de espera.",
-      "Temperatura ajustable en incrementos de 1 °C: control mediante mando giratorio y visualización en pantalla LED.",
-      "Conservación del calor hasta 24 horas: configurable desde Xiaomi Home; el ajuste predeterminado es de 12 horas.",
-      "Interior de acero inoxidable 304 y cuerpo de doble capa: material apto para contacto con alimentos y aislamiento térmico para reducir el calor exterior."
-    ],
-    "XIAOMI",
-    "cocina"
   ],
   [
     "XIAOMI SMART LASER MEASURE",
@@ -2353,10 +3786,10 @@ let productos=[
   ],
   [
     "XIAOMI SMART SCALE S200",
-    21.0,
+    16.0,
     false,
     "img/264-xiaomismartscales200.png",
-    null,
+    21.0,
     [
       "Medición en incrementos de 50 g: sensor de acero al manganeso para registrar pequeños cambios de peso.",
       "Rango de 0,1 a 150 kg: permite pesar personas y objetos, con cambio automático entre ambos modos.",
@@ -2370,10 +3803,10 @@ let productos=[
   ],
   [
     "XIAOMI SOUND OUTDOOR",
-    41.0,
+    35.0,
     false,
     "img/266-xiaomisoundoutdoor.png",
-    null,
+    41.0,
     [
       "Potencia de 30 W: incorpora un subwoofer y dos radiadores pasivos para reforzar los graves.",
       "Hasta 12 horas de reproducción: autonomía medida con conexión Bluetooth y volumen al 50 %.",
@@ -2421,10 +3854,10 @@ let productos=[
   ],
   [
     "XIAOMI STRAW MUG",
-    26.0,
+    21.0,
     false,
     "img/271-xiaomistrawmug.jpeg",
-    null,
+    26.0,
     [
       "Capacidad de 1 litro: amplio volumen para tus bebidas.",
       "Interior de acero inoxidable 316L: duradero y resistente a la corrosión.",
@@ -2455,10 +3888,10 @@ let productos=[
   ],
   [
     "XIAOMI TOASTER",
-    30.0,
+    24.0,
     false,
     "img/273-xiaomitoaster.jpeg",
-    null,
+    30.0,
     [
       "Dos ranuras de 35 mm de ancho: admiten rebanadas gruesas y panes de distintos tamaños.",
       "Seis niveles de tostado: permite ajustar el acabado según tus preferencias.",
@@ -2555,10 +3988,10 @@ let productos=[
   ],
   [
     "XIAOMI UNIBLADE TRIMMER",
-    31.0,
+    25.0,
     false,
     "img/280-xiaomiunibladetrimmer.jpeg",
-    null,
+    31.0,
     [
       "Cuchilla de tres vías: los bordes recortan el pelo largo y la lámina central elimina el vello corto restante.",
       "Lámina protectora de cobertura completa: forma una barrera entre las cuchillas y la piel.",
@@ -2569,6 +4002,72 @@ let productos=[
     ],
     "XIAOMI",
     "cuidado-personal"
+  ],
+  [
+    "XIAOMI WATCH S4 41MM MINT GREEN",
+    135.0,
+    false,
+    "img/282-xiaomiwatchs441mmmintgreen.jpeg",
+    null,
+    [
+      "Pantalla AMOLED de 1,32″: resolución de 466 × 466 píxeles, fluidez de 60 Hz y brillo de hasta 1500 nits.",
+      "Diseño compacto de acero inoxidable: grosor de 9,5 mm y peso de aproximadamente 32 g sin correa, disponible en Verde Menta.",
+      "Batería de hasta 8 días: autonomía con uso ligero; hasta 4 días con uso normal.",
+      "Más de 150 modos deportivos y resistencia 5 ATM: incluye seguimiento de la frecuencia cardíaca durante la natación.",
+      "Monitoreo integral de bienestar: registra frecuencia cardíaca, oxígeno en sangre, estrés, sueño y temperatura de la piel."
+    ],
+    "XIAOMI",
+    "relojes"
+  ],
+  [
+    "XIAOMI WATCH S4 41MM SUNSET GOLD",
+    165.0,
+    false,
+    "img/286-xiaomiwatchs4sunsetgold.jpeg",
+    null,
+    [
+      "Acabado Sunset Gold: correa milanesa y corona con un diamante cultivado en laboratorio.",
+      "Pantalla AMOLED de 1,32 pulgadas: resolución de 466 × 466 píxeles, 60 Hz y brillo HBM de hasta 1500 nits.",
+      "Diseño compacto de acero inoxidable: grosor de 9,5 mm y peso aproximado de 32 g sin correa.",
+      "Autonomía de hasta 8 días con uso ligero: hasta 4 días con uso normal o 3 días con uso intensivo.",
+      "Más de 150 modos deportivos: posicionamiento independiente GNSS de doble frecuencia L1 + L5 y cinco sistemas de satélites.",
+      "Seguimiento del bienestar: frecuencia cardíaca, SpO₂, sueño, estrés y temperatura de la piel."
+    ],
+    "XIAOMI",
+    "relojes"
+  ],
+  [
+    "XIAOMI WATCH S4 41MM WHITE",
+    135.0,
+    false,
+    "img/283-xiaomiwatchs441mmwhite.png",
+    null,
+    [
+      "Pantalla AMOLED de 1,32″: resolución de 466 × 466 píxeles, fluidez de 60 Hz y brillo de hasta 1500 nits.",
+      "Diseño compacto de acero inoxidable: grosor de 9,5 mm y peso de aproximadamente 32 g sin correa, disponible en Verde Menta.",
+      "Batería de hasta 8 días: autonomía con uso ligero; hasta 4 días con uso normal.",
+      "Más de 150 modos deportivos y resistencia 5 ATM: incluye seguimiento de la frecuencia cardíaca durante la natación.",
+      "Monitoreo integral de bienestar: registra frecuencia cardíaca, oxígeno en sangre, estrés, sueño y temperatura de la piel."
+    ],
+    "XIAOMI",
+    "relojes"
+  ],
+  [
+    "XIAOMI WATCH S4 44MM SILVER",
+    115.0,
+    false,
+    "img/xiaomiwatchs444mmsilver-292e378931.jpeg",
+    null,
+    [
+      "Pantalla AMOLED de 1,43 pulgadas: resolución de 466 × 466 píxeles, 60 Hz y brillo HBM de hasta 1500 nits.",
+      "Hasta 15 días de autonomía: batería de 486 mAh; cinco minutos de carga ofrecen hasta dos días de uso según las pruebas de Xiaomi.",
+      "Diseño personalizable: marco de aluminio, bisel intercambiable y corona giratoria; versiones Black y Silver con correa de fluorocaucho.",
+      "Más de 150 modos deportivos: GNSS independiente de doble frecuencia L1 + L5 con cinco sistemas de satélites.",
+      "Seguimiento del bienestar: frecuencia cardíaca, oxígeno en sangre, estrés y sueño.",
+      "Llamadas Bluetooth y resistencia 5 ATM: micrófonos y altavoz integrados; apto para natación en aguas poco profundas."
+    ],
+    "XIAOMI",
+    "relojes"
   ],
   [
     "XIAOMI WATER IONIC HAIR DRYER H500",
@@ -2649,1535 +4148,6 @@ let productos=[
     ],
     "XIAOMI",
     "computacion"
-  ],
-  [
-    "REALME BUDS 2 NEO",
-    12.0,
-    false,
-    "img/066-realmebuds2neo.png",
-    null,
-    [
-      "Drivers dinámicos de 11,2 mm: ofrecen graves profundos y sonido de rango completo.",
-      "Micrófono HD integrado: diseñado para mantener conversaciones claras.",
-      "Control mediante un botón: permite reproducir o pausar música y contestar o finalizar llamadas.",
-      "Cable antienredos: facilita guardarlos y utilizarlos diariamente.",
-      "Conector de audio en ángulo de 90°: diseño acodado para la conexión al dispositivo."
-    ],
-    "REALME",
-    "audifonos"
-  ],
-  [
-    "REALME BUDS AIR 7 PRO",
-    66.0,
-    false,
-    "img/067-realmebudsair7pro.jpeg",
-    null,
-    [
-      "Cancelación activa de ruido de hasta 53 dB: reduce el ruido ambiental para disfrutar mejor de la música.",
-      "Doble driver de 11 mm + 6 mm: combina un altavoz para graves con un tweeter microplanar para agudos detallados.",
-      "Audio Hi-Res y códec LHDC: reproducción de alta resolución con dispositivos compatibles.",
-      "Latencia ultrabaja de 45 ms: ayuda a reducir el desfase entre sonido e imagen.",
-      "Resistencia IP55: protección frente al polvo y chorros de agua; no aptos para inmersión."
-    ],
-    "REALME",
-    "audifonos"
-  ],
-  [
-    "REALME BUDS AIR 8",
-    49.0,
-    false,
-    "img/068-realmebudsair8.jpeg",
-    null,
-    [
-      "Sonido de alta resolución con doble driver: incorpora un woofer de 11 mm y tweeter de 6 mm, certificación Hi-Res Audio Wireless y códec LHDC 5.0 para una reproducción detallada.",
-      "Cancelación activa de ruido inteligente de hasta 55 dB,",
-      "Sistema de 6 micrófonos con inteligencia artificial: mejora la claridad de las llamadas mediante reducción de ruido, con conectividad Bluetooth 5.4.",
-      "Hasta 58 horas de batería: autonomía total con estuche de carga y ANC desactivada, hasta 14 horas por carga de los audífonos y carga rápida de hasta 11 horas de reproducción con 10 minutos de carga.",
-      "Modo gaming de baja latencia y resistencia IP55: latencia de hasta 45 ms,"
-    ],
-    "REALME",
-    "audifonos"
-  ],
-  [
-    "REALME BUDS CLIP",
-    49.0,
-    false,
-    "img/070-realmebudsclip.jpeg",
-    null,
-    [
-      "Diseño Titanium-Fit: ajuste tipo clip que se adapta a la oreja.",
-      "Peso ultraligero de 5,3 g: comodidad para el uso diario.",
-      "Algoritmo NextBass: mejora los graves para un sonido más potente.",
-      "Altavoz de gran amplitud con doble imán: diseñado para ofrecer un sonido contundente.",
-      "Traductor con inteligencia artificial: función de traducción para facilitar la comunicación entre idiomas."
-    ],
-    "REALME",
-    "audifonos"
-  ],
-  [
-    "REALME BUDS T200",
-    25.0,
-    false,
-    "img/071-realmebudst200.png",
-    null,
-    [
-      "Drivers dinámicos de 12,4 mm: diseñados para ofrecer graves potentes.",
-      "Cancelación activa de ruido de hasta 32 dB: reduce el ruido ambiental durante la reproducción.",
-      "Audio Hi-Res Wireless y códec LDAC: sonido de alta resolución con dispositivos compatibles.",
-      "Cuatro micrófonos con reducción de ruido en llamadas: ayudan a captar la voz con mayor claridad.",
-      "Conexión dual 2.0: permite conectar dos dispositivos y alternar entre ellos."
-    ],
-    "REALME",
-    "audifonos"
-  ],
-  [
-    "REALME BUDS T200X",
-    23.0,
-    false,
-    "img/073-realmebudst200x.png",
-    null,
-    [
-      "Cancelación activa de ruido de hasta 25 dB: ayuda a reducir las distracciones del entorno.",
-      "Drivers dinámicos de 12,4 mm: diseñados para ofrecer graves potentes.",
-      "Bluetooth 5.4 y conexión dual: permite conectar dos dispositivos y alternar entre ellos.",
-      "Latencia ultrabaja de 45 ms: reduce el desfase entre sonido e imagen.",
-      "Resistencia IP55: protección frente al polvo y al agua para el uso cotidiano, sin sumergirlos."
-    ],
-    "REALME",
-    "audifonos"
-  ],
-  [
-    "REALME BUDS T310",
-    30.0,
-    false,
-    "img/074-realmebudst310.jpeg",
-    null,
-    [
-      "Cancelación activa de ruido híbrida de hasta 46 dB: reduce el ruido exterior.",
-      "Drivers dinámicos de 12,4 mm: sonido con graves potentes.",
-      "Hasta 40 horas de reproducción total con el estuche de carga.",
-      "Carga rápida: hasta 5 horas de reproducción con 10 minutos de carga.",
-      "Resistencia IP55: protección contra polvo y agua."
-    ],
-    "REALME",
-    "audifonos"
-  ],
-  [
-    "REALME BUDS T500 PRO",
-    36.0,
-    false,
-    "img/075-realmebudst500pro.jpeg",
-    null,
-    [
-      "Sonido Hi-Res con driver dinámico de 12,4 mm: diafragma con recubrimiento de titanio, certificación Hi-Res Audio Wireless y códec LHDC 5.0 para disfrutar de graves potentes y sonido detallado.",
-      "Cancelación activa de ruido ANC de hasta 50 dB",
-      "Seis micrófonos con inteligencia artificial: sistema de reducción de ruido para llamadas más claras, acompañado de conectividad Bluetooth 6.1.",
-      "Hasta 56 horas de batería: autonomía total con el estuche de carga y hasta 13,5 horas de reproducción continua en los audífonos con ANC desactivada.",
-      "Modo gaming de 45 ms y resistencia IP55"
-    ],
-    "REALME",
-    "audifonos"
-  ],
-  [
-    "REALME TECH LIFE BUDS",
-    17.0,
-    false,
-    "img/077-realmetechlifebuds.jpeg",
-    null,
-    [
-      "Sonido potente con driver dinámico de 12,4 mm: ofrece graves profundos y una reproducción equilibrada para música, videos y entretenimiento.",
-      "Reducción de ruido ambiental con inteligencia artificial: tecnología AI ENC que ayuda a mejorar la claridad de la voz durante las llamadas.",
-      "Bluetooth 5.4 y conexión dual",
-      "Hasta 36 horas de batería: autonomía total con el estuche de carga y hasta 7 horas de reproducción continua por carga de los audífonos.",
-      "Modo gaming de baja latencia y resistencia IPX4: latencia anunciada de hasta 45 ms, protección contra sudor y salpicaduras y controles táctiles."
-    ],
-    "REALME",
-    "audifonos"
-  ],
-  [
-    "REALME TECH LIFE H1",
-    43.0,
-    false,
-    "img/078-realmetechlifeh1.jpeg",
-    null,
-    [
-      "Cancelación de ruido de hasta 43 dB: reduce el ruido exterior.",
-      "Drivers de 40 mm: sonido potente para música y entretenimiento.",
-      "Hasta 70 horas de reproducción: amplia autonomía.",
-      "Audio espacial de 360°: experiencia de sonido envolvente.",
-      "Modo de baja latencia de 80 ms: reduce el retraso del audio al jugar."
-    ],
-    "REALME",
-    "audifonos"
-  ],
-  [
-    "REALME BUDS WIRELESS 5 ANC",
-    30.0,
-    false,
-    "img/076-realmebudswireless5anc.jpeg",
-    null,
-    [
-      "Cancelación activa de ruido híbrida de hasta 50 dB.",
-      "Driver dinámico de 13,6 mm: graves potentes.",
-      "Hasta 38 horas de reproducción con ANC desactivado, o hasta 20 horas con ANC activado.",
-      "Audio espacial de 360°: experiencia de sonido envolvente.",
-      "Resistencia IP55: protección contra polvo y agua."
-    ],
-    "REALME",
-    "audifonos"
-  ],
-  [
-    "MIBRO EARBUDS 5",
-    15.5,
-    false,
-    "img/044-mibroearbuds5.jpeg",
-    null,
-    [
-      "Drivers de 13 mm: para reproducir graves potentes y agudos claros.",
-      "Reducción de ruido ENC en llamadas: ayuda a mejorar la claridad de la voz.",
-      "Modo de baja latencia: orientado a juegos y videos.",
-      "Controles táctiles: permiten gestionar música, llamadas y asistente de voz.",
-      "Compatibilidad con Android y iPhone: conexión inalámbrica con ambos sistemas."
-    ],
-    "MIBRO",
-    "audifonos"
-  ],
-  [
-    "MIBRO MAGNETIC CHARGING CABLE",
-    9.0,
-    false,
-    "img/045-mibromagneticchargingcable.png",
-    null,
-    [
-      "C2, A1, A2, T1, GS, GS PRO, LITE 2, C3, LITE"
-    ],
-    "MIBRO",
-    "relojes"
-  ],
-  [
-    "MIBRO OPEN EAR",
-    25.0,
-    false,
-    "img/046-mibroopenear.jpeg",
-    null,
-    [
-      "Diseño abierto con ganchos de sujeción: permite escuchar música manteniendo la percepción del entorno.",
-      "Drivers de 16,1 mm con tecnología AELC Malleus: mejoran los detalles y la definición del sonido.",
-      "Doble micrófono con reducción de ruido en llamadas: ayuda a transmitir la voz con mayor claridad.",
-      "Bluetooth 5.4 con conexión a dos dispositivos: permite alternar entre el teléfono y otro equipo.",
-      "Resistencia IPX4: protección frente al sudor y las salpicaduras durante el uso diario."
-    ],
-    "MIBRO",
-    "audifonos"
-  ],
-  [
-    "MIBRO OPEN EAR PRO",
-    43.0,
-    false,
-    "img/047-mibroopenearpro.jpeg",
-    null,
-    [
-      "Diseño abierto de 7,2 g por audífono: ganchos con estructura de titanio y silicona para un ajuste cómodo y firme.",
-      "Hasta 7 horas de música y 30 horas con el estuche: autonomía por carga medida al 50 % de volumen.",
-      "Carga rápida: 10 minutos de carga proporcionan hasta 2 horas de reproducción.",
-      "Bluetooth 5.4 con conexión a dos dispositivos: permite alternar entre el teléfono y la computadora.",
-      "Resistencia IPX4: protección frente al sudor y las salpicaduras, ideal para actividades físicas."
-    ],
-    "MIBRO",
-    "audifonos"
-  ],
-  [
-    "MIBRO STRAP",
-    7.5,
-    false,
-    "img/048-mibrostrap.jpeg",
-    null,
-    [
-      "CORREAS DE COLORES"
-    ],
-    "MIBRO",
-    "relojes"
-  ],
-  [
-    "MIBRO WATCH A3",
-    40.0,
-    false,
-    "img/049-mibrowatcha3.jpeg",
-    null,
-    [
-      "Pantalla HD de 1,39 pulgadas: panel IPS con resolución de 360 × 360 píxeles, que ofrece imágenes nítidas y buena visualización.",
-      "Llamadas Bluetooth 5.3: permite realizar y responder llamadas desde el reloj cuando está conectado a un celular compatible.",
-      "GPS integrado con cinco sistemas satelitales: compatible con GPS, BeiDou, GLONASS, Galileo y QZSS para registrar actividades al aire libre.",
-      "Más de 100 modos deportivos y monitoreo de salud: registra actividades físicas, frecuencia cardíaca, oxígeno en sangre (SpO₂), sueño y estrés.",
-      "Hasta 8 días de batería y resistencia al agua 2 ATM: autonomía de hasta 45 días en modo básico, con diseño ligero de 29 gramos sin correa."
-    ],
-    "MIBRO",
-    "relojes"
-  ],
-  [
-    "MIBRO WATCH C4",
-    34.0,
-    false,
-    "img/050-mibrowatchc4.jpeg",
-    null,
-    [
-      "Pantalla HD de 2,01 pulgadas y 60 Hz: panel TFT con resolución de 240 × 296 píxeles, bordes delgados y visualización amplia y fluida.",
-      "Llamadas Bluetooth 5.3: permite responder y realizar llamadas desde la muñeca, mediante conexión con un celular compatible.",
-      "Más de 100 modos deportivos: registra diferentes actividades físicas y permite monitorear frecuencia cardíaca, oxígeno en sangre (SpO₂), sueño y estrés.",
-      "Hasta 10 días de batería: autonomía de hasta 45 días en modo básico, diseñada para acompañarte durante tus actividades diarias.",
-      "Diseño ultradelgado con resistencia al agua 2 ATM: grosor de 9,8 mm, peso de 29 gramos sin correa y más de 200 esferas personalizables."
-    ],
-    "MIBRO",
-    "relojes"
-  ],
-  [
-    "MIBRO WATCH FIT BLACK",
-    63.0,
-    false,
-    "img/051-mibrowatchfitblack.jpeg",
-    null,
-    [
-      "Pantalla AMOLED de 1,75 pulgadas: resolución de 390 × 450 píxeles, frecuencia de 60 Hz y función Always-On Display para una visualización nítida y fluida.",
-      "GPS integrado con cinco sistemas satelitales: permite registrar rutas deportivas, con altímetro y barómetro para monitorear elevación y presión atmosférica.",
-      "Más de 150 modos deportivos: incluye un modo profesional de pádel con análisis de golpes y rendimiento mediante sensores de movimiento.",
-      "Llamadas Bluetooth y asistente de inteligencia artificial: permite gestionar llamadas desde la muñeca, utilizar comandos de voz y generar esferas personalizadas con IA.",
-      "Hasta 8 días de batería y resistencia al agua 5 ATM: incorpora monitoreo de frecuencia cardíaca, oxígeno en sangre, sueño y estrés, con diseño ligero de 27,9 gramos sin correa."
-    ],
-    "MIBRO",
-    "relojes"
-  ],
-  [
-    "MIBRO WATCH GS ACTIVE",
-    44.0,
-    false,
-    "img/053-mibrowatchgsactive.png",
-    null,
-    [
-      "Pantalla AMOLED de 1,3 pulgadas: resolución de 360 × 360 píxeles y brillo máximo de 1.000 nits para facilitar la lectura en exteriores.",
-      "GPS integrado con cinco sistemas satelitales: compatible con GPS, BeiDou, GLONASS, Galileo y QZSS para registrar recorridos.",
-      "150 modos deportivos: incorpora el algoritmo SeekBeats™ para analizar la actividad física.",
-      "Resistencia al agua de 5 ATM: permite practicar natación e incluye reconocimiento de estilos y medición SWOLF.",
-      "Monitoreo de bienestar: seguimiento de frecuencia cardíaca, oxígeno en sangre (SpO₂), estrés y sueño, incluidas las siestas."
-    ],
-    "MIBRO",
-    "relojes"
-  ],
-  [
-    "MIBRO WATCH GS EXPLORER S",
-    95.0,
-    false,
-    "img/055-mibrowatchgsexplorers.png",
-    null,
-    [
-      "Pantalla AMOLED de 1,32 pulgadas: resolución de 466 × 466 píxeles, brillo de hasta 1500 nits, protección Corning Gorilla Glass 3 y función Always-On Display.",
-      "GPS integrado de doble frecuencia L1 + L5: compatible con cinco sistemas satelitales, navegación de retorno por ruta, brújula, altímetro y barómetro.",
-      "Resistencia al agua 10 ATM y modo de buceo libre: permite registrar profundidad, tiempo y velocidad de inmersión, con soporte para buceo libre de hasta 30 metros.",
-      "Más de 150 modos deportivos y resistencia de grado militar: certificación de pruebas MIL-STD-810H, bisel de nanocerámica y monitoreo de frecuencia cardíaca, SpO₂ y sueño.",
-      "Hasta 20 días de batería y llamadas Bluetooth: autonomía de hasta 25 horas con GPS activo, conectividad Bluetooth 5.3 y sistema Mibro Galaxy OS 2.0."
-    ],
-    "MIBRO",
-    "relojes"
-  ],
-  [
-    "MIBRO WATCH GS EXPLORER S TITANIUM",
-    190.0,
-    false,
-    "img/056-mibrowatchgsexplorerstitanium.png",
-    null,
-    [
-      "Construcción premium de titanio aeroespacial: caja de aleación de titanio con resistencia de grado militar MIL-STD-810H, diseñada para soportar condiciones exigentes.",
-      "Pantalla AMOLED de 1,32 pulgadas: resolución de 466 × 466 píxeles, brillo de hasta 1500 nits, protección Corning Gorilla Glass 3 y función Always-On Display.",
-      "GPS integrado de doble frecuencia L1 + L5 y mapas sin conexión: cinco sistemas satelitales, navegación de rutas, brújula, altímetro y función de retorno para aventuras al aire libre.",
-      "Resistencia al agua 10 ATM y más de 150 modos deportivos: permite registrar actividades como natación, senderismo, pádel y buceo libre de hasta 30 metros.",
-      "Hasta 20 días de batería y llamadas Bluetooth 5.3: autonomía de hasta 25 horas con GPS activo, con monitoreo de frecuencia cardíaca, oxígeno en sangre (SpO₂), sueño y estrés."
-    ],
-    "MIBRO",
-    "relojes"
-  ],
-  [
-    "MIBRO WATCH GS PRO 2",
-    68.0,
-    false,
-    "img/057-mibrowatchgspro2.jpeg",
-    null,
-    [
-      "Pantalla AMOLED de 1,43 pulgadas: resolución de 466 × 466 píxeles, frecuencia de 60 Hz, brillo de hasta 1200 nits y función Always-On Display.",
-      "GPS integrado de doble frecuencia L1 + L5: compatible con cinco sistemas satelitales, navegación de rutas, alertas de desviación, brújula, altímetro y barómetro.",
-      "Más de 150 modos deportivos: incluye triatlón, entrenador de running y modo profesional de pádel con análisis de golpes, velocidad y rendimiento.",
-      "Resistencia al agua 5 ATM y diseño premium: bisel de acero inoxidable 316L, ideal para entrenamientos, natación y actividades al aire libre.",
-      "Hasta 20 días de batería y llamadas Bluetooth 5.3: autonomía de hasta 20 horas con GPS activo, con monitoreo de frecuencia cardíaca, oxígeno en sangre (SpO₂), sueño y estrés."
-    ],
-    "MIBRO",
-    "relojes"
-  ],
-  [
-    "MIBRO WATCH GT",
-    70.0,
-    false,
-    "img/058-mibrowatchgt.png",
-    null,
-    [
-      "Pantalla AMOLED de 1,43″: resolución de 466 × 466 píxeles, refresco de 60 Hz y función de pantalla siempre encendida.",
-      "Diseño en acero inoxidable 316L: acabado elegante y resistente para el uso diario.",
-      "GPS integrado y más de 100 modos deportivos: compatible con cinco sistemas de posicionamiento para registrar actividades al aire libre.",
-      "Llamadas Bluetooth y asistente con IA: permite atender llamadas desde el reloj, consultar información y programar recordatorios.",
-      "Resistencia al agua de 5 ATM: apto para natación y actividades acuáticas compatibles."
-    ],
-    "MIBRO",
-    "relojes"
-  ],
-  [
-    "MIBRO WATCH LITE 3",
-    47.0,
-    false,
-    "img/059-mibrowatchlite3.png",
-    null,
-    [
-      "Pantalla AMOLED de 1,3″: resolución de 360 × 360 píxeles y función de pantalla siempre encendida.",
-      "Llamadas Bluetooth: permite contestar llamadas desde la muñeca al conectarse al teléfono.",
-      "Más de 100 modos deportivos: seguimiento de diferentes actividades y entrenamientos.",
-      "Monitoreo de bienestar las 24 horas: registra frecuencia cardíaca, oxígeno en sangre y niveles de estrés.",
-      "Batería de hasta 12 días: autonomía en modo de uso diario, según las condiciones de utilización."
-    ],
-    "MIBRO",
-    "relojes"
-  ],
-  [
-    "MIBRO WATCH LITE 3 PRO",
-    65.0,
-    false,
-    "img/060-mibrowatchlite3pro.jpeg",
-    null,
-    [
-      "Pantalla AMOLED de 1,32″: resolución de 466 × 466 píxeles, brillo de 1.000 nits y función de pantalla siempre encendida.",
-      "GPS integrado: compatible con cinco sistemas de posicionamiento para registrar recorridos al aire libre.",
-      "Más de 150 modos deportivos y resistencia de 5 ATM: incluye funciones para seguimiento de natación.",
-      "Llamadas por Bluetooth 5.3: permite atender llamadas desde la muñeca al conectarse al teléfono.",
-      "Batería de hasta 15 días: autonomía en uso diario o hasta 15 horas en modo GPS, según las condiciones de uso."
-    ],
-    "MIBRO",
-    "relojes"
-  ],
-  [
-    "AMAZON ECHO DOT 5TA GENERACIÓN SIN RELOJ",
-    63.0,
-    false,
-    "img/006-amazonechodot5tageneracionsinreloj.png",
-    null,
-    [
-      "Sonido mejorado con graves hasta 2 veces más potentes: parlante frontal de 1,73 pulgadas (44 mm), con voces más claras y bajos más profundos respecto a la cuarta generación.",
-      "Asistente inteligente Alexa: permite reproducir música, consultar el clima, configurar alarmas, recordatorios y controlar dispositivos inteligentes compatibles mediante comandos de voz.",
-      "Sensor de temperatura integrado: detecta la temperatura del ambiente y permite crear rutinas automáticas con dispositivos inteligentes compatibles.",
-      "Detección de movimiento por ultrasonido: permite activar rutinas inteligentes, como encender luces automáticamente cuando detecta presencia en una habitación.",
-      "Conectividad Wi-Fi Dual Band y Bluetooth: compatible con redes de 2,4 GHz y 5 GHz, reproducción de audio inalámbrica y control de dispositivos inteligentes compatibles con Matter."
-    ],
-    "AMAZON",
-    "asistentes"
-  ],
-  [
-    "AMAZON ECHO DOT KIDS 5TA GENERACIÓN BÚHO",
-    52.0,
-    false,
-    "img/007-amazonechodotkids5tageneracionbuho.jpeg",
-    null,
-    [
-      "Parlante frontal de 1,73 pulgadas: para disfrutar de música, cuentos y audiolibros.",
-      "Alexa integrada: permite interactuar por voz y reproducir sonidos ambientales para la rutina de descanso.",
-      "Controles parentales: configura límites de tiempo, objetivos educativos y contenido para hasta cuatro perfiles infantiles.",
-      "Un año de Amazon Kids+ incluido: acceso a contenido infantil, sujeto a disponibilidad regional y condiciones de la suscripción.",
-      "Botón para desactivar los micrófonos: acompañado de controles de privacidad desde la aplicación."
-    ],
-    "AMAZON",
-    "asistentes"
-  ],
-  [
-    "AMAZON ECHO DOT MAX",
-    90.0,
-    false,
-    "img/008-amazonechodotmax.jpeg",
-    null,
-    [
-      "Graves casi 3 veces más potentes: sonido con bajos más profundos en comparación con el Echo Dot de quinta generación, gracias a su sistema de audio de dos vías con woofer y tweeter.",
-      "Sonido inteligente adaptable al ambiente: ajusta automáticamente la reproducción según la acústica de la habitación para ofrecer una experiencia de audio más equilibrada.",
-      "Alexa con procesador Amazon AZ3: reconocimiento de voz mejorado, reducción de ruido ambiental y control mediante comandos de voz para música, alarmas, recordatorios y consultas.",
-      "Centro de hogar inteligente integrado: compatibilidad con Zigbee, Matter y Thread para controlar dispositivos inteligentes compatibles, como luces, enchufes y sensores.",
-      "Tecnología Omnisense: permite crear rutinas inteligentes mediante detección de presencia, movimiento y temperatura, para automatizar distintas funciones del hogar."
-    ],
-    "AMAZON",
-    "asistentes"
-  ],
-  [
-    "AMAZON ECHO SHOW 5 3RA GEN",
-    78.0,
-    false,
-    "img/011-amazonechoshow53ragen.jpeg",
-    null,
-    [
-      "Pantalla de 5,5″: consulta el clima, calendarios, videos y cámaras de seguridad compatibles en un formato compacto.",
-      "Altavoz de 1,7″ con graves mejorados: ofrece el doble de graves y voces más claras respecto a la generación anterior.",
-      "Cámara integrada para videollamadas: comunícate con otros dispositivos Echo con pantalla o con la aplicación Alexa.",
-      "Alexa con procesador AZ2 Neural Edge: controla dispositivos inteligentes compatibles y gestiona recordatorios, temporizadores y música mediante la voz.",
-      "Controles físicos de privacidad: incluye cubierta para la cámara y botón para desactivar los micrófonos."
-    ],
-    "AMAZON",
-    "asistentes"
-  ],
-  [
-    "AMAZON ECHO SHOW 11",
-    245.0,
-    false,
-    "img/010-amazonechoshow11.jpeg",
-    null,
-    [
-      "Pantalla táctil Full HD de 11″: imágenes nítidas y bordes delgados para disfrutar videos, recetas y calendarios.",
-      "Audio espacial con altavoces estéreo y woofer: sonido envolvente, graves profundos y voces claras.",
-      "Cámara de 13 MP con encuadre automático: mantiene a las personas centradas durante las videollamadas e incorpora reducción de ruido.",
-      "Procesador AZ3 Pro: ofrece un funcionamiento rápido para las funciones de Alexa y el control del hogar.",
-      "Tecnología Omnisense: permite configurar rutinas automáticas según presencia, movimiento y temperatura, utilizando dispositivos compatibles."
-    ],
-    "AMAZON",
-    "asistentes"
-  ],
-  [
-    "AMAZON ECHO SPOT",
-    68.0,
-    false,
-    "img/013-amazonechospot.jpeg",
-    null,
-    [
-      "Pantalla táctil a color de 2,83 pulgadas: resolución de 240 × 320 píxeles, con visualización de hora, clima, alarmas y títulos de canciones.",
-      "Sonido mejorado con parlante de 1,73 pulgadas: altavoz frontal que ofrece voces claras y graves profundos para música, podcasts y audiolibros.",
-      "Asistente inteligente Alexa: permite controlar música, programar alarmas, temporizadores, recordatorios y realizar consultas mediante comandos de voz.",
-      "Reloj despertador totalmente personalizable: múltiples diseños de reloj, seis temas de colores, alarmas musicales y modo nocturno.",
-      "Control del hogar inteligente y conectividad inalámbrica: permite crear rutinas y controlar dispositivos compatibles, con Wi-Fi Dual Band de 2,4 y 5 GHz y Bluetooth."
-    ],
-    "AMAZON",
-    "asistentes"
-  ],
-  [
-    "AMAZON ECHO STUDIO",
-    255.0,
-    false,
-    "img/014-amazonechostudio.png",
-    null,
-    [
-      "Cinco altavoces integrados: woofer de 5,25″, tres altavoces de medios de 2″ y un tweeter de 1″ para graves profundos y voces claras.",
-      "Sonido Dolby Atmos: experiencia de audio tridimensional con contenido compatible.",
-      "Ajuste acústico automático: analiza la acústica de la habitación y adapta la reproducción para optimizar el sonido.",
-      "Alexa y central Zigbee integradas: controla dispositivos inteligentes compatibles mediante comandos de voz.",
-      "Conexión con Fire TV compatible: permite utilizar uno o dos Echo Studio para disfrutar del audio de películas y series."
-    ],
-    "AMAZON",
-    "asistentes"
-  ],
-  [
-    "AMAZON SOPORTE ECHO SHOW 8 3RA GEN",
-    21.0,
-    false,
-    "img/015-amazonsoporteechoshow83ragen.jpeg",
-    null,
-    [
-      "Puerto USB-C de 12,5 W: permite cargar celulares, audífonos y otros dispositivos compatibles.",
-      "Inclinación ajustable: mueve el Echo Show hacia adelante o atrás para mejorar el ángulo de visión.",
-      "Fijación magnética: permite colocar el equipo de forma rápida y segura.",
-      "Diseño específico para Echo Show 8 de 3.ª generación: acabado en color a juego con el dispositivo.",
-      "Fabricado con un 44 % de materiales reciclados."
-    ],
-    "AMAZON",
-    "asistentes"
-  ],
-  [
-    "AMAZON VIDEO DOORBELL",
-    70.0,
-    false,
-    "img/016-amazonvideodoorbell.jpeg",
-    null,
-    [
-      "Video Full HD 1080p con visión nocturna: permite observar la entrada de día y de noche.",
-      "Audio bidireccional con cancelación de ruido: para escuchar y hablar con los visitantes.",
-      "Detección avanzada de movimiento: incluye zonas personalizables para vigilar áreas específicas.",
-      "Campo de visión amplio: cobertura de 155° horizontal y 90° vertical.",
-      "Batería recargable integrada: también admite conexión al cableado de un timbre compatible."
-    ],
-    "AMAZON",
-    "hogar"
-  ],
-  [
-    "APPLE DUAL USB-C PORT 35W COMPACT POWER ADAPTER",
-    29.0,
-    false,
-    "img/019-appledualusbcport35wcompactpoweradapter.png",
-    null,
-    [
-      "Potencia total de 35 W: disponible para cargar los dispositivos conectados.",
-      "Dos puertos USB-C: permite cargar dos dispositivos al mismo tiempo.",
-      "Diseño compacto: práctico para llevar y utilizar en casa, la oficina o durante viajes.",
-      "Clavijas plegables: facilitan guardarlo y transportarlo.",
-      "Compatibilidad con dispositivos Apple: puede utilizarse con MacBook Air, iPhone, iPad, Apple Watch y AirPods, con los cables correspondientes."
-    ],
-    "APPLE",
-    "cargadores"
-  ],
-  [
-    "APPLE MAGSAFE CHARGER",
-    28.0,
-    false,
-    "img/021-applemagsafecharger.jpeg",
-    null,
-    [
-      "Carga inalámbrica de hasta 25 W: requiere un iPhone compatible y un adaptador USB-C de 30 W.",
-      "Alineación magnética MagSafe: los imanes mantienen el cargador correctamente colocado en los iPhone compatibles.",
-      "Certificación Qi2 de 25 W y compatibilidad Qi: permite cargar también dispositivos compatibles con estos estándares.",
-      "Compatible con AirPods: funciona con modelos que tienen estuche de carga inalámbrica.",
-      "Cable integrado de 1 metro con conector USB-C: también existe una presentación de 2 metros."
-    ],
-    "APPLE",
-    "cargadores"
-  ],
-  [
-    "APPLE USB-C TO HEADPHONE JACK",
-    19.0,
-    false,
-    "img/023-appleusbctoheadphonejack.jpeg",
-    null,
-    [
-      "Conector USB-C: se conecta al puerto del dispositivo compatible.",
-      "Entrada de audio de 3,5 mm: permite utilizar audífonos con el conector tradicional.",
-      "Compatible con parlantes de 3,5 mm: también permite conectar equipos de audio que utilicen esta conexión.",
-      "Compatibilidad con iPhone USB-C: incluye iPhone 15 y 16, entre otros modelos indicados por Apple.",
-      "Cable integrado entre ambos conectores: diseño sencillo para conectar directamente el accesorio de audio al dispositivo."
-    ],
-    "APPLE",
-    "accesorios"
-  ],
-  [
-    "APPLE USB-C 60W CHARGE CABLE 1M",
-    19.0,
-    false,
-    "img/022-appleusbc60wchargecable1m.jpeg",
-    null,
-    [
-      "Carga de hasta 60 W: admite carga rápida con dispositivos y adaptadores compatibles.",
-      "Conectores USB-C en ambos extremos: para conectar equipos con este puerto.",
-      "Longitud de 1 metro: práctica para cargar en el escritorio o junto a un tomacorriente.",
-      "Diseño trenzado: recubrimiento exterior tejido.",
-      "Sincronización y transferencia de datos USB 2: permite cargar y transferir información entre dispositivos USB-C."
-    ],
-    "APPLE",
-    "accesorios"
-  ],
-  [
-    "APPLE 20W POWER ADAPTER USB-C",
-    25.0,
-    false,
-    "img/017-apple20wpoweradapterusbc.jpeg",
-    null,
-    [
-      "Potencia de 20 W: para cargar dispositivos compatibles de forma rápida y eficiente.",
-      "Puerto USB-C: permite conectar el cable de carga adecuado para cada dispositivo.",
-      "Carga rápida para iPhone 8 o posterior: la velocidad depende del modelo y las condiciones de uso.",
-      "Compatible con iPad: Apple recomienda su uso con iPad Pro y iPad Air.",
-      "También compatible con AirPods y Apple Watch: utilizando sus respectivos cables o accesorios de carga."
-    ],
-    "APPLE",
-    "cargadores"
-  ],
-  [
-    "APPLE 40W DYNAMIC POWER ADAPTER WITH 60W MAX",
-    40.0,
-    false,
-    "img/018-apple40wdynamicpoweradapterwith60wmax.jpeg",
-    null,
-    [
-      "Potencia dinámica de hasta 60 W: aumenta la potencia de salida según las necesidades de carga del dispositivo.",
-      "Tecnología AVS: ajusta el voltaje con precisión para una carga más eficiente.",
-      "Carga rápida para iPhone: permite alcanzar hasta el 50 % en 20 minutos en iPhone 17, 17 Pro y 17 Pro Max, según las pruebas de Apple.",
-      "Conexión USB-C: compatible con dispositivos que admiten carga mediante este estándar.",
-      "Diseño compacto de bolsillo: facilita transportarlo para usarlo en casa, la oficina o durante viajes."
-    ],
-    "APPLE",
-    "cargadores"
-  ],
-  [
-    "HONOR EARBUDS CLIP",
-    59.0,
-    false,
-    "img/035-honorearbudsclip.jpeg",
-    null,
-    [
-      "Diseño abierto tipo clip con arco de titanio: pesa aproximadamente 5,1 g por audífono y permite escuchar el entorno.",
-      "Drivers de doble imán de 10,8 mm: con diafragma recubierto de titanio para graves dinámicos y agudos definidos.",
-      "Hasta 7 horas por carga y 36 horas con el estuche: además, 10 minutos de carga ofrecen hasta 2 horas de música.*",
-      "Dos micrófonos con reducción de ruido mediante IA: mejoran la claridad de la voz durante las llamadas.",
-      "Bluetooth 5.3 y conexión a dos dispositivos: permite alternar automáticamente entre fuentes de audio."
-    ],
-    "HONOR",
-    "audifonos"
-  ],
-  [
-    "DIVOOM MOCHA",
-    70.0,
-    false,
-    "img/027-divoommocha.jpeg",
-    null,
-    [
-      "Potencia de 40 W: sonido potente con amplificación para altavoces y tweeters.",
-      "Sonido envolvente de 360°: audio multidireccional para disfrutar música desde distintos ángulos.",
-      "Batería de 10.000 mAh: hasta 25 horas de reproducción, según el fabricante.",
-      "Emparejamiento TWS: permite conectar un segundo parlante compatible para reproducir sonido estéreo.",
-      "Carga USB-C con soporte de carga rápida: para recargar su batería integrada."
-    ],
-    "DIVOOM",
-    "parlantes"
-  ],
-  [
-    "DIVOOM VOOMBOX ROCK",
-    42.0,
-    false,
-    "img/028-divoomvoomboxrock.jpeg",
-    null,
-    [
-      "Potencia de 30 W: sistema con dos altavoces de rango completo, dos tweeters y dos radiadores pasivos.",
-      "Bluetooth 4.2: conexión inalámbrica con alcance de hasta 10 metros.",
-      "Batería de 5000 mAh: también permite cargar dispositivos móviles mediante USB.",
-      "Emparejamiento Double Up: conecta dos Voombox Rock para reproducir sonido estéreo con canales izquierdo y derecho.",
-      "Entrada auxiliar de 3,5 mm: reproduce música desde dispositivos mediante cable."
-    ],
-    "DIVOOM",
-    "parlantes"
-  ],
-  [
-    "DIVOOM VOOMBOX TREK",
-    30.0,
-    false,
-    "img/029-divoomvoomboxtrek.jpeg",
-    null,
-    [
-      "Potencia de 6 W con ajuste DSP: altavoz de 2 pulgadas y radiador pasivo para reforzar los graves.",
-      "Resistencia al agua IPX5: preparado para lluvia y salpicaduras.",
-      "Hasta 6 horas de reproducción: batería recargable de 1400 mAh.",
-      "Emparejamiento estéreo TWS: conecta dos Voombox Trek para ampliar la experiencia sonora.",
-      "Tres opciones de reproducción: Bluetooth 4.2, entrada AUX y tarjetas microSD/TF de hasta 32 GB."
-    ],
-    "DIVOOM",
-    "parlantes"
-  ],
-  [
-    "ONN TV 4K",
-    51.0,
-    false,
-    "img/062-onntv4k.png",
-    null,
-    [
-      "Resolución 4K Ultra HD: disfruta películas y series con mayor detalle en televisores y contenido compatibles.",
-      "Google TV integrado: reúne aplicaciones de streaming y recomendaciones de entretenimiento en una misma interfaz.",
-      "Control remoto con Google Assistant: busca contenido y controla funciones del televisor mediante la voz.",
-      "8 GB de almacenamiento y 2 GB de RAM: permite instalar aplicaciones y ejecutar servicios de streaming.",
-      "Wi-Fi de doble banda de 2,4 y 5 GHz: ofrece dos opciones de conexión inalámbrica para reproducir contenido."
-    ],
-    "ONN",
-    "television"
-  ],
-  [
-    "ONN TV HD",
-    45.0,
-    false,
-    "img/063-onntvhd.png",
-    null,
-    [
-      "Resolución Full HD 1080p: reproduce contenido compatible a 1920 × 1080 píxeles.",
-      "Google TV integrado: acceso a aplicaciones de streaming y recomendaciones de películas y series.",
-      "Control remoto con Google Assistant: permite buscar contenido y controlar funciones mediante comandos de voz.",
-      "Google Cast: transmite contenido desde dispositivos móviles compatibles al televisor.",
-      "8 GB de almacenamiento y 1,5 GB de RAM: espacio para instalar aplicaciones y ejecutar servicios de streaming."
-    ],
-    "ONN",
-    "television"
-  ],
-  [
-    "PROOVE MAGIC WAND ASP-02",
-    25.0,
-    false,
-    "img/064-proovemagicwandasp02.png",
-    null,
-    [
-      "Dos modos de uso: activo para pantallas de iPad y pasivo para pantallas táctiles de teléfonos y tabletas.",
-      "Autonomía aproximada de 9 horas: batería recargable de 130 mAh con puerto USB-C.",
-      "Ahorro automático de energía: entra en reposo después de 5 minutos de inactividad.",
-      "Diseño ligero de aluminio: pesa aproximadamente 13 gramos y mide 165 × 9 mm.",
-      "Punta reemplazable: permite sustituirla cuando se desgaste para prolongar la vida útil del lápiz."
-    ],
-    "PROOVE",
-    "lapices"
-  ],
-  [
-    "IMILAB CAMARA C21",
-    28.0,
-    false,
-    "img/038-imilabcamarac21.jpeg",
-    null,
-    [
-      "Resolución 2.5K: imágenes detalladas para supervisar tu hogar.",
-      "Movimiento horizontal de 360° y vertical de 110°: permite revisar diferentes ángulos desde la aplicación.",
-      "Detección inteligente y seguimiento de personas: sigue sus movimientos y envía alertas por personas o ruidos detectados.",
-      "Audio bidireccional: escucha y habla con quienes están en casa en tiempo real.",
-      "Grabación continua con microSD de hasta 256 GB: almacenamiento local sin suscripción; tarjeta no incluida."
-    ],
-    "IMILAB",
-    "camaras"
-  ],
-  [
-    "IMILAB CAMARA C22",
-    32.0,
-    false,
-    "img/039-imilabcamarac22.jpeg",
-    null,
-    [
-      "Resolución 3K: imágenes detalladas para supervisar tu hogar en tiempo real.",
-      "Movimiento horizontal de 360° y vertical de 115°: permite revisar diferentes ángulos desde la aplicación.",
-      "Visión nocturna mejorada: captura imágenes a color en ambientes con poca iluminación.",
-      "Detección inteligente y seguimiento automático de personas: sigue sus movimientos y envía alertas al detectar personas o ruidos.",
-      "Audio bidireccional: permite escuchar y hablar con quienes están en casa desde el teléfono."
-    ],
-    "IMILAB",
-    "camaras"
-  ],
-  [
-    "IMILAB CAMARA C30 DUAL",
-    49.0,
-    false,
-    "img/040-imilabcamarac30dual.jpeg",
-    null,
-    [
-      "Doble lente con resolución 3K + 3K: permite visualizar dos áreas simultáneamente con gran detalle.",
-      "Cobertura de 360°: amplía la vigilancia del espacio interior.",
-      "Detección mediante IA: identifica personas, mascotas, llanto de bebés y ruidos para enviar alertas.",
-      "Wi-Fi 6 de doble banda: compatible con redes de 2,4 GHz y 5 GHz.",
-      "Audio bidireccional: permite escuchar y hablar con quienes están en casa desde el teléfono."
-    ],
-    "IMILAB",
-    "camaras"
-  ],
-  [
-    "TECNO CARGADOR 33W U330",
-    11.0,
-    false,
-    "img/083-tecnocargador33wu330.jpeg",
-    null,
-    [
-      "Carga rápida de hasta 33 W: proporciona una potencia elevada para recargar smartphones TECNO y otros dispositivos compatibles, ayudando a reducir el tiempo de espera frente a cargadores convencionales de menor potencia.",
-      "Sistema de carga adaptativa inteligente: ajusta automáticamente el voltaje y la corriente de salida según los requerimientos del dispositivo conectado, ofreciendo diferentes niveles de potencia para una recarga eficiente.",
-      "Conexión USB-A para carga de dispositivos: incorpora un puerto USB-A de salida que permite conectar un cable compatible, como USB-A a USB-C, para cargar celulares y otros equipos electrónicos.",
-      "Alimentación universal de 100 a 240 V: admite redes eléctricas de 50/60 Hz, por lo que puede utilizarse en diferentes países y entornos."
-    ],
-    "TECNO",
-    "cargadores"
-  ],
-  [
-    "TECNO HOT BEATS J2",
-    10.0,
-    false,
-    "img/085-tecnohotbeatsj2.jpeg",
-    null,
-    [
-      "DISEÑO INTRAUDITIVO EN ÁNGULO DE 45° QUE EVITA CAÍDAS",
-      "POTENTE RENDIMIENTO DE LOS GRAVES",
-      "CONTROL REMOTO DE UN BOTÓN",
-      "PARA RESPONDER Y COLGAR LLAMADAS, REPRODUCIR Y PAUSAR MÚSICA Y AJUSTAR EL VOLUMEN"
-    ],
-    "TECNO",
-    "audifonos"
-  ],
-  [
-    "TECNO SQUARE S2",
-    26.0,
-    false,
-    "img/087-tecnosquares2.jpeg",
-    null,
-    [
-      "CAPACIDAD DE LA BATERÍA 2200 MAH",
-      "ALTAVOZ DE GRAVES POTENTES DE 52 MM",
-      "LUZ LED COLORIDA",
-      "ADMITE EMPAREJAMIENTO DE 2 ALTAVOCES BLUETOOTH AL MISMO TIEMPO",
-      "CONEXIÓN DE FLASH USB, TARJETA TF O BLUETOOTH."
-    ],
-    "TECNO",
-    "parlantes"
-  ],
-  [
-    "TECNO HIPODS H3",
-    30.0,
-    false,
-    "img/084-tecnohipodsh3.jpeg",
-    null,
-    [
-      "AUTONOMÍA (ESTUCHE): 12 HRS.",
-      "AUTONOMÍA (AUDIFONOS): 4 HRS.",
-      "TRES MODOS/REDUCCIÓN INTELIGENTE DE RUIDO",
-      "GRAVES ULTRAPROFUNDOS",
-      "BLUETOOTH 5.0",
-      "RESISTENCIA IPX4",
-      "PUERTO DE CARGA TIPO C"
-    ],
-    "TECNO",
-    "audifonos"
-  ],
-  [
-    "TECNO PHANTOM BACKPACK",
-    45.0,
-    false,
-    "img/tecnophantombackpack.png",
-    null,
-    [],
-    "TECNO",
-    "hogar"
-  ],
-  [
-    "TECNO 2 IN 1 MICRO USB TIPO C",
-    7.0,
-    false,
-    "img/081-tecno2in1microusbtipoc.png",
-    null,
-    [
-      "LONGITUD 1 METRO",
-      "SALIDA 2A",
-      "COLOR NEGRO",
-      "MATERIAL NYLON TRENZADO Y ALEACIÓN DE ALUMINIO",
-      "COMPATIBILIDAD CON DISPOSITIVOS TIPO C Y MICRO USB"
-    ],
-    "TECNO",
-    "accesorios"
-  ],
-  [
-    "1MORE PISTON FIT E1009",
-    9.5,
-    false,
-    "img/002-1morepistonfite1009.jpeg",
-    null,
-    [
-      "Sonido de alta calidad con diafragma de doble capa: tecnología de titanio de grado aeroespacial y polímero PET para ofrecer graves profundos, voces claras y agudos definidos.",
-      "Diseño ergonómico de 45°: auriculares inclinados que se adaptan al canal auditivo, con tres tamaños de almohadillas de silicona para mayor comodidad.",
-      "Micrófono MEMS integrado: permite realizar llamadas con mayor claridad y controlar funciones básicas desde el cable.",
-      "Estructura de aleación de aluminio: acabado metálico resistente, ligero y elegante, diseñado para el uso diario.",
-      "Conexión universal de 3,5 mm: cable de 1,25 metros, compatible con celulares, computadoras y dispositivos que incorporen entrada de audio de 3,5 mm."
-    ],
-    "1MORE",
-    "audifonos"
-  ],
-  [
-    "WANBO T6 MAX",
-    190.0,
-    false,
-    "img/099-wanbot6max.png",
-    null,
-    [
-      "Resolución Full HD 1080p: imagen detallada y compatibilidad con reproducción de contenido 4K.",
-      "Brillo de 650 lúmenes ANSI: cifra indicada para esta versión.",
-      "Enfoque automático: facilita ajustar la nitidez de la imagen.",
-      "2 GB de RAM y 16 GB de almacenamiento: para ejecutar aplicaciones y guardar contenido.",
-      "Wi-Fi de doble banda y Bluetooth 5.0: conexión a redes de 2,4/5 GHz y a altavoces inalámbricos."
-    ],
-    "WANBO",
-    "proyectores"
-  ],
-  [
-    "WANBO TT",
-    190.0,
-    false,
-    "img/100-wanbott.jpeg",
-    null,
-    [
-      "Resolución nativa Full HD de 1920 × 1080: admite contenido 4K y proyecta imágenes de 40 a 120 pulgadas.",
-      "Brillo de 650 lúmenes ANSI: para disfrutar películas y contenido multimedia con buena iluminación de imagen.",
-      "Enfoque automático y corrección trapezoidal de cuatro puntos: facilitan ajustar la nitidez y la forma de la proyección.",
-      "Netflix integrado con licencia oficial: también incluye YouTube y Prime Video en su sistema Linux.",
-      "Dos altavoces de 5 W con Dolby Audio: ofrece 10 W de potencia total para reproducir sonido sin altavoces externos."
-    ],
-    "WANBO",
-    "proyectores"
-  ],
-  [
-    "70MAI AIR COMPRESSOR ECO",
-    18.0,
-    false,
-    "img/004-70maiaircompressoreco.jpeg",
-    null,
-    [
-      "Caudal de hasta 14 L/min: permite inflar un neumático de automóvil en pocos minutos.",
-      "Presión máxima de 50 PSI (3,4 bar): con manómetro que muestra la presión en ambas unidades.",
-      "Alimentación de 12 V: se conecta directamente a la toma de encendedor del vehículo.",
-      "Cable de 3,3 m y manguera de 1 m: facilitan alcanzar los neumáticos del automóvil.",
-      "Linterna integrada: se enciende automáticamente durante el inflado para facilitar su uso de noche."
-    ],
-    "70MAI",
-    "auto"
-  ],
-  [
-    "MAIMO WATCH R",
-    33.0,
-    false,
-    "img/043-maimowatchr.jpeg",
-    null,
-    [
-      "Hasta 12 días de batería: autonomía en uso típico para la versión sin GPS; hasta 11 días en la versión con GPS.",
-      "Hasta 115 modos deportivos",
-      "Resistencia al agua de 5 ATM: apto para natación y uso cotidiano, según el fabricante.",
-      "Monitoreo de bienestar: seguimiento de frecuencia cardíaca, oxígeno en sangre (SpO₂), estrés y calidad del sueño.",
-      "Diseño con marco de acero inoxidable: pesa 29,4 g sin correa y ofrece más de 100 esferas para personalizar su apariencia."
-    ],
-    "MAIMO",
-    "relojes"
-  ],
-  [
-    "ONEPLUS BUDS PRO 2R",
-    83.0,
-    false,
-    "img/061-oneplusbudspro2r.jpeg",
-    null,
-    [
-      "Doble controlador de 11 mm + 6 mm: desarrollado con Dynaudio para reproducir graves profundos y agudos definidos.",
-      "Cancelación activa de ruido adaptativa de hasta 48 dB: ajusta la reducción del ruido según el entorno.",
-      "Hasta 39 horas de autonomía con el estuche: hasta 9 horas por carga sin cancelación de ruido; con ella activada, hasta 25 y 6 horas, respectivamente.",
-      "Bluetooth 5.3 con conexión dual: permite conectar y alternar entre dos dispositivos.",
-      "Resistencia IP55 en los audífonos: protección frente al polvo, agua y sudor; el estuche cuenta con clasificación IPX4."
-    ],
-    "ONEPLUS",
-    "audifonos"
-  ],
-  [
-    "QCY CROSSKY C10",
-    19.0,
-    false,
-    "img/065-qcycrosskyc10.jpeg",
-    null,
-    [
-      "Diseño abierto tipo clip en C: se sujeta a la oreja sin introducirse en el canal auditivo.",
-      "Construcción ligera: diseñada para ofrecer comodidad durante el uso cotidiano.",
-      "Sonido con graves reforzados: altavoz ovalado y algoritmo de ajuste dinámico de bajas frecuencias.",
-      "Audio direccional 2.0: ayuda a reducir la fuga de sonido hacia el exterior.",
-      "Acabado con textura tipo cuero: disponible en cuatro colores para combinar con distintos estilos."
-    ],
-    "QCY",
-    "audifonos"
-  ],
-  [
-    "JBL PARTYBOX WIRELESS MIC",
-    105.0,
-    false,
-    "img/041-jblpartyboxwirelessmic.png",
-    null,
-    [
-      "Kit de dos micrófonos y receptor inalámbrico: compatible con todos los parlantes JBL PartyBox.",
-      "Captación cardioide con filtro antipop: ofrece voces claras y reduce ruidos de respiración y manipulación.",
-      "Conexión inalámbrica de 2,4 GHz: alcance de hasta 30 metros y latencia inferior a 12 ms.",
-      "Baterías recargables de larga duración: hasta 20 horas por micrófono y hasta 12 horas para el receptor.",
-      "Carga rápida: 10 minutos de carga proporcionan hasta 2 horas adicionales de uso del micrófono; también funciona mientras se carga."
-    ],
-    "JBL",
-    "hogar"
-  ],
-  [
-    "TRONSMART ELEMENT MEGA",
-    42.5,
-    false,
-    "img/090-tronsmartelementmega.jpeg",
-    null,
-    [
-      "TECNOLOGÍA SOUNDPULSE®.",
-      "POTENTE SONIDO DE ALTA FIDELIDAD",
-      "CONTROL TÁCTIL INTUITIVO.",
-      "VERDADERO EMPAREJAMIENTO ESTÉREO INALÁMBRICO.",
-      "TRANSMISIÓN NFC.",
-      "POTENCIA 40W"
-    ],
-    "TRONSMART",
-    "parlantes"
-  ],
-  [
-    "TRONSMART T7 LITE",
-    30.0,
-    false,
-    "img/091-tronsmartt7lite.png",
-    null,
-    [
-      "Potencia de salida de 24 W.",
-      "Dos altavoces de rango completo y tres radiadores pasivos: graves reforzados.",
-      "Hasta 24 horas de reproducción, con batería de 4.000 mAh.*",
-      "Resistencia al agua IPX7.",
-      "Emparejamiento estéreo: conecta dos unidades para ampliar la experiencia de sonido."
-    ],
-    "TRONSMART",
-    "parlantes"
-  ],
-  [
-    "TRONSMART TRIP",
-    20.0,
-    false,
-    "img/092-tronsmarttrip.png",
-    null,
-    [
-      "Hasta 20 horas de reproducción al 50 % del volumen.",
-      "Resistencia al agua IPX7.",
-      "Bluetooth 5.3: alcance de transmisión de hasta 18 metros.",
-      "Dos altavoces de rango completo con tecnología SoundPulse®: sonido con agudos claros y graves equilibrados.",
-      "Emparejamiento estéreo TWS: conecta dos parlantes Trip para reproducir sonido estéreo."
-    ],
-    "TRONSMART",
-    "parlantes"
-  ],
-  [
-    "1MORE SONOFLOW HC306",
-    40.0,
-    false,
-    "img/003-1moresonoflowhc306.jpeg",
-    null,
-    [
-      "Cancelación activa de ruido (ANC) con modo transparencia para escuchar el entorno.",
-      "Hasta 70 horas de reproducción sin ANC o 50 horas con ANC activado.",
-      "Bluetooth 5.0, con alcance inalámbrico de hasta 10 metros.",
-      "Carga completa en aproximadamente 80 minutos, con batería de 720 mAh.",
-      "Peso de 240 gramos, para llevarlos y utilizarlos a diario."
-    ],
-    "1MORE",
-    "audifonos"
-  ],
-  [
-    "APPLE MACBOOK NEO 13 256GB",
-    670.0,
-    false,
-    "img/020-applemacbookneo13256gb.png",
-    null,
-    [
-      "Potente chip Apple A18 Pro: procesador de 6 núcleos, GPU de 5 núcleos y Neural Engine de 16 núcleos, ideal para productividad, estudios y entretenimiento.",
-      "Pantalla Liquid Retina de 13 pulgadas: resolución de 2408 × 1506 píxeles, brillo de 500 nits y reproducción de 1.000 millones de colores.",
-      "Hasta 16 horas de batería: autonomía para trabajar, estudiar y disfrutar de entretenimiento durante el día, según pruebas de reproducción de video.",
-      "8 GB de memoria unificada y almacenamiento SSD: disponible en configuraciones de 256 GB y 512 GB, con sistema operativo macOS y compatibilidad con Apple Intelligence.",
-      "Diseño de aluminio ligero y elegante: peso de solo 1,23 kg, conectividad Wi-Fi 6E, Bluetooth 6 y cámara FaceTime HD de 1080p."
-    ],
-    "APPLE",
-    "hogar"
-  ],
-  [
-    "BASEUS F01A WIRELESS MOUSE",
-    19.0,
-    false,
-    "img/024-baseusf01awirelessmouse.jpeg",
-    null,
-    [
-      "Conexión inalámbrica de 2,4 GHz: con alcance de hasta 20 metros.",
-      "Sensibilidad ajustable hasta 1600 DPI: tres niveles para adaptar la velocidad del cursor.",
-      "Botones silenciosos: permiten trabajar sin el ruido habitual de los clics.",
-      "Frecuencia de respuesta de 250 Hz: para un movimiento fluido del cursor.",
-      "Suspensión automática tras 30 minutos de inactividad: ayuda a ahorrar batería."
-    ],
-    "BASEUS",
-    "computacion"
-  ],
-  [
-    "BASEUS T2 PRO SMART DEVICE TRACKER",
-    10.0,
-    false,
-    "img/025-baseust2prosmartdevicetracker.jpeg",
-    null,
-    [
-      "RASTREADOR CON BLUETOOTH Y ALARMA DE 90 DB",
-      "LA BATERÍA CR2032 REEMPLAZABLE DURA HASTA 1 AÑO.",
-      "ALERTAS DE SEÑAL BIDIRECCIONAL SI LA DISTANCIA EXCEDE EL RANGO SEGURO",
-      "ACTUALIZACIONES DE UBICACIÓN EN TIEMPO REAL A TRAVÉS DE LA APLICACIÓN BASEUS SMART",
-      "AYUDA A RASTREAR LLAVES, BILLETERAS, MASCOTAS, NIÑOS, EQUIPAJE Y MÁS.",
-      "COMPATIBLE CON DISPOSITIVOS ANDROID E IOS."
-    ],
-    "BASEUS",
-    "accesorios"
-  ],
-  [
-    "BLACK SHARK GOBLIN X1 WIRED GAMING HEADSET",
-    25.0,
-    false,
-    "img/026-blacksharkgoblinx1wiredgamingheadset.jpeg",
-    null,
-    [
-      "Drivers dinámicos de 50 mm: sonido envolvente para identificar detalles durante las partidas.",
-      "Conexión de 3,5 mm: compatible con PC, PS4, PS5, Switch y Xbox mediante puertos compatibles.",
-      "Micrófono omnidireccional flexible: permite ajustar su posición cerca de la boca.",
-      "Almohadillas de espuma viscoelástica: ofrecen comodidad y aislamiento pasivo del ruido.",
-      "Controles en el cable: ajuste de volumen y botón para silenciar el micrófono."
-    ],
-    "BLACK SHARK",
-    "audifonos"
-  ],
-  [
-    "KIESLECT KS MINI",
-    29.0,
-    false,
-    "img/042-kieslectksmini.jpeg",
-    null,
-    [
-      "Pantalla AMOLED HD de 1,78 pulgadas: ofrece una visualización clara y amplia.",
-      "Llamadas mediante Bluetooth 5.2: permite conversar desde el reloj conectado al teléfono y guardar hasta 100 contactos.",
-      "Monitoreo de bienestar las 24 horas: registra frecuencia cardíaca, oxígeno en sangre y patrones de sueño.",
-      "Alertas de frecuencia cardíaca anormal: avisa cuando detecta valores fuera de lo habitual.",
-      "Compatibilidad con Android y iOS: permite vincularlo con teléfonos de ambos sistemas."
-    ],
-    "KIESLECT",
-    "relojes"
-  ],
-  [
-    "SAMSUNG 25W POWER ADAPTER + CABLE USB-C DE 1 M",
-    25.0,
-    false,
-    "img/079-samsung25wpoweradaptercableusbcde1m.png",
-    null,
-    [
-      "Carga superrápida de hasta 25 W: para dispositivos compatibles con Samsung Super Fast Charging.",
-      "USB Power Delivery 3.0 PPS: ajusta la alimentación a los requisitos del dispositivo.",
-      "Cable USB-C a USB-C de 1 metro incluido: junto con el adaptador de pared.",
-      "Entrada de 100–240 V: admite distintos voltajes de red eléctrica.",
-      "Consumo en espera inferior a 5 mW: reduce el consumo cuando no está cargando.",
-      "Protecciones integradas: contra sobrecorriente, cortocircuitos y altas temperaturas."
-    ],
-    "SAMSUNG",
-    "cargadores"
-  ],
-  [
-    "SAMSUNG CAR CHARGER DUO 25W",
-    22.0,
-    false,
-    "img/080-samsungcarchargerduo25w.png",
-    null,
-    [
-      "Puerto USB-C de hasta 25 W: compatible con Samsung Super Fast Charging.",
-      "Puerto USB-A de hasta 15 W: permite cargar un segundo dispositivo con carga rápida.",
-      "Carga simultánea de dos dispositivos: potencia total combinada de hasta 40 W.",
-      "Protecciones integradas: contra sobrecorriente, cortocircuitos y altas temperaturas.",
-      "Diseño compacto: dimensiones de 80 × 34 × 26 mm.",
-      "Peso ligero de 36,5 g: fácil de transportar y guardar en el vehículo."
-    ],
-    "SAMSUNG",
-    "cargadores"
-  ],
-  [
-    "SAMSUNG TRAVEL ADAPTER 25W",
-    15.0,
-    false,
-    "img/079-samsungtraveladapter25w.png",
-    null,
-    [
-      "Carga súper rápida de hasta 25 W: incorpora la tecnología Samsung Super Fast Charging, basada en USB Power Delivery 3.0 con PPS",
-      "Conectividad USB-C de amplia compatibilidad: dispone de un puerto USB tipo C para cargar celulares Samsung Galaxy, tablets y otros dispositivos compatibles con carga USB-C, adaptando la velocidad de carga según las capacidades de cada equipo.",
-      "Diseño compacto con tecnología GaN: utiliza tecnología de nitruro de galio para ofrecer un adaptador más pequeño y eficiente que su predecesor.",
-      "Admite entrada de 100 a 240 V, lo que facilita su utilización en diferentes redes eléctricas mediante el enchufe adecuado"
-    ],
-    "SAMSUNG",
-    "cargadores"
-  ],
-  [
-    "SAMSUNG TRAVEL ADAPTER 45W + CABLE USB-C",
-    32.0,
-    false,
-    "img/082-samsungtraveladapter45wcableusbc.png",
-    null,
-    [
-      "Carga superrápida de hasta 45 W: compatible con Samsung Super Fast Charging 2.0.",
-      "USB Power Delivery 3.0 PDO/PPS: adapta la alimentación a dispositivos compatibles.",
-      "Cable USB-C a USB-C de 5 A incluido: preparado para utilizar la carga de alta potencia.",
-      "Cable de 1,8 metros: ofrece mayor alcance entre el enchufe y el dispositivo.",
-      "Entrada de 100–240 V: compatible con diferentes voltajes de red eléctrica.",
-      "Protecciones integradas: contra sobrecorriente, cortocircuitos y variaciones de temperatura."
-    ],
-    "SAMSUNG",
-    "cargadores"
-  ],
-  [
-    "SONY WHXB910N",
-    121.0,
-    false,
-    "img/080-sonywhxb910n.jpeg",
-    null,
-    [
-      "Tecnología EXTRA BASS y controladores de 40 mm: ofrecen graves profundos y potentes, manteniendo la claridad de las voces.",
-      "Cancelación activa de ruido con Dual Noise Sensor: reduce el ruido exterior para disfrutar mejor de la música.",
-      "Hasta 30 horas de batería: para largas sesiones de reproducción, según las condiciones de uso.",
-      "Carga rápida: 10 minutos de carga proporcionan hasta 4,5 horas de reproducción, con un adaptador de corriente compatible.",
-      "Conexión Bluetooth multipunto: permite mantener conectados dos dispositivos y alternar entre ellos."
-    ],
-    "SONY",
-    "audifonos"
-  ],
-  [
-    "TECNO BUDS 2",
-    28.0,
-    false,
-    "img/082-tecnobuds2.jpeg",
-    null,
-    [
-      "AUTONOMÍA (ESTUCHE): 12 HRS.",
-      "AUTONOMÍA (AUDIFONOS): 4 HRS.",
-      "GRAVES PROFUNDOS CON UN ALTAVOZ DE BOBINA MÓVIL",
-      "DISEÑO MEDIO INTRAUDITIVO",
-      "BLUETOOTH 5.0",
-      "TIEMPO DE CARGA: 1,5 HRS.",
-      "PUERTO DE CARGA TIPO C"
-    ],
-    "TECNO",
-    "audifonos"
-  ],
-  [
-    "TECNO TWS EARPHONE BDE01",
-    42.0,
-    false,
-    "img/088-tecnotwsearphonebde01.jpeg",
-    null,
-    [
-      "AUTONOMÍA: 27 HRS.",
-      "SONIDO DE ALTA FIDELIDAD",
-      "MODO DE BAJA LATENCIA",
-      "CANCELACIÓN DE RUIDO ACTIVA",
-      "DISEÑO ERGONÓMICO",
-      "BLUETOOTH 5.0",
-      "RESISTENCIA IPX5"
-    ],
-    "TECNO",
-    "audifonos"
-  ],
-  [
-    "TECNO TWS EARPHONE G01",
-    40.0,
-    false,
-    "img/089-tecnotwsearphoneg01.png",
-    null,
-    [
-      "AUTONOMÍA: 25 HRS.",
-      "AUTONOMÍA (AUDIFONOS): 6.5 HRS.",
-      "DISEÑO ERGONÓMICO",
-      "BLUETOOTH 5.0",
-      "CANCELACIÓN DE RUIDO",
-      "MODO BAJA LATENCIA",
-      "RESISTENCIA IPX4"
-    ],
-    "TECNO",
-    "audifonos"
-  ],
-  [
-    "VEN DENS S/M VD MIC004",
-    6.0,
-    false,
-    "img/093-vendenssmvdmic004.png",
-    null,
-    [
-      "Breve descripción:",
-      "Modelo: VD-MIC004",
-      "18 g/ud. (peso neto)"
-    ],
-    "VEN DENS",
-    "accesorios"
-  ],
-  [
-    "VEN DENS S/M VD MIC007",
-    10.0,
-    false,
-    "img/094-vendenssmvdmic007.jpeg",
-    null,
-    [
-      "Parámetro del producto",
-      "Material : TPE",
-      "Tipo de conector: para puerto tipo C",
-      "Tiempo de grabación continua: 3-4 horas",
-      "Rango máximo de grabación: 15-20 m"
-    ],
-    "VEN DENS",
-    "accesorios"
-  ],
-  [
-    "VEN DENS S/M VD MIC009",
-    12.0,
-    false,
-    "img/095-vendenssmvdmic009.jpeg",
-    null,
-    [
-      "Parámetro del producto",
-      "Material : TPE",
-      "Tipo de conector: para puerto tipo C",
-      "Tiempo de grabación continua: 3-4 horas",
-      "Rango máximo de grabación: 15-20 m"
-    ],
-    "VEN DENS",
-    "accesorios"
-  ],
-  [
-    "VEN DENS S/M VD MIC011",
-    12.5,
-    false,
-    "img/096-vendenssmvdmic011.jpeg",
-    null,
-    [
-      "Parámetro del producto",
-      "Material : TPE",
-      "Tipo de conector: para puerto tipo C",
-      "Tiempo de grabación continua: 3-4 horas",
-      "Rango máximo de grabación: 15-20 m"
-    ],
-    "VEN DENS",
-    "accesorios"
-  ],
-  [
-    "VEN DENS S/M VD MIC015",
-    18.5,
-    false,
-    "img/097-vendenssmvdmic015.png",
-    null,
-    [
-      "CARACTERÍSTICAS",
-      "1. Reducción de ruido: un clic para la reducción",
-      "de ruido 2. Reverberación: Con efecto de sonido de reverberación (triple clic para cambiar)",
-      "PARÁMETROS",
-      "DEL PRODUCTO Tiempo de carga: aproximadamente 1 hora",
-      "Tiempo de trabajo: 6 horas",
-      "Protocolo de transmisión: Bluetooth 5.3",
-      "Distancia de transmisión: Aproximadamente 20 m–25 m (positivo)",
-      "Sensibilidad del micrófono: -38dB",
-      "Operación: Plug and Play, emparejamiento automático al encender",
-      "RX Receptor: Puerto tipo C"
-    ],
-    "VEN DENS",
-    "accesorios"
-  ],
-  [
-    "VEN DENS S/M VD MIC017",
-    20.5,
-    false,
-    "img/098-vendenssmvdmic017.png",
-    null,
-    [
-      "CARACTERÍSTICAS",
-      "1. Reducción de ruido: un clic para la reducción",
-      "de ruido 2. Reverberación: Con efecto de sonido de reverberación (triple clic para cambiar)",
-      "PARÁMETROS",
-      "DEL PRODUCTO Tiempo de carga: aproximadamente 1 hora",
-      "Tiempo de trabajo: 6 horas",
-      "Protocolo de transmisión: Bluetooth 5.3",
-      "Distancia de transmisión: Aproximadamente 20 m–25 m (positivo)",
-      "Sensibilidad del micrófono: -38dB",
-      "Operación: Plug and Play, emparejamiento automático al encender",
-      "RX Receptor: Puerto tipo C"
-    ],
-    "VEN DENS",
-    "accesorios"
-  ],
-  [
-    "Xiaomi 22.5W Power Bank 10000mAh Lite",
-    20.0,
-    false,
-    "img/108-xiaomi225wpowerbank10000mahlite.jpeg",
-    null,
-    [
-      "Batería de 10.000 mAh: capacidad para proporcionar energía adicional a celulares, tablets y otros dispositivos durante viajes y actividades diarias.",
-      "Carga rápida de hasta 22,5 W: puerto USB-C bidireccional que permite cargar dispositivos compatibles y recargar la batería externa en aproximadamente 4,5 horas con el cargador adecuado.",
-      "Carga simultánea de 3 dispositivos: incorpora 2 puertos USB-A y 1 puerto USB-C para alimentar varios equipos al mismo tiempo.",
-      "Compatibilidad con protocolos PD y QC3+: permite cargar smartphones y accesorios compatibles, incluyendo un modo de baja corriente para audífonos y pulseras inteligentes.",
-      "Diseño ligero con 9 capas de protección: pesa solamente 227 gramos e incorpora sistemas de seguridad contra sobrecargas, sobrecalentamiento y cortocircuitos."
-    ],
-    "XIAOMI",
-    "powerbanks"
-  ],
-  [
-    "XIAOMI FOCUS STYLUS PRO",
-    75.0,
-    false,
-    "img/143-xiaomifocusstyluspro.png",
-    null,
-    [
-      "16.384 niveles de sensibilidad a la presión: precisión para trazos suaves y cambios de grosor.",
-      "Latencia ultrabaja: respuesta a nivel de milisegundos para escribir y dibujar con fluidez.",
-      "Control por gestos sin botones: pellizco, doble toque, deslizamiento y rotación para manejar herramientas en Mi Canvas.",
-      "Respuesta háptica: vibraciones que confirman los gestos realizados.",
-      "Vista previa sin tocar la pantalla: muestra posición, color, grosor y forma del pincel en Mi Canvas.",
-      "Compatibilidad con Xiaomi Pad 6S Pro 12.4 y las series Xiaomi Pad 7 y Pad 8."
-    ],
-    "XIAOMI",
-    "lapices"
-  ],
-  [
-    "Xiaomi Router Wi-Fi 7 Be3600 2.5G EU RN06",
-    62.0,
-    false,
-    "img/238-xiaomirouterwifi7be360025geurn06.png",
-    null,
-    [
-      "Wi-Fi 7 Dual Band BE3600: conexión de 2,4 GHz (688 Mbps) y 5 GHz (2882 Mbps), con velocidad inalámbrica combinada de hasta 3570 Mbps.",
-      "Puerto Ethernet de 2,5 Gbps: incluye 1 puerto WAN/LAN de 2500 Mbps y 3 puertos Gigabit de 1000 Mbps para conexiones por cable de alta velocidad.",
-      "Tecnología MLO de doble banda: permite utilizar simultáneamente las bandas de 2,4 GHz y 5 GHz con dispositivos compatibles, mejorando la estabilidad y reduciendo la latencia.",
-      "Procesador Qualcomm de cuatro núcleos: CPU de 1,1 GHz, 256 MB de RAM y capacidad probada de hasta 128 dispositivos conectados.",
-      "Tecnología Xiaomi Mesh: permite ampliar la cobertura mediante routers compatibles, creando una red Wi-Fi unificada, con administración desde Xiaomi Home."
-    ],
-    "XIAOMI",
-    "routers"
-  ],
-  [
-    "XIAOMI WATCH S4 41MM MINT GREEN",
-    135.0,
-    false,
-    "img/282-xiaomiwatchs441mmmintgreen.jpeg",
-    null,
-    [
-      "Pantalla AMOLED de 1,32″: resolución de 466 × 466 píxeles, fluidez de 60 Hz y brillo de hasta 1500 nits.",
-      "Diseño compacto de acero inoxidable: grosor de 9,5 mm y peso de aproximadamente 32 g sin correa, disponible en Verde Menta.",
-      "Batería de hasta 8 días: autonomía con uso ligero; hasta 4 días con uso normal.",
-      "Más de 150 modos deportivos y resistencia 5 ATM: incluye seguimiento de la frecuencia cardíaca durante la natación.",
-      "Monitoreo integral de bienestar: registra frecuencia cardíaca, oxígeno en sangre, estrés, sueño y temperatura de la piel."
-    ],
-    "XIAOMI",
-    "relojes"
-  ],
-  [
-    "XIAOMI WATCH S4 41MM SUNSET GOLD",
-    165.0,
-    false,
-    "img/286-xiaomiwatchs4sunsetgold.jpeg",
-    null,
-    [
-      "Acabado Sunset Gold: correa milanesa y corona con un diamante cultivado en laboratorio.",
-      "Pantalla AMOLED de 1,32 pulgadas: resolución de 466 × 466 píxeles, 60 Hz y brillo HBM de hasta 1500 nits.",
-      "Diseño compacto de acero inoxidable: grosor de 9,5 mm y peso aproximado de 32 g sin correa.",
-      "Autonomía de hasta 8 días con uso ligero: hasta 4 días con uso normal o 3 días con uso intensivo.",
-      "Más de 150 modos deportivos: posicionamiento independiente GNSS de doble frecuencia L1 + L5 y cinco sistemas de satélites.",
-      "Seguimiento del bienestar: frecuencia cardíaca, SpO₂, sueño, estrés y temperatura de la piel."
-    ],
-    "XIAOMI",
-    "relojes"
-  ],
-  [
-    "XIAOMI WATCH S4 41MM WHITE",
-    135.0,
-    false,
-    "img/283-xiaomiwatchs441mmwhite.png",
-    null,
-    [
-      "Pantalla AMOLED de 1,32″: resolución de 466 × 466 píxeles, fluidez de 60 Hz y brillo de hasta 1500 nits.",
-      "Diseño compacto de acero inoxidable: grosor de 9,5 mm y peso de aproximadamente 32 g sin correa, disponible en Verde Menta.",
-      "Batería de hasta 8 días: autonomía con uso ligero; hasta 4 días con uso normal.",
-      "Más de 150 modos deportivos y resistencia 5 ATM: incluye seguimiento de la frecuencia cardíaca durante la natación.",
-      "Monitoreo integral de bienestar: registra frecuencia cardíaca, oxígeno en sangre, estrés, sueño y temperatura de la piel."
-    ],
-    "XIAOMI",
-    "relojes"
-  ],
-  [
-    "XIAOMI WATCH S4 44MM SILVER",
-    115.0,
-    false,
-    "img/xiaomiwatchs444mmsilver-292e378931.jpeg",
-    null,
-    [
-      "Pantalla AMOLED de 1,43 pulgadas: resolución de 466 × 466 píxeles, 60 Hz y brillo HBM de hasta 1500 nits.",
-      "Hasta 15 días de autonomía: batería de 486 mAh; cinco minutos de carga ofrecen hasta dos días de uso según las pruebas de Xiaomi.",
-      "Diseño personalizable: marco de aluminio, bisel intercambiable y corona giratoria; versiones Black y Silver con correa de fluorocaucho.",
-      "Más de 150 modos deportivos: GNSS independiente de doble frecuencia L1 + L5 con cinco sistemas de satélites.",
-      "Seguimiento del bienestar: frecuencia cardíaca, oxígeno en sangre, estrés y sueño.",
-      "Llamadas Bluetooth y resistencia 5 ATM: micrófonos y altavoz integrados; apto para natación en aguas poco profundas."
-    ],
-    "XIAOMI",
-    "relojes"
   ]
 ];
 const aliasProductos={
@@ -4195,11 +4165,13 @@ const aliasProductos={
   "xiaomimultifunctioncampinglantern": "xiaomimultifuncioncampinglantern",
   "xiaomimultifunctionflashlight": "xiaomimultifuncionflashlight",
   "xiaomimultifuncionalhotpotcooker6l": "xiaomimultifunctionalhotpotcooker6l",
-  "xiaominightlight3": "xiaominghtlight3gl",
+  "xiaominightlight3": "xiaominightlight3gl",
   "xiaomiredmibuds6active": "xiaomiredmibuds6activeglobal",
   "xiaomiredmiheadphonesneo": "xiaomiredmiheadphoneneo",
   "xiaomisoundoutdoor30w": "xiaomisoundoutdoor",
-  "xiaomismartkettle2pro": "xiaomismartelectrickettle2pro"
+  "xiaomismartkettle2pro": "xiaomismartelectrickettle2pro",
+  "xiaominightlight3gl": "xiaominightlight3gl",
+  "xiaominghtlight3gl": "xiaominightlight3gl"
 };
 const etiquetasCategorias={
   "audifonos": "Audífonos",
@@ -4316,6 +4288,7 @@ function tarjetaProducto(p) {
     <img src="${escaparHTML(p[3])}" alt="${escaparHTML(p[0])}" loading="lazy" onerror="imagenNoDisponible(this)">
     <div class="sin-imagen" hidden>Imagen no disponible</div>
     <p class="nombre-producto">${escaparHTML(p[0])}</p>
+    ${p[4] != null ? `<p class="precio-anterior"><span>Antes </span><s>Bs ${formatoBs(precioUnitarioBs(p[4]))}</s></p>` : ""}
     <p class="price">Bs ${formatoBs(precioUnitarioBs(p[1]))}</p>
     ${ficha}
     <div class="acciones-producto">
